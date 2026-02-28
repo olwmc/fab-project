@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wang Tile Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f5f0e8;
+  --paper2: #ede7d9;
+  --ink: #1a1410;
+  --ink2: #3d3428;
+  --ink3: #6b5e4e;
+  --rule: #c8bfb0;
+  --rule2: #ddd6c8;
+  --accent: #c0392b;
+  --gold: #b8860b;
+  --teal: #1a6b6b;
+  --slate: #3d5a6b;
+
+  /* tile edge palette — 6 colors */
+  --e0: #1a1410;
+  --e1: #c0392b;
+  --e2: #1a6b6b;
+  --e3: #b8860b;
+  --e4: #3d5a6b;
+  --e5: #7b4f8e;
+
+  --e0l: #f5f0e8;
+  --e1l: #fadbd8;
+  --e2l: #d1ece8;
+  --e3l: #fef9e7;
+  --e4l: #dce8f0;
+  --e5l: #eeddf5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Mono', monospace;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ── */
+header {
+  padding: 12px 24px;
+  border-bottom: 2px solid var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-shrink: 0;
+  background: var(--paper);
+}
+header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+header .sub {
+  font-size: 10px;
+  color: var(--ink3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.header-actions { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+
+/* ── LAYOUT ── */
+.main {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── LEFT PANEL ── */
+.left {
+  border-right: 2px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--paper2);
+}
+.section {
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 16px;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── COLOR PALETTE ── */
+.palette {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.color-btn {
+  width: 32px; height: 32px;
+  border-radius: 3px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.1s;
+  position: relative;
+}
+.color-btn.selected {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 1px var(--ink);
+  transform: scale(1.1);
+}
+.color-btn .clabel {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: var(--ink3);
+  white-space: nowrap;
+}
+
+/* ── TILE EDITOR ── */
+.tile-editor-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.tile-editor {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+}
+.tile-editor canvas { position: absolute; top: 0; left: 0; }
+.tile-editor-hint {
+  font-size: 9px;
+  color: var(--ink3);
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+/* ── TILE LIST ── */
+.tile-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tile-thumb {
+  position: relative;
+  cursor: pointer;
+  border: 1.5px solid var(--rule);
+  border-radius: 2px;
+  transition: all 0.1s;
+}
+.tile-thumb:hover { border-color: var(--ink2); }
+.tile-thumb.selected-tile { border-color: var(--accent); border-width: 2px; }
+.tile-thumb .del-btn {
+  position: absolute;
+  top: -6px; right: -6px;
+  width: 14px; height: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 9px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+.tile-thumb:hover .del-btn { display: flex; }
+
+/* ── CONTROLS ── */
+button {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  cursor: pointer;
+  border: 1.5px solid;
+  transition: all 0.12s;
+  border-radius: 2px;
+}
+.btn-primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.btn-primary:hover { background: var(--ink2); }
+.btn-secondary {
+  background: transparent;
+  border-color: var(--rule);
+  color: var(--ink3);
+}
+.btn-secondary:hover { border-color: var(--ink2); color: var(--ink); }
+.btn-danger {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-danger:hover { background: var(--accent); color: #fff; }
+
+.btn-row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* ── RIGHT PANEL ── */
+.right {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.right-header {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  background: var(--paper);
+}
+.right-header .rh-title {
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+.rh-stats { display: flex; gap: 12px; font-size: 9px; color: var(--ink3); margin-left: auto; }
+.rh-stats span b { color: var(--teal); font-weight: 500; }
+
+.grid-wrap {
+  flex: 1;
+  overflow: auto;
+  background: var(--paper);
+  background-image:
+    linear-gradient(var(--rule2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule2) 1px, transparent 1px);
+  background-size: 48px 48px;
+  position: relative;
+  cursor: crosshair;
+}
+canvas#grid { display: block; }
+
+.empty-grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  pointer-events: none;
+}
+.empty-grid p {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--rule);
+}
+.empty-grid small { font-size: 9px; color: var(--rule2); letter-spacing: 0.06em; }
+
+/* ── MODE TABS ── */
+.mode-tabs {
+  display: flex;
+  gap: 0;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.mode-tab {
+  padding: 5px 12px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--ink3);
+  border-radius: 0;
+  transition: all 0.1s;
+}
+.mode-tab.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* ── TOOLTIP ── */
+#tooltip {
+  position: fixed;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6px 10px;
+  font-size: 9px;
+  line-height: 1.6;
+  pointer-events: none;
+  display: none;
+  z-index: 100;
+  border-radius: 2px;
+  letter-spacing: 0.03em;
+}
+
+/* ── STATUS BAR ── */
+.statusbar {
+  border-top: 1px solid var(--rule);
+  padding: 5px 16px;
+  font-size: 9px;
+  color: var(--ink3);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  background: var(--paper2);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.statusbar .status-msg { flex: 1; }
+.statusbar .status-msg.ok { color: var(--teal); }
+.statusbar .status-msg.err { color: var(--accent); }
+
+/* ── PRESETS ── */
+.preset-row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wang Tile Designer</h1>
+  <span class="sub">freeform tileset editor</span>
+  <div class="header-actions">
+    <div class="mode-tabs">
+      <button class="mode-tab active" id="modeManual">Manual</button>
+      <button class="mode-tab" id="modeWFC">Auto-fill (WFC)</button>
+      <button class="mode-tab" id="modeRandom">Random</button>
+    </div>
+  </div>
+</header>
+
+<div class="main">
+  <!-- LEFT -->
+  <div class="left">
+
+    <!-- COLOR PALETTE -->
+    <div class="section">
+      <div class="section-title">Edge Color <span style="font-size:8px;font-family:'DM Mono'">click to select</span></div>
+      <div class="palette" id="palette" style="margin-bottom:20px;"></div>
+    </div>
+
+    <!-- TILE EDITOR -->
+    <div class="section">
+      <div class="section-title">New Tile <span style="font-size:8px;font-family:'DM Mono'">click edges to paint</span></div>
+      <div class="tile-editor-wrap">
+        <div class="tile-editor" id="tileEditorWrap">
+          <canvas id="tileEditor" width="120" height="120"></canvas>
+        </div>
+        <div class="tile-editor-hint">
+          Click the <b>top / bottom / left / right</b><br>triangle to set that edge's color.
+        </div>
+        <div class="btn-row" style="margin-top:4px;">
+          <button class="btn-primary" id="addTileBtn">+ Add Tile</button>
+          <button class="btn-secondary" id="clearEditorBtn">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TILE LIBRARY -->
+    <div class="section">
+      <div class="section-title">
+        Tile Library
+        <span id="tileCount" style="font-size:9px;color:var(--teal);">0 tiles</span>
+      </div>
+      <div class="tile-list" id="tileList"></div>
+      <div class="btn-row" style="margin-top:10px;">
+        <button class="btn-secondary" id="clearAllBtn">Clear all</button>
+      </div>
+    </div>
+
+    <!-- PRESETS -->
+    <div class="section">
+      <div class="section-title">Presets</div>
+      <div class="preset-row">
+        <button class="btn-secondary" id="presetBrick">Brick</button>
+        <button class="btn-secondary" id="presetChecker">Checker</button>
+        <button class="btn-secondary" id="presetAperiodic">Aperiodic 11</button>
+        <button class="btn-secondary" id="presetMaze">Maze</button>
+      </div>
+    </div>
+
+    <!-- GRID SIZE -->
+    <div class="section">
+      <div class="section-title">Grid Size</div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <input type="range" id="gridSize" min="4" max="32" value="16" style="flex:1;accent-color:var(--ink);">
+        <span id="gridSizeVal" style="font-size:10px;color:var(--teal);min-width:40px;">16×16</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="right-header">
+      <span class="rh-title">Canvas</span>
+      <div class="rh-stats">
+        <span>placed <b id="statPlaced">0</b></span>
+        <span>conflicts <b id="statConflicts" style="color:var(--accent)">0</b></span>
+        <span>coverage <b id="statCoverage">0%</b></span>
+      </div>
+      <button class="btn-secondary" id="clearGridBtn" style="margin-left:8px;">Clear grid</button>
+      <button class="btn-primary" id="fillBtn" style="margin-left:4px;">&#9654; Fill</button>
+    </div>
+    <div class="grid-wrap" id="gridWrap">
+      <div class="empty-grid" id="emptyGrid">
+        <p>Add tiles to your library, then fill or click to place</p>
+        <small>or load a preset to get started</small>
+      </div>
+      <canvas id="grid"></canvas>
+    </div>
+    <div class="statusbar">
+      <span class="status-msg" id="statusMsg">Ready.</span>
+      <span>mode: <b id="statusMode" style="color:var(--teal)">manual</b></span>
+    </div>
+  </div>
+</div>
+
+<div id="tooltip"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  CONSTANTS & STATE
+// ═══════════════════════════════════════════════════════
+
+const COLORS = [
+  { id: 0, hex: '#1a1410', name: 'Ink'    },
+  { id: 1, hex: '#c0392b', name: 'Red'    },
+  { id: 2, hex: '#1a6b6b', name: 'Teal'   },
+  { id: 3, hex: '#b8860b', name: 'Gold'   },
+  { id: 4, hex: '#3d5a6b', name: 'Slate'  },
+  { id: 5, hex: '#7b4f8e', name: 'Plum'   },
+];
+
+const EDGE_NAMES = ['top','right','bottom','left'];
+
+// Each tile: { id, top, right, bottom, left }  (0-5 color indices)
+let tiles = [];
+let tileIdCounter = 0;
+
+// Current editor state
+let editorEdges = [0, 0, 0, 0]; // top, right, bottom, left
+let selectedColor = 1;
+let mode = 'manual'; // manual | wfc | random
+
+// Grid
+let gridN = 16;
+let gridCells = []; // null or tile id
+let TSIZE = 36; // pixels per tile
+
+// ═══════════════════════════════════════════════════════
+//  COLOR PALETTE UI
+// ═══════════════════════════════════════════════════════
+
+function buildPalette() {
+  const el = document.getElementById('palette');
+  el.innerHTML = '';
+  COLORS.forEach(c => {
+    const btn = document.createElement('div');
+    btn.className = 'color-btn' + (c.id === selectedColor ? ' selected' : '');
+    btn.style.background = c.hex;
+    btn.title = c.name;
+    btn.addEventListener('click', () => {
+      selectedColor = c.id;
+      document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    });
+    el.appendChild(btn);
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  TILE EDITOR CANVAS
+// ═══════════════════════════════════════════════════════
+
+function drawEditorTile() {
+  const canvas = document.getElementById('tileEditor');
+  const ctx = canvas.getContext('2d');
+  drawTileOnCanvas(ctx, 0, 0, 120, editorEdges[0], editorEdges[1], editorEdges[2], editorEdges[3], false, true);
+}
+
+// Draw a Wang tile: top/right/bottom/left are color indices
+function drawTileOnCanvas(ctx, x, y, s, top, right, bottom, left, highlight=false, labels=false) {
+  const cx = x + s/2, cy = y + s/2;
+  const bg = highlight ? '#fff8e8' : '#f5f0e8';
+  ctx.fillStyle = bg;
+  ctx.fillRect(x, y, s, s);
+
+  const triData = [
+    { ci: top,    pts: [[x,y],[x+s,y],[cx,cy]] },
+    { ci: right,  pts: [[x+s,y],[x+s,y+s],[cx,cy]] },
+    { ci: bottom, pts: [[x+s,y+s],[x,y+s],[cx,cy]] },
+    { ci: left,   pts: [[x,y+s],[x,y],[cx,cy]] },
+  ];
+
+  for (const { ci, pts } of triData) {
+    ctx.beginPath();
+    ctx.moveTo(pts[0][0], pts[0][1]);
+    ctx.lineTo(pts[1][0], pts[1][1]);
+    ctx.lineTo(pts[2][0], pts[2][1]);
+    ctx.closePath();
+    ctx.fillStyle = COLORS[ci].hex;
+    ctx.fill();
+  }
+
+  // center circle
+  ctx.beginPath();
+  ctx.arc(cx, cy, s * 0.1, 0, Math.PI * 2);
+  ctx.fillStyle = bg;
+  ctx.fill();
+
+  // border
+  ctx.strokeStyle = '#1a1410';
+  ctx.lineWidth = highlight ? 2 : 1;
+  ctx.strokeRect(x + 0.5, y + 0.5, s - 1, s - 1);
+
+  if (labels) {
+    ctx.font = `bold ${Math.max(8, s*0.11)}px DM Mono`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const positions = [
+      [cx, y + s*0.18],   // top
+      [x + s*0.82, cy],  // right
+      [cx, y + s*0.82],  // bottom
+      [x + s*0.18, cy],  // left
+    ];
+    const indices = [top, right, bottom, left];
+    positions.forEach(([tx,ty], i) => {
+      // Light text on dark colors, dark on light
+      ctx.fillStyle = '#fff';
+      ctx.fillText(COLORS[indices[i]].name[0], tx, ty);
+    });
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+  }
+}
+
+// Handle clicks on tile editor — detect which triangle was clicked
+document.getElementById('tileEditor').addEventListener('click', e => {
+  const canvas = e.target;
+  const rect = canvas.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) * (canvas.width / rect.width);
+  const my = (e.clientY - rect.top) * (canvas.height / rect.height);
+  const s = canvas.width;
+  const cx = s/2, cy = s/2;
+
+  // Determine which triangle by angle from center
+  const dx = mx - cx, dy = my - cy;
+  const angle = Math.atan2(dy, dx) * 180 / Math.PI; // -180 to 180
+
+  // top: -135 to -45, right: -45 to 45, bottom: 45 to 135, left: 135/-135
+  let edge;
+  if (angle >= -135 && angle < -45) edge = 0; // top
+  else if (angle >= -45 && angle < 45) edge = 1; // right
+  else if (angle >= 45 && angle < 135) edge = 2; // bottom
+  else edge = 3; // left
+
+  editorEdges[edge] = selectedColor;
+  drawEditorTile();
+});
+
+document.getElementById('clearEditorBtn').addEventListener('click', () => {
+  editorEdges = [0, 0, 0, 0];
+  drawEditorTile();
+});
+
+// ═══════════════════════════════════════════════════════
+//  TILE LIBRARY
+// ═══════════════════════════════════════════════════════
+
+function addTile(top, right, bottom, left) {
+  const tile = { id: tileIdCounter++, top, right, bottom, left };
+  tiles.push(tile);
+  refreshTileList();
+  refreshStats();
+  document.getElementById('emptyGrid').style.display = 'none';
+}
+
+function deleteTile(id) {
+  tiles = tiles.filter(t => t.id !== id);
+  // Remove from grid
+  gridCells = gridCells.map(c => c === id ? null : c);
+  refreshTileList();
+  renderGrid();
+  refreshStats();
+}
+
+function refreshTileList() {
+  const el = document.getElementById('tileList');
+  el.innerHTML = '';
+  document.getElementById('tileCount').textContent = `${tiles.length} tile${tiles.length!==1?'s':''}`;
+
+  tiles.forEach(t => {
+    const THUMB = 40;
+    const wrap = document.createElement('div');
+    wrap.className = 'tile-thumb';
+    wrap.style.width = THUMB + 'px';
+    wrap.style.height = THUMB + 'px';
+    wrap.title = `T:${COLORS[t.top].name} R:${COLORS[t.right].name} B:${COLORS[t.bottom].name} L:${COLORS[t.left].name}`;
+
+    const c = document.createElement('canvas');
+    c.width = THUMB; c.height = THUMB;
+    const ctx = c.getContext('2d');
+    drawTileOnCanvas(ctx, 0, 0, THUMB, t.top, t.right, t.bottom, t.left);
+    wrap.appendChild(c);
+
+    // Delete button
+    const del = document.createElement('button');
+    del.className = 'del-btn';
+    del.textContent = '×';
+    del.addEventListener('click', ev => { ev.stopPropagation(); deleteTile(t.id); });
+    wrap.appendChild(del);
+
+    wrap.addEventListener('click', () => {
+      // Load into editor
+      editorEdges = [t.top, t.right, t.bottom, t.left];
+      drawEditorTile();
+    });
+
+    el.appendChild(wrap);
+  });
+}
+
+document.getElementById('addTileBtn').addEventListener('click', () => {
+  addTile(...editorEdges);
+});
+
+document.getElementById('clearAllBtn').addEventListener('click', () => {
+  tiles = [];
+  gridCells = new Array(gridN * gridN).fill(null);
+  refreshTileList();
+  renderGrid();
+  setStatus('Tile library cleared.', 'ok');
+});
+
+// ═══════════════════════════════════════════════════════
+//  GRID
+// ═══════════════════════════════════════════════════════
+
+function initGrid() {
+  gridCells = new Array(gridN * gridN).fill(null);
+  const canvas = document.getElementById('grid');
+  const wrap = document.getElementById('gridWrap');
+  const W = wrap.clientWidth || 600;
+  const H = wrap.clientHeight || 500;
+  TSIZE = Math.max(12, Math.min(48, Math.floor(Math.min(W, H) / gridN)));
+  canvas.width  = gridN * TSIZE;
+  canvas.height = gridN * TSIZE;
+  renderGrid();
+}
+
+function renderGrid() {
+  const canvas = document.getElementById('grid');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#f5f0e8';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let row = 0; row < gridN; row++) {
+    for (let col = 0; col < gridN; col++) {
+      const idx = row * gridN + col;
+      const tid = gridCells[idx];
+      const x = col * TSIZE, y = row * TSIZE;
+
+      if (tid === null) {
+        // Empty cell
+        ctx.fillStyle = '#f0ebe0';
+        ctx.fillRect(x, y, TSIZE, TSIZE);
+        ctx.strokeStyle = '#ddd6c8';
+        ctx.lineWidth = 0.5;
+        ctx.strokeRect(x + 0.5, y + 0.5, TSIZE - 1, TSIZE - 1);
+      } else {
+        const tile = tiles.find(t => t.id === tid);
+        if (!tile) {
+          gridCells[idx] = null;
+          continue;
+        }
+        const conflict = hasConflict(row, col);
+        drawTileOnCanvas(ctx, x, y, TSIZE, tile.top, tile.right, tile.bottom, tile.left, conflict);
+        if (conflict) {
+          // Red X overlay
+          ctx.strokeStyle = '#c0392b';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(x+4, y+4); ctx.lineTo(x+TSIZE-4, y+TSIZE-4);
+          ctx.moveTo(x+TSIZE-4, y+4); ctx.lineTo(x+4, y+TSIZE-4);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  refreshStats();
+}
+
+function hasConflict(row, col) {
+  const idx = row * gridN + col;
+  const tid = gridCells[idx];
+  if (tid === null) return false;
+  const t = tiles.find(t => t.id === tid);
+  if (!t) return false;
+
+  // Check top neighbor
+  if (row > 0) {
+    const above = tiles.find(tt => tt.id === gridCells[(row-1)*gridN+col]);
+    if (above && above.bottom !== t.top) return true;
+  }
+  // Check left neighbor
+  if (col > 0) {
+    const left = tiles.find(tt => tt.id === gridCells[row*gridN+(col-1)]);
+    if (left && left.right !== t.left) return true;
+  }
+  return false;
+}
+
+function countConflicts() {
+  let n = 0;
+  for (let row = 0; row < gridN; row++)
+    for (let col = 0; col < gridN; col++)
+      if (hasConflict(row, col)) n++;
+  return n;
+}
+
+function refreshStats() {
+  const placed = gridCells.filter(c => c !== null).length;
+  const total = gridN * gridN;
+  const conflicts = countConflicts();
+  document.getElementById('statPlaced').textContent = placed;
+  document.getElementById('statConflicts').textContent = conflicts;
+  document.getElementById('statCoverage').textContent = Math.round(placed/total*100) + '%';
+}
+
+// ─── Grid click handler ───
+document.getElementById('grid').addEventListener('click', e => {
+  if (mode !== 'manual') return;
+  if (!tiles.length) { setStatus('Add tiles to your library first.', 'err'); return; }
+  const canvas = e.target;
+  const rect = canvas.getBoundingClientRect();
+  const col = Math.floor((e.clientX - rect.left) / TSIZE);
+  const row = Math.floor((e.clientY - rect.top) / TSIZE);
+  if (col < 0 || col >= gridN || row < 0 || row >= gridN) return;
+
+  const idx = row * gridN + col;
+  if (gridCells[idx] !== null) {
+    // Cycle to next valid tile or clear
+    const current = tiles.findIndex(t => t.id === gridCells[idx]);
+    const next = (current + 1) % (tiles.length + 1);
+    gridCells[idx] = next < tiles.length ? tiles[next].id : null;
+  } else {
+    // Place best fitting tile or first tile
+    const best = findBestTile(row, col);
+    gridCells[idx] = best !== null ? tiles[best].id : tiles[0].id;
+  }
+  renderGrid();
+  document.getElementById('emptyGrid').style.display = 'none';
+});
+
+// Tooltip on grid hover
+document.getElementById('grid').addEventListener('mousemove', e => {
+  const canvas = e.target;
+  const rect = canvas.getBoundingClientRect();
+  const col = Math.floor((e.clientX - rect.left) / TSIZE);
+  const row = Math.floor((e.clientY - rect.top) / TSIZE);
+  const tt = document.getElementById('tooltip');
+  if (col >= 0 && col < gridN && row >= 0 && row < gridN) {
+    const idx = row * gridN + col;
+    const tid = gridCells[idx];
+    if (tid !== null) {
+      const t = tiles.find(tt => tt.id === tid);
+      if (t) {
+        tt.style.display = 'block';
+        tt.style.left = (e.clientX + 12) + 'px';
+        tt.style.top  = (e.clientY - 8) + 'px';
+        tt.innerHTML = `[${col},${row}] &nbsp; T:${COLORS[t.top].name} R:${COLORS[t.right].name}<br>B:${COLORS[t.bottom].name} L:${COLORS[t.left].name}${hasConflict(row,col) ? '<br><span style="color:#ff8888">⚠ conflict</span>' : ''}`;
+      }
+    } else {
+      tt.style.display = 'none';
+    }
+  } else { tt.style.display = 'none'; }
+});
+document.getElementById('grid').addEventListener('mouseleave', () => {
+  document.getElementById('tooltip').style.display = 'none';
+});
+
+// ═══════════════════════════════════════════════════════
+//  PLACEMENT HELPERS
+// ═══════════════════════════════════════════════════════
+
+function getConstraints(row, col) {
+  // Returns { top, left } required edge colors, or null if unconstrained
+  let reqTop = null, reqLeft = null;
+  if (row > 0) {
+    const above = tiles.find(t => t.id === gridCells[(row-1)*gridN+col]);
+    if (above) reqTop = above.bottom;
+  }
+  if (col > 0) {
+    const left = tiles.find(t => t.id === gridCells[row*gridN+(col-1)]);
+    if (left) reqLeft = left.right;
+  }
+  return { reqTop, reqLeft };
+}
+
+function validTilesFor(row, col) {
+  const { reqTop, reqLeft } = getConstraints(row, col);
+  return tiles.filter(t =>
+    (reqTop  === null || t.top  === reqTop) &&
+    (reqLeft === null || t.left === reqLeft)
+  );
+}
+
+function findBestTile(row, col) {
+  const valid = validTilesFor(row, col);
+  if (!valid.length) return null;
+  return tiles.indexOf(valid[Math.floor(Math.random() * valid.length)]);
+}
+
+// ═══════════════════════════════════════════════════════
+//  FILL MODES
+// ═══════════════════════════════════════════════════════
+
+function fillRandom() {
+  if (!tiles.length) { setStatus('Add tiles first.', 'err'); return; }
+  let placed = 0, stuck = 0;
+
+  for (let row = 0; row < gridN; row++) {
+    for (let col = 0; col < gridN; col++) {
+      if (gridCells[row * gridN + col] !== null) continue; // skip already placed
+      const valid = validTilesFor(row, col);
+      if (valid.length) {
+        gridCells[row * gridN + col] = valid[Math.floor(Math.random() * valid.length)].id;
+        placed++;
+      } else {
+        stuck++;
+      }
+    }
+  }
+  renderGrid();
+  document.getElementById('emptyGrid').style.display = 'none';
+  const msg = stuck ? `Placed ${placed} tiles, ${stuck} stuck (no valid fit).` : `Filled ${placed} tiles successfully!`;
+  setStatus(msg, stuck ? 'err' : 'ok');
+}
+
+// Wave Function Collapse — simplified
+let _seedMask = []; // which cells were manually seeded before fill
+
+function wfcPropagate(g, ent, row, col) {
+  // BFS propagation from a newly placed cell; returns false on contradiction
+  const q = [[row-1,col],[row+1,col],[row,col-1],[row,col+1]];
+  while (q.length) {
+    const [r, c] = q.shift();
+    if (r < 0 || r >= gridN || c < 0 || c >= gridN) continue;
+    if (g[r * gridN + c] !== null) continue;
+    const idx = r * gridN + c;
+    if (!ent[idx]) continue;
+
+    let rT=null, rL=null, rB=null, rR=null;
+    if (r>0 && g[(r-1)*gridN+c]!==null) { const x=tiles.find(t=>t.id===g[(r-1)*gridN+c]); if(x) rT=x.bottom; }
+    if (c>0 && g[r*gridN+(c-1)]!==null) { const x=tiles.find(t=>t.id===g[r*gridN+(c-1)]); if(x) rL=x.right; }
+    if (r<gridN-1 && g[(r+1)*gridN+c]!==null) { const x=tiles.find(t=>t.id===g[(r+1)*gridN+c]); if(x) rB=x.top; }
+    if (c<gridN-1 && g[r*gridN+(c+1)]!==null) { const x=tiles.find(t=>t.id===g[r*gridN+(c+1)]); if(x) rR=x.left; }
+
+    const ns = new Set([...ent[idx]].filter(ti => {
+      const t = tiles[ti];
+      return (rT===null||t.top===rT) && (rL===null||t.left===rL) &&
+             (rB===null||t.bottom===rB) && (rR===null||t.right===rR);
+    }));
+    if (ns.size === 0) return false;
+    if (ns.size !== ent[idx].size) {
+      ent[idx] = ns;
+      q.push([r-1,c],[r+1,c],[r,c-1],[r,c+1]);
+    }
+  }
+  return true;
+}
+
+function fillWFC() {
+  if (!tiles.length) { setStatus('Add tiles first.', 'err'); return; }
+
+  const seedMask = gridCells.map(c => c !== null);
+
+  // Initial state: preserve seeded cells
+  let g = [...gridCells];
+  let ent = Array.from({ length: gridN * gridN }, (_, i) =>
+    g[i] !== null ? null : new Set(tiles.map((_, ti) => ti))
+  );
+
+  // Propagate from all seeds
+  for (let i = 0; i < gridN * gridN; i++) {
+    if (g[i] !== null) {
+      const r = Math.floor(i / gridN), c = i % gridN;
+      wfcPropagate(g, ent, r, c);
+    }
+  }
+
+  const stack = []; // { g, ent, idx, chosen } — snapshot before each collapse
+  const MAX_BACKTRACKS = 100000;
+  let backtracks = 0;
+
+  while (true) {
+    // Find min-entropy unfilled cell
+    let minE = Infinity, minIdx = -1;
+    for (let i = 0; i < gridN * gridN; i++) {
+      if (g[i] !== null || !ent[i]) continue;
+      const e = ent[i].size;
+      if (e === 0) { minE = 0; minIdx = i; break; }
+      if (e < minE) { minE = e; minIdx = i; }
+    }
+
+    if (minIdx === -1) break; // all filled — success!
+
+    if (minE === 0) {
+      // Contradiction — backtrack
+      if (!stack.length) {
+        setStatus('No valid tiling found — tile set cannot fill this grid.', 'err');
+        renderGrid();
+        return;
+      }
+      backtracks++;
+      if (backtracks > MAX_BACKTRACKS) {
+        setStatus(`Gave up after ${MAX_BACKTRACKS} backtracks — tile set is very constrained.`, 'err');
+        renderGrid();
+        return;
+      }
+      const frame = stack.pop();
+      g = frame.g; ent = frame.ent;
+      // Ban the choice that led to this contradiction
+      ent[frame.idx].delete(frame.chosen);
+      if (ent[frame.idx].size > 0) {
+        // Try next option from this state
+        const next = [...ent[frame.idx]][Math.floor(Math.random() * ent[frame.idx].size)];
+        const gn = [...g], en = ent.map(s => s ? new Set(s) : null);
+        stack.push({ g: [...g], ent: ent.map(s => s ? new Set(s) : null), idx: frame.idx, chosen: next });
+        const r = Math.floor(frame.idx / gridN), c = frame.idx % gridN;
+        gn[frame.idx] = tiles[next].id;
+        en[frame.idx] = null;
+        g = gn; ent = en;
+        wfcPropagate(g, ent, r, c);
+      }
+      continue;
+    }
+
+    // Collapse: pick random tile from min-entropy cell
+    const possible = [...ent[minIdx]];
+    const chosen = possible[Math.floor(Math.random() * possible.length)];
+    const row = Math.floor(minIdx / gridN), col = minIdx % gridN;
+
+    // Save state for potential backtrack
+    stack.push({ g: [...g], ent: ent.map(s => s ? new Set(s) : null), idx: minIdx, chosen });
+
+    g[minIdx] = tiles[chosen].id;
+    ent[minIdx] = null;
+    wfcPropagate(g, ent, row, col);
+  }
+
+  gridCells = g;
+  renderGrid();
+  document.getElementById('emptyGrid').style.display = 'none';
+  const conflicts = countConflicts();
+  const msg = backtracks > 0 ? ` (${backtracks} backtracks)` : '';
+  setStatus(conflicts ? `WFC done${msg} — ${conflicts} conflict(s).` : `WFC complete${msg} — clean tiling!`, conflicts ? 'err' : 'ok');
+}
+
+document.getElementById('fillBtn').addEventListener('click', () => {
+  if (mode === 'wfc') fillWFC();
+  else if (mode === 'random') fillRandom();
+  else fillWFC(); // manual: complete whatever's been seeded
+});
+
+document.getElementById('clearGridBtn').addEventListener('click', () => {
+  gridCells = new Array(gridN * gridN).fill(null);
+  renderGrid();
+  setStatus('Grid cleared.', '');
+});
+
+// ═══════════════════════════════════════════════════════
+//  MODES
+// ═══════════════════════════════════════════════════════
+
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('active'));
+  const tabId = { manual: 'modeManual', wfc: 'modeWFC', random: 'modeRandom' }[m];
+  document.getElementById(tabId).classList.add('active');
+  document.getElementById('statusMode').textContent = m;
+  const fillBtn = document.getElementById('fillBtn');
+  if (m === 'manual') fillBtn.textContent = '⚡ Complete (WFC)';
+  else if (m === 'wfc') fillBtn.textContent = '▶ Fill (WFC)';
+  else fillBtn.textContent = '▶ Fill (Random)';
+}
+
+document.getElementById('modeManual').addEventListener('click', () => setMode('manual'));
+document.getElementById('modeWFC').addEventListener('click', () => setMode('wfc'));
+document.getElementById('modeRandom').addEventListener('click', () => setMode('random'));
+
+// ═══════════════════════════════════════════════════════
+//  GRID SIZE
+// ═══════════════════════════════════════════════════════
+
+document.getElementById('gridSize').addEventListener('input', e => {
+  gridN = parseInt(e.target.value);
+  document.getElementById('gridSizeVal').textContent = `${gridN}×${gridN}`;
+  initGrid();
+});
+
+// ═══════════════════════════════════════════════════════
+//  STATUS
+// ═══════════════════════════════════════════════════════
+
+function setStatus(msg, type='') {
+  const el = document.getElementById('statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg' + (type ? ' ' + type : '');
+}
+
+// ═══════════════════════════════════════════════════════
+//  PRESETS
+// ═══════════════════════════════════════════════════════
+
+const PRESETS = {
+  brick: [
+    // Brick pattern: mortar=0, brick=1
+    // Two tile types that tile periodically
+    { top:0, right:1, bottom:1, left:0 }, // top-left of brick
+    { top:0, right:0, bottom:1, left:1 }, // top-right of brick
+    { top:1, right:1, bottom:0, left:0 }, // bottom-left of brick
+    { top:1, right:0, bottom:0, left:1 }, // bottom-right of brick
+  ],
+  checker: [
+    // True checkerboard: 2 tiles that only pair with each other
+    { top:0, right:1, bottom:1, left:0 }, // dark
+    { top:1, right:0, bottom:0, left:1 }, // light
+  ],
+  // Jeandel-Rao 11-tile aperiodic set (2015) — 5 colors, genuinely aperiodic
+  aperiodic: [
+    { top:4, right:0, bottom:0, left:1 },
+    { top:2, right:0, bottom:0, left:1 },
+    { top:0, right:0, bottom:2, left:0 },
+    { top:1, right:1, bottom:0, left:2 },
+    { top:0, right:1, bottom:1, left:2 },
+    { top:0, right:2, bottom:1, left:0 },
+    { top:2, right:2, bottom:1, left:0 },
+    { top:1, right:2, bottom:0, left:0 },
+    { top:1, right:2, bottom:2, left:1 },
+    { top:3, right:1, bottom:0, left:0 },
+    { top:1, right:0, bottom:4, left:1 },
+  ],
+  maze: [
+    // Passage tiles: edge 0=wall, edge 1=passage
+    { top:0, right:1, bottom:0, left:1 }, // horizontal corridor
+    { top:1, right:0, bottom:1, left:0 }, // vertical corridor
+    { top:1, right:1, bottom:1, left:1 }, // open crossroads
+    { top:0, right:0, bottom:0, left:0 }, // solid wall
+  ]
+};
+
+function loadPreset(name) {
+  tiles = [];
+  tileIdCounter = 0;
+  PRESETS[name].forEach(t => {
+    tiles.push({ id: tileIdCounter++, ...t });
+  });
+  refreshTileList();
+  gridCells = new Array(gridN * gridN).fill(null);
+  renderGrid();
+  setStatus(`Loaded "${name}" preset — ${tiles.length} tiles. Hit Fill to tile the grid!`, 'ok');
+  document.getElementById('emptyGrid').style.display = 'none';
+}
+
+document.getElementById('presetBrick').addEventListener('click', () => loadPreset('brick'));
+document.getElementById('presetChecker').addEventListener('click', () => loadPreset('checker'));
+document.getElementById('presetAperiodic').addEventListener('click', () => loadPreset('aperiodic'));
+document.getElementById('presetMaze').addEventListener('click', () => loadPreset('maze'));
+
+// ═══════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════
+
+buildPalette();
+drawEditorTile();
+setTimeout(() => {
+  initGrid();
+  // Load checker preset by default for immediate delight
+  loadPreset('checker');
+  setMode('wfc');
+  fillWFC();
+}, 100);
+</script>
+</body>
+</html>
