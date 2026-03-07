@@ -613,10 +613,10 @@ function drawTile(ctx, x, y, s, edges, options = {}) {
   ctx.fillStyle = bg;
   ctx.fill();
 
-  // Border
-  ctx.strokeStyle = '#1a1410';
-  ctx.lineWidth = highlight ? 2 : 1;
-  ctx.strokeRect(x + 0.5, y + 0.5, s - 1, s - 1);
+  // Border - can be added back for visual clarity between tiles
+  // ctx.fillStyle = 'rgba(0,0,0,0.05)';
+  // ctx.fillRect(x, y, s, 1);
+  // ctx.fillRect(x, y, 1, s);
 
   // Labels
   if (labels && s >= 40) {
