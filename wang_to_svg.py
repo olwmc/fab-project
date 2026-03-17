@@ -9,14 +9,14 @@ can be assembled back into the same pattern.
 Visual encoding (no color printing needed)
 ──────────────────────────────────────────
 Each tile's four triangular edge segments are filled with a distinct
-pattern per Wang-color, using two laser-friendly techniques:
+pattern per Wang-color, using blue hairlines:
 
-  Color 0 (Ink)  : solid BLACK fill     → raster engrave
-  Color 1 (Red)  : horizontal blue lines → vector engrave
-  Color 2 (Teal) : vertical blue lines   → vector engrave
-  Color 3 (Gold) : diagonal /  blue      → vector engrave
-  Color 4 (Slate): diagonal \\  blue      → vector engrave
-  Color 5 (Plum) : crosshatch blue       → vector engrave
+  Color 0 (Ink)  : blank (no marking)
+  Color 1 (Red)  : vertical blue lines   (90°)
+  Color 2 (Teal) : diagonal blue lines   (45°  /)
+  Color 3 (Gold) : blue crosshatch       (0° + 90°)
+  Color 4 (Slate): concentric blue circles
+  Color 5 (Plum) : concentric blue triangles
 
   Cut outline    : RED (#ff0000) hairline → cut through
 
@@ -72,15 +72,18 @@ TOP, RIGHT, BOTTOM, LEFT = 0, 1, 2, 3
 # Which edges carry tabs (True) vs slots (False)
 IS_TAB = {TOP: False, RIGHT: True, BOTTOM: True, LEFT: False}
 
-# Pattern per color: ('solid',) or ('hatch', (angle_deg, ...))
-#   0 = horizontal, 90 = vertical, 45 = diagonal /, -45 = diagonal \
+# Pattern per color:
+#   ('none',)                — no marking
+#   ('hatch', (angle, ...))  — parallel lines at given angle(s) in degrees
+#   ('circles',)             — concentric circles, clipped to triangle
+#   ('triangles',)           — concentric scaled triangles, clipped to triangle
 COLOR_PATTERNS = [
-    ('solid',),           # 0 Ink   — solid black fill (raster)
-    ('hatch', (0,)),      # 1 Red   — horizontal blue lines
-    ('hatch', (90,)),     # 2 Teal  — vertical blue lines
-    ('hatch', (45,)),     # 3 Gold  — diagonal /
-    ('hatch', (-45,)),    # 4 Slate — diagonal \
-    ('hatch', (0, 90)),   # 5 Plum  — crosshatch
+    ('none',),            # 0 Ink   — blank
+    ('hatch', (90,)),     # 1 Red   — vertical blue lines
+    ('hatch', (45,)),     # 2 Teal  — diagonal / blue lines
+    ('hatch', (0, 90)),   # 3 Gold  — blue crosshatch
+    ('circles',),         # 4 Slate — concentric blue circles
+    ('triangles',),       # 5 Plum  — concentric blue triangles
 ]
 
 
@@ -170,36 +173,84 @@ def hatch_segments(angle_deg, S, spacing):
             c += step_c
 
 
-def fill_elements(edge_idx, color, S, hatch_spacing):
+def fill_elements(edge_idx, color, S, hatch_spacing, clip_id):
     """
-    Return a list of SVG element strings for the visual fill of one
-    edge triangle.
+    Return (defs, elems) — lists of SVG strings for <defs> and drawing elements.
 
-    Black polygons  → raster engrave.
-    Blue <line>s    → vector engrave / score.
+    defs:  zero or one <clipPath> definition (needed for circles / triangles).
+    elems: blue <line>, <circle>, or <polygon> elements for vector engraving.
+
+    Callers must place defs inside a <defs> block BEFORE referencing clip_id.
+    clip_id must be unique within the SVG document.
     """
     tri = triangle_vertices(edge_idx, S)
     pat = COLOR_PATTERNS[color]
 
+    if pat[0] == 'none':
+        return [], []
+
     if pat[0] == 'solid':
         pts = ' '.join(f'{x:.4f},{y:.4f}' for x, y in tri)
-        return [f'<polygon points="{pts}" fill="#000000" stroke="none"/>']
+        return [], [f'<polygon points="{pts}" fill="#000000" stroke="none"/>']
 
-    elems = []
-    for angle in pat[1]:
-        for seg in hatch_segments(angle, S, hatch_spacing):
-            result = clip_line_to_poly(*seg, tri)
-            if result is None:
-                continue
-            ax, ay, bx, by = result
-            if math.hypot(bx - ax, by - ay) < 0.01:   # skip degenerate
-                continue
+    if pat[0] == 'hatch':
+        elems = []
+        for angle in pat[1]:
+            for seg in hatch_segments(angle, S, hatch_spacing):
+                result = clip_line_to_poly(*seg, tri)
+                if result is None:
+                    continue
+                ax, ay, bx, by = result
+                if math.hypot(bx - ax, by - ay) < 0.01:
+                    continue
+                elems.append(
+                    f'<line x1="{ax:.4f}" y1="{ay:.4f}"'
+                    f' x2="{bx:.4f}" y2="{by:.4f}"'
+                    f' stroke="#0000ff" stroke-width="0.01" fill="none"/>'
+                )
+        return [], elems
+
+    # Shapes that need a clipPath — build the clip polygon once.
+    pts_str = ' '.join(f'{x:.4f},{y:.4f}' for x, y in tri)
+    defs = [
+        f'<clipPath id="{clip_id}">',
+        f'  <polygon points="{pts_str}"/>',
+        f'</clipPath>',
+    ]
+    clip_attr = f'clip-path="url(#{clip_id})"'
+    stroke_attr = 'stroke="#0000ff" stroke-width="0.01" fill="none"'
+
+    if pat[0] == 'circles':
+        cx, cy = S / 2, S / 2
+        max_r = S * math.sqrt(2)
+        elems = []
+        r = hatch_spacing
+        while r <= max_r + 1e-9:
             elems.append(
-                f'<line x1="{ax:.4f}" y1="{ay:.4f}"'
-                f' x2="{bx:.4f}" y2="{by:.4f}"'
-                f' stroke="#0000ff" stroke-width="0.01" fill="none"/>'
+                f'<circle cx="{cx:.4f}" cy="{cy:.4f}" r="{r:.4f}"'
+                f' {stroke_attr} {clip_attr}/>'
             )
-    return elems
+            r += hatch_spacing
+        return defs, elems
+
+    if pat[0] == 'triangles':
+        # Concentric scaled copies of the edge triangle, shrinking toward centroid.
+        cx = sum(x for x, y in tri) / 3
+        cy = sum(y for x, y in tri) / 3
+        max_dist = max(math.hypot(x - cx, y - cy) for x, y in tri)
+        delta_s = hatch_spacing / max_dist
+        elems = []
+        s = 1.0
+        while s > 1e-6:
+            scaled = [(cx + s * (x - cx), cy + s * (y - cy)) for x, y in tri]
+            sp = ' '.join(f'{x:.4f},{y:.4f}' for x, y in scaled)
+            elems.append(
+                f'<polygon points="{sp}" {stroke_attr} {clip_attr}/>'
+            )
+            s -= delta_s
+        return defs, elems
+
+    return [], []
 
 
 # ── Cut-path geometry ─────────────────────────────────────────────────────────
@@ -258,8 +309,13 @@ def render_svg(pieces, *, n_cols, tile_size, tab_height, tab_widths, tolerance,
     W = margin + n_cols * cell_w
     H = margin + n_rows * cell_h
 
+    def _pat_desc(p):
+        if p[0] == 'none':    return 'none'
+        if p[0] == 'solid':   return 'solid-black'
+        if p[0] == 'hatch':   return 'hatch(' + ','.join(str(a) for a in p[1]) + ')deg'
+        return p[0]
     pat_notes = "  ".join(
-        f"{COLOR_NAMES[i]}: {'solid-black' if COLOR_PATTERNS[i][0]=='solid' else 'hatch(' + ','.join(str(a) for a in COLOR_PATTERNS[i][1]) + ')deg'}"
+        f"{COLOR_NAMES[i]}: {_pat_desc(COLOR_PATTERNS[i])}"
         for i in range(len(COLOR_PATTERNS))
     )
 
@@ -286,26 +342,25 @@ def render_svg(pieces, *, n_cols, tile_size, tab_height, tab_widths, tolerance,
         lines.append(f'  <!-- piece {i+1:03d}  {label} -->')
         lines.append(f'  <g transform="translate({ox:.4f},{oy:.4f})">')
 
-        # ── Raster / engrave fills (process before cut) ───────────────────
-        # Group black (raster) and blue (vector-engrave) separately so laser
-        # software can assign them to different layers / operations.
-        black_elems = []
-        blue_elems  = []
+        # ── Engrave fills (process before cut) ────────────────────────────
+        all_defs = []
+        blue_elems = []
         for edge_idx in range(4):
-            for elem in fill_elements(edge_idx, edges[edge_idx], S, hatch_spacing):
-                if 'fill="#000000"' in elem:
-                    black_elems.append(elem)
-                else:
-                    blue_elems.append(elem)
+            clip_id = f"cp{i+1:03d}e{edge_idx}"
+            defs, elems = fill_elements(
+                edge_idx, edges[edge_idx], S, hatch_spacing, clip_id
+            )
+            all_defs.extend(defs)
+            blue_elems.extend(elems)
 
-        if black_elems:
-            lines.append('    <g id="raster">')
-            for e in black_elems:
-                lines.append(f'      {e}')
-            lines.append('    </g>')
+        if all_defs:
+            lines.append('    <defs>')
+            for d in all_defs:
+                lines.append(f'      {d}')
+            lines.append('    </defs>')
 
         if blue_elems:
-            lines.append('    <g id="engrave">')
+            lines.append(f'    <g class="engrave">')
             for e in blue_elems:
                 lines.append(f'      {e}')
             lines.append('    </g>')
@@ -437,18 +492,17 @@ def main():
     print(f"SVG size     : {sheet_w:.1f} × {sheet_h:.1f} mm  (last sheet may be shorter)")
     print()
     print("Laser layers (assign in your laser software by color):")
-    print("  #000000 black fill   → raster engrave")
     print("  #0000ff blue stroke  → vector engrave / score")
     print("  #ff0000 red stroke   → vector cut (through)")
     print()
     print("Visual patterns per edge color:")
     descs = [
-        "solid black fill",
-        "horizontal blue lines  (0°)",
+        "blank (no marking)",
         "vertical blue lines   (90°)",
         "diagonal blue lines   (45°  /)",
-        "diagonal blue lines  (-45°  \\)",
         "blue crosshatch       (0° + 90°)",
+        "concentric blue circles",
+        "concentric blue triangles",
     ]
     for i, name in enumerate(COLOR_NAMES):
         print(f"  {i}  {name:<6}  {descs[i]}")
