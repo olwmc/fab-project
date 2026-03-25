@@ -255,8 +255,20 @@ def fill_elements(edge_idx, color, S, hatch_spacing, clip_id):
 
 # ── Cut-path geometry ─────────────────────────────────────────────────────────
 
-def edge_waypoints(edge_idx, color, S, tab_height, tab_widths, tolerance):
-    """Return 6 (x,y) waypoints tracing one edge of the cut outline."""
+def edge_waypoints(edge_idx, color, S, tab_height, tab_widths, tolerance, flat=False):
+    """Return (x,y) waypoints tracing one edge of the cut outline.
+
+    When flat=True the edge is a straight line (no tab or slot) — used for
+    border pieces whose outer edges sit on the puzzle perimeter.
+    """
+    if flat:
+        return {
+            TOP:    [(0, 0), (S, 0)],
+            RIGHT:  [(S, 0), (S, S)],
+            BOTTOM: [(S, S), (0, S)],
+            LEFT:   [(0, S), (0, 0)],
+        }[edge_idx]
+
     th = tab_height
     tw = tab_widths[color]
     is_tab = IS_TAB[edge_idx]
@@ -282,11 +294,12 @@ def edge_waypoints(edge_idx, color, S, tab_height, tab_widths, tolerance):
         return [(0, S), (0, mid+half), (d, mid+half), (d, mid-half), (0, mid-half), (0, 0)]
 
 
-def make_path_d(edges, S, tab_height, tab_widths, tolerance):
+def make_path_d(edges, S, tab_height, tab_widths, tolerance, flat_edges=frozenset()):
     """SVG 'd' attribute for the closed cut outline of one tile."""
     pts = []
     for e in range(4):
-        wps = edge_waypoints(e, edges[e], S, tab_height, tab_widths, tolerance)
+        wps = edge_waypoints(e, edges[e], S, tab_height, tab_widths, tolerance,
+                             flat=(e in flat_edges))
         pts.extend(wps[:-1])
     d = f"M {pts[0][0]:.4f},{pts[0][1]:.4f}"
     for x, y in pts[1:]:
@@ -330,12 +343,13 @@ def render_svg(pieces, *, n_cols, tile_size, tab_height, tab_widths, tolerance,
         f' | black=raster blue=engrave red=cut</desc>',
     ]
 
-    for i, edges in enumerate(pieces):
+    for i, (edges, flat_edges) in enumerate(pieces):
         col, row = i % n_cols, i // n_cols
         ox = margin + col * cell_w
         oy = margin + row * cell_h
         label = "  ".join(
             f'{["T","R","B","L"][j]}:{COLOR_NAMES[e]}'
+            + ('/flat' if j in flat_edges else '')
             for j, e in enumerate(edges)
         )
 
@@ -366,7 +380,7 @@ def render_svg(pieces, *, n_cols, tile_size, tab_height, tab_widths, tolerance,
             lines.append('    </g>')
 
         # ── Cut outline (red) ─────────────────────────────────────────────
-        cut_d = make_path_d(edges, S, tab_height, tab_widths, tolerance)
+        cut_d = make_path_d(edges, S, tab_height, tab_widths, tolerance, flat_edges)
         lines.append(
             f'    <path d="{cut_d}" fill="none" stroke="#ff0000"'
             f' stroke-width="0.01" stroke-linecap="square" stroke-linejoin="miter"/>'
@@ -401,6 +415,8 @@ def main():
                     help=f"Stock sheet width in inches (default {STOCK_W_IN})")
     ap.add_argument("--stock-height",   type=float, default=STOCK_H_IN,     metavar="IN",
                     help=f"Stock sheet height in inches (default {STOCK_H_IN})")
+    ap.add_argument("--border", action="store_true",
+                    help="Give perimeter tiles flat outer edges (clean puzzle border)")
     args = ap.parse_args()
 
     src = Path(args.input)
@@ -423,8 +439,21 @@ def main():
                  f"0–{len(TAB_WIDTHS)-1}.")
 
     pieces = []
-    for tid, cnt in sorted(usage.items()):
-        pieces.extend([tile_defs[tid]] * cnt)
+    if args.border:
+        # Positional iteration — mark perimeter edges as flat.
+        for idx, tid in enumerate(data["grid"]):
+            if tid is None:
+                continue
+            row, col = divmod(idx, grid_n)
+            flat = set()
+            if row == 0:            flat.add(TOP)
+            if row == grid_n - 1:   flat.add(BOTTOM)
+            if col == 0:            flat.add(LEFT)
+            if col == grid_n - 1:   flat.add(RIGHT)
+            pieces.append((tile_defs[tid], frozenset(flat)))
+    else:
+        for tid, cnt in sorted(usage.items()):
+            pieces.extend([(tile_defs[tid], frozenset())] * cnt)
 
     n_used   = len(usage)
     n_total  = sum(usage.values())
@@ -447,6 +476,9 @@ def main():
 
     # ── Summary ───────────────────────────────────────────────────────────────
     print(f"Grid         : {grid_n}×{grid_n}")
+    if args.border:
+        n_border = 4 * grid_n - 4 if grid_n > 1 else 1
+        print(f"Border       : ON — {n_border} perimeter pieces with flat outer edges")
     print(f"Tile types   : {len(tile_defs)} defined, {n_used} in grid"
           + (f", {n_unused} unused" if n_unused else ""))
     print(f"Pieces to cut: {n_total}")
