@@ -59,7 +59,7 @@ HATCH_SPACING  = 3.0    # mm between parallel hatch lines (perpendicular distanc
 
 MM_PER_IN      = 25.4
 STOCK_W_IN     = 12.0   # inches — default stock width
-STOCK_H_IN     = 12.5   # inches — default stock height
+STOCK_H_IN     = 12.0   # inches — default stock height
 
 # Tab/slot width per color index (mm) — must be clearly distinct
 TAB_WIDTHS = [4.0, 6.5, 9.0, 11.5, 14.0, 16.5]
