@@ -72,6 +72,9 @@ TOP, RIGHT, BOTTOM, LEFT = 0, 1, 2, 3
 # Which edges carry tabs (True) vs slots (False)
 IS_TAB = {TOP: False, RIGHT: True, BOTTOM: True, LEFT: False}
 
+ETCH_WIDTH = 0.1
+CUT_WIDTH = 0.0762
+
 # Pattern per color:
 #   ('none',)                — no marking
 #   ('hatch', (angle, ...))  — parallel lines at given angle(s) in degrees
@@ -206,7 +209,7 @@ def fill_elements(edge_idx, color, S, hatch_spacing, clip_id):
                 elems.append(
                     f'<line x1="{ax:.4f}" y1="{ay:.4f}"'
                     f' x2="{bx:.4f}" y2="{by:.4f}"'
-                    f' stroke="#0000ff" stroke-width="0.1" fill="none"/>'
+                    f' stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none"/>'
                 )
         return [], elems
 
@@ -218,7 +221,7 @@ def fill_elements(edge_idx, color, S, hatch_spacing, clip_id):
         f'</clipPath>',
     ]
     clip_attr = f'clip-path="url(#{clip_id})"'
-    stroke_attr = 'stroke="#0000ff" stroke-width="0.1" fill="none"'
+    stroke_attr = 'stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none"'
 
     if pat[0] == 'circles':
         cx, cy = S / 2, S / 2
@@ -254,20 +257,82 @@ def fill_elements(edge_idx, color, S, hatch_spacing, clip_id):
 
 
 # ── Cut-path geometry ─────────────────────────────────────────────────────────
+#
+# Each edge is rendered as a jigsaw-style knob (tab) or notch (slot) using
+# cubic Bézier curves.
+#
+# The shape is defined in a canonical local space:
+#   u  — distance along the edge, from 0 to S
+#   v  — distance perpendicular to the edge, positive = outward from tile
+#
+# The knob profile (for a tab) has three sections:
+#   1. Straight run from edge corner to shoulder start
+#   2. Shoulder: gently rises from the edge baseline up to the neck
+#   3. Neck: slight narrowing as it widens into the knob head
+#   4. Knob head: a rounded circular bump (two quarter-circle Béziers)
+#   5. Mirror of 3, 2, 1 back to the far corner
+#
+# Slots are the same shape, mirrored inward (v negated), and slightly
+# enlarged by `tolerance` in both width and depth for a snug laser-cut fit.
+#
+# The canonical shape is then mapped into SVG coordinates via a per-edge
+# linear transform:
+#   TOP    (u,v) → (u,       -v      )  outward = up   = -y
+#   RIGHT  (u,v) → (S+v,     u       )  outward = right = +x
+#   BOTTOM (u,v) → (S-u,     S+v     )  outward = down = +y  (edge traversed R→L)
+#   LEFT   (u,v) → (-v,      S-u     )  outward = left = -x  (edge traversed B→T)
+#
+# Because all transforms are linear, they apply identically to Bézier
+# control points and to anchor points.
 
-def edge_waypoints(edge_idx, color, S, tab_height, tab_widths, tolerance, flat=False):
-    """Return (x,y) waypoints tracing one edge of the cut outline.
+def _tx(u, v, edge_idx, S):
+    """Map canonical (u along edge, v outward) to SVG (x, y)."""
+    if edge_idx == TOP:
+        return (u,     -v)
+    elif edge_idx == RIGHT:
+        return (S + v,  u)
+    elif edge_idx == BOTTOM:
+        return (S - u,  S + v)
+    else:  # LEFT
+        return (-v,     S - u)
 
-    When flat=True the edge is a straight line (no tab or slot) — used for
-    border pieces whose outer edges sit on the puzzle perimeter.
+
+def _pt(u, v, edge_idx, S, sgn):
+    """Format a canonical (u, sgn*v) point as 'x.xxxx,y.yyyy' for SVG."""
+    x, y = _tx(u, v * sgn, edge_idx, S)
+    return f"{x:.4f},{y:.4f}"
+
+
+def edge_path_segment(edge_idx, color, S, tab_height, tab_widths, tolerance,
+                      flat=False):
     """
+    Return an SVG path fragment (no leading 'M') that traces one edge.
+
+    Each edge starts at its own corner:
+      TOP=(0,0)  RIGHT=(S,0)  BOTTOM=(S,S)  LEFT=(0,S)
+    and ends at the next corner in CW order.
+
+    flat=True produces a simple straight line (used for puzzle-border edges).
+
+    The knob is a true jigsaw "mushroom" shape with a neck narrower than the
+    head, so assembled pieces are locked laterally (cannot slide apart along
+    the edge). The shoulder width still encodes the edge color via tab_widths.
+
+    Shape profile (canonical u/v space, v=outward, tab case):
+
+        edge baseline  ─────┬──────────────┬─────
+                       sh_L │  shoulder     │ sh_R
+                             │               │
+                      nk_L ──┘   neck   └── nk_R    ← neck (narrower than head)
+                                 │   │
+                           ╭─────┴───┴─────╮
+                           │   knob head   │        ← head radius > neck half-width
+                           ╰───────────────╯
+    """
+    end_corners = [(S, 0), (S, S), (0, S), (0, 0)]
+    ex, ey = end_corners[edge_idx]
     if flat:
-        return {
-            TOP:    [(0, 0), (S, 0)],
-            RIGHT:  [(S, 0), (S, S)],
-            BOTTOM: [(S, S), (0, S)],
-            LEFT:   [(0, S), (0, 0)],
-        }[edge_idx]
+        return f"L {ex:.4f},{ey:.4f}"
 
     th = tab_height
     tw = tab_widths[color]
@@ -277,33 +342,95 @@ def edge_waypoints(edge_idx, color, S, tab_height, tab_widths, tolerance, flat=F
         tw += tolerance
         th += tolerance
 
-    half = tw / 2
-    mid  = S / 2
+    sgn = 1 if is_tab else -1
 
-    if edge_idx == TOP:
-        d = th if not is_tab else -th
-        return [(0, 0), (mid-half, 0), (mid-half, d), (mid+half, d), (mid+half, 0), (S, 0)]
-    elif edge_idx == RIGHT:
-        d = S + th if is_tab else S - th
-        return [(S, 0), (S, mid-half), (d, mid-half), (d, mid+half), (S, mid+half), (S, S)]
-    elif edge_idx == BOTTOM:
-        d = S + th if is_tab else S - th
-        return [(S, S), (mid+half, S), (mid+half, d), (mid-half, d), (mid-half, S), (0, S)]
-    else:  # LEFT
-        d = th if not is_tab else -th
-        return [(0, S), (0, mid+half), (d, mid+half), (d, mid-half), (0, mid-half), (0, 0)]
+    mid = S / 2
+
+    # ── Geometry ──────────────────────────────────────────────────────────
+    #
+    # shoulder_half  : half-width of the base footprint on the edge line.
+    #                  Encodes edge color (wider = different color).
+    # neck_v         : v-height where the neck is at its narrowest.
+    # head_r         : radius of the circular knob head.
+    # neck_half      : half-width of the neck — MUST be < head_r for undercut.
+    # head_cy        : v-coord of the knob-circle centre.
+    # head_top       : v-coord of the topmost point of the knob.
+    #
+    # We clamp head_r so the knob never exceeds tab_height, then derive
+    # neck_half as a fixed fraction of head_r (always < head_r → undercut).
+
+    shoulder_half = tw * 0.50               # encodes color
+    neck_v        = th * 0.30               # neck base height
+    head_r        = min(tw * 0.38, th * 0.34)   # clamped so head fits in th
+    neck_half     = head_r * 0.68           # < head_r → lateral undercut
+    head_cy       = neck_v + head_r         # circle centre
+    # head_top = head_cy + head_r = neck_v + 2*head_r ≤ 0.30*th + 0.68*th < th ✓
+
+    k = 0.5523 * head_r                     # Bézier magic for quarter-circle
+
+    def P(u, v):
+        return _pt(u, v, edge_idx, S, sgn)
+
+    def C3(u1, v1, u2, v2, u3, v3):
+        return f"C {P(u1,v1)} {P(u2,v2)} {P(u3,v3)}"
+
+    parts = []
+
+    # ── 1. Straight run to shoulder ───────────────────────────────────────
+    parts.append(f"L {P(mid - shoulder_half, 0)}")
+
+    # ── 2. Shoulder → neck (left side) ───────────────────────────────────
+    # Rise from the baseline and pinch inward to the narrow neck.
+    # cp1: stay near baseline, shift inward slightly
+    # cp2: just below neck level, already at neck u-position
+    parts.append(C3(mid - shoulder_half, th * 0.10,
+                    mid - neck_half,     neck_v * 0.55,
+                    mid - neck_half,     neck_v))
+
+    # ── 3. Neck → head entry at 9-o'clock (left side) ────────────────────
+    # Curve sweeps outward (u decreases) and upward to the 9-o'clock point.
+    # Arrival must be tangent to the circle → direction is straight up at that pt.
+    # cp1: go upward from neck
+    # cp2: approach 9-o'clock horizontally from the right
+    parts.append(C3(mid - neck_half, neck_v + (head_cy - neck_v) * 0.55,
+                    mid - head_r,    head_cy * 0.85,
+                    mid - head_r,    head_cy))
+
+    # ── 4. Knob head: left quarter-circle (9 → 12 o'clock) ───────────────
+    head_top = head_cy + head_r
+    parts.append(C3(mid - head_r, head_cy + k,
+                    mid - k,      head_top,
+                    mid,          head_top))
+
+    # ── 5. Knob head: right quarter-circle (12 → 3 o'clock) ──────────────
+    parts.append(C3(mid + k,      head_top,
+                    mid + head_r, head_cy + k,
+                    mid + head_r, head_cy))
+
+    # ── 6. Head exit → neck (right side, mirror of step 3) ───────────────
+    parts.append(C3(mid + head_r, head_cy * 0.85,
+                    mid + neck_half, neck_v + (head_cy - neck_v) * 0.55,
+                    mid + neck_half, neck_v))
+
+    # ── 7. Neck → shoulder (right side, mirror of step 2) ────────────────
+    parts.append(C3(mid + neck_half,     neck_v * 0.55,
+                    mid + shoulder_half, th * 0.10,
+                    mid + shoulder_half, 0))
+
+    # ── 8. Straight run to end corner ────────────────────────────────────
+    parts.append(f"L {ex:.4f},{ey:.4f}")
+
+    return " ".join(parts)
 
 
 def make_path_d(edges, S, tab_height, tab_widths, tolerance, flat_edges=frozenset()):
     """SVG 'd' attribute for the closed cut outline of one tile."""
-    pts = []
+    # The TOP edge starts at (0,0).
+    d = "M 0.0000,0.0000"
     for e in range(4):
-        wps = edge_waypoints(e, edges[e], S, tab_height, tab_widths, tolerance,
-                             flat=(e in flat_edges))
-        pts.extend(wps[:-1])
-    d = f"M {pts[0][0]:.4f},{pts[0][1]:.4f}"
-    for x, y in pts[1:]:
-        d += f" L {x:.4f},{y:.4f}"
+        seg = edge_path_segment(e, edges[e], S, tab_height, tab_widths,
+                                tolerance, flat=(e in flat_edges))
+        d += " " + seg
     return d + " Z"
 
 
@@ -383,7 +510,7 @@ def render_svg(pieces, *, n_cols, tile_size, tab_height, tab_widths, tolerance,
         cut_d = make_path_d(edges, S, tab_height, tab_widths, tolerance, flat_edges)
         lines.append(
             f'    <path d="{cut_d}" fill="none" stroke="#ff0000"'
-            f' stroke-width="0.1" stroke-linecap="square" stroke-linejoin="miter"/>'
+            f' stroke-width="{CUT_WIDTH}" stroke-linecap="square" stroke-linejoin="miter"/>'
         )
         lines.append('  </g>')
 
