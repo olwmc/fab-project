@@ -58,11 +58,16 @@ MARGIN         = 6.0    # mm gap between pieces on sheet
 HATCH_SPACING  = 3.0    # mm between parallel hatch lines (perpendicular distance)
 
 MM_PER_IN      = 25.4
-STOCK_W_IN     = 12.0   # inches — default stock width
-STOCK_H_IN     = 12.0   # inches — default stock height
+STOCK_W_IN     = 11.0   # inches — default stock width
+STOCK_H_IN     = 11.0   # inches — default stock height
 
 # Tab/slot width per color index (mm) — must be clearly distinct
 TAB_WIDTHS = [4.0, 6.5, 9.0, 11.5, 14.0, 16.5]
+
+# Knob centre offset along the edge per color (mm).
+# Shifts the entire knob profile left/right so same-color tabs/slots align
+# while different-color tabs cannot seat in the wrong slot.
+BULB_OFFSETS = [-5.0, -3.0, -1.0, 1.0, 3.0, 5.0]
 
 COLOR_NAMES = ["Ink", "Red", "Teal", "Gold", "Slate", "Plum"]
 
@@ -344,7 +349,10 @@ def edge_path_segment(edge_idx, color, S, tab_height, tab_widths, tolerance,
 
     sgn = 1 if is_tab else -1
 
-    mid = S / 2
+    # BOTTOM and LEFT edges are traversed in reverse (u increases opposite to SVG
+    # x/y), so negate the offset to keep the physical knob position consistent.
+    offset_sign = -1 if edge_idx in (BOTTOM, LEFT) else 1
+    mid = S / 2 + offset_sign * BULB_OFFSETS[color]
 
     # ── Geometry ──────────────────────────────────────────────────────────
     #
@@ -360,8 +368,8 @@ def edge_path_segment(edge_idx, color, S, tab_height, tab_widths, tolerance,
     # neck_half as a fixed fraction of head_r (always < head_r → undercut).
 
     shoulder_half = tw * 0.50               # encodes color
-    neck_v        = th * 0.30               # neck base height
-    head_r        = min(tw * 0.38, th * 0.34)   # clamped so head fits in th
+    neck_v        = th * 0.15               # neck base height
+    head_r        = min(tw * 0.48, th * 0.42)   # clamped so head fits in th
     neck_half     = head_r * 0.68           # < head_r → lateral undercut
     head_cy       = neck_v + head_r         # circle centre
     # head_top = head_cy + head_r = neck_v + 2*head_r ≤ 0.30*th + 0.68*th < th ✓
