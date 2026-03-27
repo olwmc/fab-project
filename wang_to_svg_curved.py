@@ -53,7 +53,7 @@ from collections import Counter
 # ── Defaults ──────────────────────────────────────────────────────────────────
 TILE_SIZE      = 40.0   # mm
 TAB_HEIGHT     = 5.0    # mm
-TAB_TOLERANCE  = 0.15   # mm added to slots (kerf / fit clearance)
+TAB_TOLERANCE  = 0.17   # mm added to slots (kerf / fit clearance)
 MARGIN         = 6.0    # mm gap between pieces on sheet
 HATCH_SPACING  = 3.0    # mm between parallel hatch lines (perpendicular distance)
 
