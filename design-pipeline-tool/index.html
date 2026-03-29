@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wang Tile Designer — Fabrication Pipeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:  #f5f0e8;
+  --paper2: #ede7d9;
+  --ink:    #1a1410;
+  --ink2:   #3d3428;
+  --ink3:   #6b5e4e;
+  --rule:   #c8bfb0;
+  --rule2:  #ddd6c8;
+  --accent: #c0392b;
+  --teal:   #1a6b6b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Mono', monospace;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ── */
+header {
+  padding: 12px 24px;
+  border-bottom: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+header .sub {
+  font-size: 10px;
+  color: var(--ink3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── APP TABS ── */
+.app-tabs {
+  display: flex;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-left: 16px;
+}
+.app-tab {
+  padding: 5px 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--ink3);
+  border-radius: 0;
+  transition: all 0.1s;
+}
+.app-tab.active { background: var(--ink); color: var(--paper); }
+
+/* ── MODE TABS ── */
+#modeTabsWrap {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+.mode-tabs {
+  display: flex;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.mode-tab {
+  padding: 5px 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--ink3);
+  border-radius: 0;
+  transition: all 0.1s;
+}
+.mode-tab.active { background: var(--ink); color: var(--paper); }
+
+/* ── LAYOUT ── */
+.main {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── TAB PANELS ── */
+#tabDesign, #tabFabricate {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── LEFT PANEL ── */
+.left {
+  border-right: 2px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--paper2);
+}
+.section {
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 16px;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-title .hint {
+  font-size: 8px;
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+}
+
+/* ── COLOR PALETTE ── */
+.palette { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.color-btn {
+  width: 32px; height: 32px;
+  border-radius: 3px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.color-btn.selected {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 1px var(--ink);
+  transform: scale(1.1);
+}
+
+/* ── TILE EDITOR ── */
+.tile-editor-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.tile-editor {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+}
+.tile-editor canvas { display: block; }
+.tile-editor-hint {
+  font-size: 9px;
+  color: var(--ink3);
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+/* ── TILE LIST ── */
+.tile-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.tile-thumb {
+  position: relative;
+  cursor: pointer;
+  border: 1.5px solid var(--rule);
+  border-radius: 2px;
+  transition: all 0.1s;
+}
+.tile-thumb:hover { border-color: var(--ink2); }
+.tile-thumb .del-btn {
+  position: absolute;
+  top: -6px; right: -6px;
+  width: 14px; height: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 9px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+.tile-thumb:hover .del-btn { display: flex; }
+
+/* ── DROP ZONE ── */
+.drop-zone {
+  border: 1.5px dashed var(--rule);
+  border-radius: 3px;
+  padding: 14px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+.drop-zone:hover, .drop-zone.drag-over {
+  border-color: var(--ink);
+  background: var(--paper);
+}
+.drop-zone .drop-label {
+  font-size: 9px;
+  color: var(--ink3);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+.drop-zone .drop-label u { color: var(--teal); text-underline-offset: 2px; }
+.file-status {
+  margin-top: 8px;
+  font-size: 9px;
+  color: var(--ink3);
+  line-height: 1.5;
+  min-height: 14px;
+}
+.file-status.ok { color: var(--teal); }
+.file-status.err { color: var(--accent); }
+
+/* ── PARAM ROWS ── */
+.param-grid {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 5px 8px;
+}
+.param-label {
+  font-size: 9px;
+  color: var(--ink3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.param-input {
+  width: 64px;
+  padding: 5px 7px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  text-align: right;
+  border: 1.5px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper);
+  color: var(--ink);
+  -moz-appearance: textfield;
+}
+.param-input:focus { outline: 1.5px solid var(--ink); border-color: var(--ink); }
+.param-input::-webkit-inner-spin-button,
+.param-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+.param-unit {
+  font-size: 9px;
+  color: var(--ink3);
+  min-width: 18px;
+}
+.param-hint {
+  grid-column: 1 / -1;
+  font-size: 8px;
+  color: var(--rule);
+  letter-spacing: 0.03em;
+  margin-top: -2px;
+  margin-bottom: 4px;
+}
+
+/* ── CHECKBOX ── */
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 6px;
+  font-size: 9px;
+  color: var(--ink3);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.check-row input[type=checkbox] { accent-color: var(--ink); width: 12px; height: 12px; }
+.check-note {
+  font-size: 8px;
+  color: var(--rule);
+  margin-top: 3px;
+  padding-left: 19px;
+  line-height: 1.4;
+}
+
+/* ── BUTTONS ── */
+button {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  cursor: pointer;
+  border: 1.5px solid;
+  transition: all 0.12s;
+  border-radius: 2px;
+}
+.btn-primary { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--ink2); }
+.btn-primary:disabled { opacity: 0.4; cursor: default; }
+.btn-secondary { background: transparent; border-color: var(--rule); color: var(--ink3); }
+.btn-secondary:hover { border-color: var(--ink2); color: var(--ink); }
+.btn-secondary:disabled { opacity: 0.4; cursor: default; }
+.btn-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.btn-full { width: 100%; }
+
+/* ── LASER LAYER KEY ── */
+.layer-key { font-size: 8px; color: var(--ink3); line-height: 2.0; }
+.layer-key .swatch { font-weight: 700; }
+
+/* ── RIGHT PANEL ── */
+.right { display: flex; flex-direction: column; overflow: hidden; }
+.right-header {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  background: var(--paper);
+}
+.right-header .rh-title {
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+.rh-stats { display: flex; gap: 12px; font-size: 9px; color: var(--ink3); margin-left: auto; }
+.rh-stats span b { color: var(--teal); font-weight: 500; }
+
+/* ── STATS BAR (fabricate) ── */
+.stats-bar {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 9px;
+  color: var(--ink3);
+}
+.stats-bar b { color: var(--teal); font-weight: 500; }
+
+/* ── SHEET NAV ── */
+.sheet-nav { display: flex; align-items: center; gap: 6px; }
+.sheet-nav button { padding: 4px 10px; font-size: 11px; line-height: 1; }
+.sheet-nav .sheet-label { font-size: 9px; color: var(--ink3); min-width: 54px; text-align: center; }
+.zoom-ctl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: var(--ink3);
+  margin-left: auto;
+}
+.zoom-ctl input[type=range] { width: 80px; accent-color: var(--ink); }
+
+/* ── GRID WRAP (designer) ── */
+.grid-wrap {
+  flex: 1;
+  overflow: auto;
+  background: var(--paper);
+  background-image:
+    linear-gradient(var(--rule2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule2) 1px, transparent 1px);
+  background-size: 48px 48px;
+  position: relative;
+  cursor: crosshair;
+}
+canvas#grid { display: block; }
+
+.empty-grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  pointer-events: none;
+}
+.empty-grid p {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--rule);
+}
+.empty-grid small { font-size: 9px; color: var(--rule2); letter-spacing: 0.06em; }
+
+/* ── PREVIEW AREA (fabricate) ── */
+.preview-wrap {
+  flex: 1;
+  overflow: auto;
+  background: var(--paper);
+  background-image:
+    linear-gradient(var(--rule2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule2) 1px, transparent 1px);
+  background-size: 48px 48px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+.preview-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  pointer-events: none;
+}
+.preview-empty p {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--rule);
+}
+.preview-empty small { font-size: 9px; color: var(--rule2); letter-spacing: 0.06em; }
+.preview-svg-wrap {
+  display: none;
+  width: 100%;
+}
+.preview-svg-wrap svg {
+  display: block;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+/* ── TOOLTIP ── */
+#tooltip {
+  position: fixed;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6px 10px;
+  font-size: 9px;
+  line-height: 1.6;
+  pointer-events: none;
+  display: none;
+  z-index: 100;
+  border-radius: 2px;
+  letter-spacing: 0.03em;
+  max-width: 220px;
+}
+
+/* ── STATUS BAR ── */
+.statusbar {
+  border-top: 1px solid var(--rule);
+  padding: 5px 16px;
+  font-size: 9px;
+  color: var(--ink3);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  background: var(--paper2);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.statusbar .status-msg { flex: 1; }
+.statusbar .status-msg.ok  { color: var(--teal); }
+.statusbar .status-msg.err { color: var(--accent); }
+
+/* ── SELECT ── */
+select {
+  width: 100%;
+  padding: 7px 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  border: 1.5px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+}
+select:focus { outline: 1.5px solid var(--ink); }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wang Tile Designer</h1>
+  <span class="sub">fabrication pipeline</span>
+  <div class="app-tabs">
+    <button class="app-tab active" data-tab="design">Design</button>
+    <button class="app-tab" data-tab="fabricate">Fabricate</button>
+  </div>
+  <div id="modeTabsWrap">
+    <div class="mode-tabs" id="modeTabs">
+      <button class="mode-tab active" data-mode="manual">Manual</button>
+      <button class="mode-tab" data-mode="scan">Scan L→R</button>
+      <button class="mode-tab" data-mode="wfc">WFC</button>
+      <button class="mode-tab" data-mode="random">Random</button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     DESIGN TAB
+════════════════════════════════════════════════════════ -->
+<div id="tabDesign">
+  <div class="main">
+
+    <!-- ── DESIGN LEFT PANEL ── -->
+    <div class="left">
+
+      <div class="section">
+        <div class="section-title">Edge Color <span class="hint">click to select</span></div>
+        <div class="palette" id="palette"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">New Tile <span class="hint">click edges to paint</span></div>
+        <div class="tile-editor-wrap">
+          <div class="tile-editor">
+            <canvas id="tileEditor" width="120" height="120"></canvas>
+          </div>
+          <div class="tile-editor-hint">
+            Click <b>top / right / bottom / left</b><br>triangle to set that edge's color.
+          </div>
+          <div class="btn-row" style="margin-top:4px;">
+            <button class="btn-primary" id="addTileBtn">+ Add Tile</button>
+            <button class="btn-secondary" id="clearEditorBtn">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          Tile Library
+          <span id="tileCount" style="font-size:9px;color:var(--teal);">0 tiles</span>
+        </div>
+        <div class="tile-list" id="tileList"></div>
+        <div class="btn-row" style="margin-top:10px;">
+          <button class="btn-secondary" id="clearAllBtn">Clear All</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Presets</div>
+        <select id="presetSelect">
+          <option value="">— select a preset —</option>
+          <optgroup label="Simple Periodic">
+            <option value="checkerboard">Checkerboard (2 tiles)</option>
+            <option value="stripes_h">Horizontal Stripes (2 tiles)</option>
+            <option value="stripes_v">Vertical Stripes (2 tiles)</option>
+            <option value="diagonal">Diagonal Flow (4 tiles)</option>
+          </optgroup>
+          <optgroup label="Stochastic / Texture">
+            <option value="stochastic8">Cohen Stochastic (8 tiles)</option>
+            <option value="stochastic18">Stochastic 18 (3×3 colors)</option>
+          </optgroup>
+          <optgroup label="Maze / Connectivity">
+            <option value="maze_all">Complete 2-Color (16 tiles)</option>
+            <option value="maze_connected">Connected Passages (11 tiles)</option>
+            <option value="pipes">Dual Pipes (23 tiles, 3 colors)</option>
+          </optgroup>
+          <optgroup label="Aperiodic">
+            <option value="jeandel_rao">Jeandel–Rao (11 tiles — use WFC)</option>
+          </optgroup>
+        </select>
+        <p id="presetDesc" style="font-size:8px;color:var(--ink3);margin-top:8px;line-height:1.6;min-height:28px;"></p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Grid Size</div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input type="range" id="gridSize" min="4" max="32" value="16" style="flex:1;accent-color:var(--ink);">
+          <span id="gridSizeVal" style="font-size:10px;color:var(--teal);min-width:40px;">16×16</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Save / Load</div>
+        <div class="btn-row">
+          <button class="btn-primary" id="designExportBtn">↓ Export JSON</button>
+          <button class="btn-secondary" id="importBtn">↑ Import JSON</button>
+        </div>
+        <input type="file" id="importFile" accept=".json" style="display:none;">
+        <p id="saveLoadMsg" style="font-size:8px;color:var(--ink3);margin-top:8px;line-height:1.6;min-height:14px;"></p>
+      </div>
+
+    </div>
+
+    <!-- ── DESIGN RIGHT PANEL ── -->
+    <div class="right">
+      <div class="right-header">
+        <span class="rh-title">Canvas</span>
+        <div class="rh-stats">
+          <span>placed <b id="statPlaced">0</b></span>
+          <span>conflicts <b id="statConflicts" style="color:var(--accent)">0</b></span>
+          <span>coverage <b id="statCoverage">0%</b></span>
+        </div>
+        <button class="btn-secondary" id="clearGridBtn" style="margin-left:8px;">Clear Grid</button>
+        <button class="btn-primary" id="fillBtn" style="margin-left:4px;">&#9654; Fill</button>
+      </div>
+      <div class="grid-wrap" id="gridWrap">
+        <div class="empty-grid" id="emptyGrid">
+          <p>Add tiles to your library, then fill or click to place</p>
+          <small>or load a preset to get started</small>
+        </div>
+        <canvas id="grid"></canvas>
+      </div>
+      <div class="statusbar">
+        <span class="status-msg" id="designStatusMsg">Ready.</span>
+        <span>mode: <b id="statusMode" style="color:var(--teal)">manual</b></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     FABRICATE TAB
+════════════════════════════════════════════════════════ -->
+<div id="tabFabricate" style="display:none;">
+  <div class="main">
+
+    <!-- ── FABRICATE LEFT PANEL ── -->
+    <div class="left">
+
+      <div class="section">
+        <div class="section-title">Design File</div>
+        <div class="drop-zone" id="dropZone">
+          <div class="drop-label">Drop JSON export here<br>or <u>click to browse</u></div>
+        </div>
+        <input type="file" id="fileInput" accept=".json" style="display:none">
+        <div class="file-status" id="fileStatus">No file loaded.</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Tile Geometry</div>
+        <div class="param-grid">
+          <span class="param-label">Tile size</span>
+          <input class="param-input" type="number" id="tileSize" value="40" min="10" max="200" step="1">
+          <span class="param-unit">mm</span>
+
+          <span class="param-label">Tab height</span>
+          <input class="param-input" type="number" id="tabHeight" value="5" min="1" max="30" step="0.5">
+          <span class="param-unit">mm</span>
+          <span class="param-hint">depth of jigsaw knob / slot</span>
+
+          <span class="param-label">Margin</span>
+          <input class="param-input" type="number" id="margin" value="6" min="1" max="30" step="0.5">
+          <span class="param-unit">mm</span>
+          <span class="param-hint">gap between pieces on sheet</span>
+
+          <span class="param-label">Hatch spacing</span>
+          <input class="param-input" type="number" id="hatchSpacing" value="3" min="0.5" max="20" step="0.5">
+          <span class="param-unit">mm</span>
+          <span class="param-hint">engrave pattern line spacing</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Fit</div>
+        <div class="param-grid">
+          <span class="param-label">Tolerance</span>
+          <input class="param-input" type="number" id="tolerance" value="0.17" min="0" max="1" step="0.01">
+          <span class="param-unit">mm</span>
+          <span class="param-hint">slot enlargement for kerf compensation</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Stock Sheet</div>
+        <div class="param-grid">
+          <span class="param-label">Width</span>
+          <input class="param-input" type="number" id="stockWidth" value="11" min="4" max="48" step="0.5">
+          <span class="param-unit">"</span>
+
+          <span class="param-label">Height</span>
+          <input class="param-input" type="number" id="stockHeight" value="11" min="4" max="48" step="0.5">
+          <span class="param-unit">"</span>
+        </div>
+        <label class="check-row">
+          <input type="checkbox" id="border">
+          Flat border edges
+        </label>
+        <div class="check-note">perimeter tiles get straight outer edges — one piece per grid cell rather than consolidated by type</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Export</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <button class="btn-secondary btn-full" id="previewBtn">↻ Refresh Preview</button>
+          <button class="btn-primary  btn-full" id="exportBtn"  disabled>↓ Export Laser Cut SVG</button>
+        </div>
+        <div class="file-status" id="exportMsg"></div>
+      </div>
+
+      <div class="section" style="border-bottom:none;">
+        <div class="section-title">Laser Layers</div>
+        <div class="layer-key">
+          <div><span class="swatch" style="color:#ff0000;">■</span> red stroke → vector cut (through)</div>
+          <div><span class="swatch" style="color:#0000ff;">■</span> blue stroke → vector engrave / score</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── FABRICATE RIGHT PANEL ── -->
+    <div class="right">
+
+      <div class="right-header">
+        <span class="rh-title">Preview</span>
+        <div class="sheet-nav" id="sheetNav">
+          <button class="btn-secondary" id="prevSheet">‹</button>
+          <span class="sheet-label" id="sheetLabel">—</span>
+          <button class="btn-secondary" id="nextSheet">›</button>
+        </div>
+        <div class="stats-bar" id="statsBar" style="margin-left:16px;">
+          <span>grid <b id="sGrid">—</b></span>
+          <span>pieces <b id="sPieces">—</b></span>
+          <span>per sheet <b id="sPerSheet">—</b></span>
+          <span>sheets <b id="sSheets">—</b></span>
+          <span>layout <b id="sLayout">—</b></span>
+        </div>
+        <div class="zoom-ctl">
+          zoom
+          <input type="range" id="zoomSlider" min="25" max="400" value="100" step="25">
+          <span id="zoomVal" style="min-width:38px;">100%</span>
+        </div>
+      </div>
+
+      <div class="preview-wrap" id="previewWrap">
+        <div class="preview-empty" id="previewEmpty">
+          <p>Load a JSON or design in the Design tab</p>
+          <small>switch to Design tab or drop a JSON file here</small>
+        </div>
+        <div class="preview-svg-wrap" id="previewSvgWrap"></div>
+      </div>
+
+      <div class="statusbar">
+        <span class="status-msg" id="statusMsg">Ready.</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="tooltip"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  SHARED CONSTANTS
+// ═══════════════════════════════════════════════════════
+
+const COLORS = [
+  { hex: '#1a1410', name: 'Ink'   },
+  { hex: '#c0392b', name: 'Red'   },
+  { hex: '#1a6b6b', name: 'Teal'  },
+  { hex: '#b8860b', name: 'Gold'  },
+  { hex: '#3d5a6b', name: 'Slate' },
+  { hex: '#7b4f8e', name: 'Plum'  },
+];
+
+// ═══════════════════════════════════════════════════════
+//  APP STATE (designer)
+// ═══════════════════════════════════════════════════════
+
+const state = {
+  // Tile library: each tile is { id, edges: [top, right, bottom, left] }
+  tiles: [],
+  nextId: 0,
+
+  // Editor
+  editorEdges: [0, 0, 0, 0],
+  selectedColor: 1,
+
+  // Grid
+  gridN: 16,
+  grid: [],       // flat array of tile IDs or null
+  tileSize: 36,   // px per cell on canvas
+
+  // Fill mode
+  mode: 'manual',
+};
+
+// ═══════════════════════════════════════════════════════
+//  TILE HELPERS
+// ═══════════════════════════════════════════════════════
+
+function tileById(id) {
+  return state.tiles.find(t => t.id === id) || null;
+}
+
+function addTileToLibrary(edges) {
+  // Duplicate check
+  const dup = state.tiles.some(t =>
+    t.edges[0] === edges[0] && t.edges[1] === edges[1] &&
+    t.edges[2] === edges[2] && t.edges[3] === edges[3]
+  );
+  if (dup) {
+    setDesignStatus('Duplicate tile — already in library.', 'err');
+    return false;
+  }
+  state.tiles.push({ id: state.nextId++, edges: [...edges] });
+  return true;
+}
+
+function removeTile(id) {
+  state.tiles = state.tiles.filter(t => t.id !== id);
+  // Scrub from grid
+  for (let i = 0; i < state.grid.length; i++) {
+    if (state.grid[i] === id) state.grid[i] = null;
+  }
+}
+
+function clearLibrary() {
+  state.tiles = [];
+  state.nextId = 0;
+  clearGrid();
+}
+
+// ═══════════════════════════════════════════════════════
+//  GRID HELPERS
+// ═══════════════════════════════════════════════════════
+
+function clearGrid() {
+  state.grid = new Array(state.gridN * state.gridN).fill(null);
+}
+
+function idx(r, c) { return r * state.gridN + c; }
+
+function getNeighborConstraints(r, c) {
+  const N = state.gridN;
+  const con = [null, null, null, null]; // required top, right, bottom, left
+
+  if (r > 0) {
+    const t = tileById(state.grid[idx(r - 1, c)]);
+    if (t) con[0] = t.edges[2]; // neighbor's bottom = our top
+  }
+  if (c < N - 1) {
+    const t = tileById(state.grid[idx(r, c + 1)]);
+    if (t) con[1] = t.edges[3]; // neighbor's left = our right
+  }
+  if (r < N - 1) {
+    const t = tileById(state.grid[idx(r + 1, c)]);
+    if (t) con[2] = t.edges[0]; // neighbor's top = our bottom
+  }
+  if (c > 0) {
+    const t = tileById(state.grid[idx(r, c - 1)]);
+    if (t) con[3] = t.edges[1]; // neighbor's right = our left
+  }
+  return con;
+}
+
+function validTilesFor(r, c, constraints) {
+  const con = constraints || getNeighborConstraints(r, c);
+  return state.tiles.filter(t =>
+    (con[0] === null || t.edges[0] === con[0]) &&
+    (con[1] === null || t.edges[1] === con[1]) &&
+    (con[2] === null || t.edges[2] === con[2]) &&
+    (con[3] === null || t.edges[3] === con[3])
+  );
+}
+
+function hasConflict(r, c) {
+  const N = state.gridN;
+  const t = tileById(state.grid[idx(r, c)]);
+  if (!t) return false;
+
+  if (r > 0) {
+    const above = tileById(state.grid[idx(r - 1, c)]);
+    if (above && above.edges[2] !== t.edges[0]) return true;
+  }
+  if (c < N - 1) {
+    const right = tileById(state.grid[idx(r, c + 1)]);
+    if (right && right.edges[3] !== t.edges[1]) return true;
+  }
+  if (r < N - 1) {
+    const below = tileById(state.grid[idx(r + 1, c)]);
+    if (below && below.edges[0] !== t.edges[2]) return true;
+  }
+  if (c > 0) {
+    const left = tileById(state.grid[idx(r, c - 1)]);
+    if (left && left.edges[1] !== t.edges[3]) return true;
+  }
+  return false;
+}
+
+function countConflicts() {
+  let n = 0;
+  const N = state.gridN;
+  for (let r = 0; r < N; r++)
+    for (let c = 0; c < N; c++)
+      if (hasConflict(r, c)) n++;
+  return n;
+}
+
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// ═══════════════════════════════════════════════════════
+//  DRAWING
+// ═══════════════════════════════════════════════════════
+
+function drawTile(ctx, x, y, s, edges, options = {}) {
+  const { highlight = false, labels = false } = options;
+  const [top, right, bottom, left] = edges;
+  const cx = x + s / 2, cy = y + s / 2;
+  const bg = highlight ? '#fff8e8' : '#f5f0e8';
+
+  // Background
+  ctx.fillStyle = bg;
+  ctx.fillRect(x, y, s, s);
+
+  // Four triangles
+  const tris = [
+    [top,    [[x, y],     [x + s, y],     [cx, cy]]],
+    [right,  [[x + s, y], [x + s, y + s], [cx, cy]]],
+    [bottom, [[x + s, y + s], [x, y + s], [cx, cy]]],
+    [left,   [[x, y + s], [x, y],         [cx, cy]]],
+  ];
+
+  for (const [ci, pts] of tris) {
+    ctx.beginPath();
+    ctx.moveTo(pts[0][0], pts[0][1]);
+    ctx.lineTo(pts[1][0], pts[1][1]);
+    ctx.lineTo(pts[2][0], pts[2][1]);
+    ctx.closePath();
+    ctx.fillStyle = COLORS[ci].hex;
+    ctx.fill();
+  }
+
+  // Center dot
+  ctx.beginPath();
+  ctx.arc(cx, cy, s * 0.08, 0, Math.PI * 2);
+  ctx.fillStyle = bg;
+  ctx.fill();
+
+  // Labels
+  if (labels && s >= 40) {
+    ctx.font = `bold ${Math.max(8, s * 0.11)}px DM Mono`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#fff';
+    const positions = [
+      [cx, y + s * 0.18],
+      [x + s * 0.82, cy],
+      [cx, y + s * 0.82],
+      [x + s * 0.18, cy],
+    ];
+    positions.forEach((p, i) => ctx.fillText(COLORS[edges[i]].name[0], p[0], p[1]));
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  FILL ALGORITHMS
+// ═══════════════════════════════════════════════════════
+
+function fillScanOrder() {
+  const N = state.gridN;
+  let placed = 0, stuck = 0;
+
+  for (let r = 0; r < N; r++) {
+    for (let c = 0; c < N; c++) {
+      if (state.grid[idx(r, c)] !== null) continue;
+
+      // Scan-order: only constrain by already-placed neighbors (top + left)
+      let reqTop = null, reqLeft = null;
+      if (r > 0) {
+        const above = tileById(state.grid[idx(r - 1, c)]);
+        if (above) reqTop = above.edges[2];
+      }
+      if (c > 0) {
+        const leftT = tileById(state.grid[idx(r, c - 1)]);
+        if (leftT) reqLeft = leftT.edges[1];
+      }
+
+      const valid = state.tiles.filter(t =>
+        (reqTop === null || t.edges[0] === reqTop) &&
+        (reqLeft === null || t.edges[3] === reqLeft)
+      );
+
+      if (valid.length) {
+        state.grid[idx(r, c)] = pickRandom(valid).id;
+        placed++;
+      } else {
+        stuck++;
+      }
+    }
+  }
+  return { placed, stuck };
+}
+
+function fillRandom() {
+  const N = state.gridN;
+  let placed = 0, stuck = 0;
+
+  // Shuffle cell order for true randomness
+  const cells = [];
+  for (let r = 0; r < N; r++)
+    for (let c = 0; c < N; c++)
+      if (state.grid[idx(r, c)] === null) cells.push([r, c]);
+
+  // Shuffle
+  for (let i = cells.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cells[i], cells[j]] = [cells[j], cells[i]];
+  }
+
+  for (const [r, c] of cells) {
+    const valid = validTilesFor(r, c);
+    if (valid.length) {
+      state.grid[idx(r, c)] = pickRandom(valid).id;
+      placed++;
+    } else {
+      stuck++;
+    }
+  }
+  return { placed, stuck };
+}
+
+function fillWFC() {
+  const N = state.gridN;
+  const total = N * N;
+  const allIndices = state.tiles.map((_, i) => i);
+
+  // Working copies
+  let g = [...state.grid];
+  // Entropy: Set of tile indices that are still possible, or null if collapsed
+  let ent = new Array(total);
+  for (let i = 0; i < total; i++) {
+    ent[i] = g[i] !== null ? null : new Set(allIndices);
+  }
+
+  // Propagation: reduce neighbor entropy based on placed tile
+  function propagate(startR, startC) {
+    const queue = [[startR, startC]];
+    let head = 0;
+
+    while (head < queue.length) {
+      const [sr, sc] = queue[head++];
+
+      const neighbors = [
+        [sr - 1, sc, 0, 2], // neighbor above: our top(0) must match their bottom(2)
+        [sr, sc + 1, 1, 3], // neighbor right: our right(1) must match their left(3)
+        [sr + 1, sc, 2, 0], // neighbor below: our bottom(2) must match their top(0)
+        [sr, sc - 1, 3, 1], // neighbor left: our left(3) must match their right(1)
+      ];
+
+      for (const [nr, nc, , ] of neighbors) {
+        if (nr < 0 || nr >= N || nc < 0 || nc >= N) continue;
+        const ni = idx(nr, nc);
+        if (ent[ni] === null) continue; // already collapsed
+
+        // Gather all possible edge values from placed/constrained neighbors of (nr, nc)
+        const con = [null, null, null, null];
+        const dirs = [
+          [nr - 1, nc, 0, 2],
+          [nr, nc + 1, 1, 3],
+          [nr + 1, nc, 2, 0],
+          [nr, nc - 1, 3, 1],
+        ];
+        for (const [dr, dc, myEdge, theirEdge] of dirs) {
+          if (dr < 0 || dr >= N || dc < 0 || dc >= N) continue;
+          const di = idx(dr, dc);
+          if (g[di] !== null) {
+            con[myEdge] = state.tiles.find(t => t.id === g[di]).edges[theirEdge];
+          }
+        }
+
+        const before = ent[ni].size;
+        const filtered = new Set();
+        for (const ti of ent[ni]) {
+          const te = state.tiles[ti].edges;
+          if ((con[0] === null || te[0] === con[0]) &&
+              (con[1] === null || te[1] === con[1]) &&
+              (con[2] === null || te[2] === con[2]) &&
+              (con[3] === null || te[3] === con[3])) {
+            filtered.add(ti);
+          }
+        }
+        ent[ni] = filtered;
+
+        if (filtered.size === 0) return false; // contradiction
+        if (filtered.size < before) {
+          queue.push([nr, nc]);
+        }
+      }
+    }
+    return true;
+  }
+
+  // Propagate from all pre-placed (seeded) cells
+  for (let r = 0; r < N; r++) {
+    for (let c = 0; c < N; c++) {
+      if (g[idx(r, c)] !== null) {
+        if (!propagate(r, c)) {
+          setDesignStatus('Seeded tiles create an unsolvable constraint.', 'err');
+          return;
+        }
+      }
+    }
+  }
+
+  const stack = [];
+  const MAX_BT = 50000;
+  let bt = 0;
+
+  while (true) {
+    // Find minimum-entropy uncollapsed cell
+    let minE = Infinity, minI = -1;
+    for (let i = 0; i < total; i++) {
+      if (ent[i] === null) continue;
+      const e = ent[i].size;
+      if (e < minE) { minE = e; minI = i; }
+      if (e === 0) break;
+    }
+
+    if (minI === -1) break; // done!
+
+    if (minE === 0) {
+      // Contradiction — backtrack
+      let ok = false;
+      while (stack.length) {
+        bt++;
+        if (bt > MAX_BT) {
+          state.grid = g;
+          renderGrid();
+          setDesignStatus(`Gave up after ${MAX_BT} backtracks.`, 'err');
+          return;
+        }
+        const frame = stack.pop();
+        g = frame.g;
+        ent = frame.ent;
+        ent[frame.cellIdx].delete(frame.chosen);
+        if (ent[frame.cellIdx].size > 0) { ok = true; break; }
+      }
+      if (!ok) {
+        state.grid = g;
+        renderGrid();
+        setDesignStatus('No valid tiling exists for this tileset + grid.', 'err');
+        return;
+      }
+      continue;
+    }
+
+    // Collapse: pick random tile from minimum entropy cell
+    const possible = [...ent[minI]];
+    const chosen = pickRandom(possible);
+    const cr = Math.floor(minI / N), cc = minI % N;
+
+    // Save state for backtracking
+    stack.push({
+      g: [...g],
+      ent: ent.map(s => s === null ? null : new Set(s)),
+      cellIdx: minI,
+      chosen,
+    });
+
+    g[minI] = state.tiles[chosen].id;
+    ent[minI] = null;
+
+    if (!propagate(cr, cc)) {
+      // Immediate contradiction — backtrack
+      let ok = false;
+      while (stack.length) {
+        bt++;
+        if (bt > MAX_BT) {
+          state.grid = g;
+          renderGrid();
+          setDesignStatus(`Gave up after ${MAX_BT} backtracks.`, 'err');
+          return;
+        }
+        const frame = stack.pop();
+        g = frame.g;
+        ent = frame.ent;
+        ent[frame.cellIdx].delete(frame.chosen);
+        if (ent[frame.cellIdx].size > 0) { ok = true; break; }
+      }
+      if (!ok) {
+        state.grid = g;
+        renderGrid();
+        setDesignStatus('No valid tiling found.', 'err');
+        return;
+      }
+    }
+  }
+
+  state.grid = g;
+  renderGrid();
+  const conflicts = countConflicts();
+  const btMsg = bt > 0 ? ` (${bt} backtracks)` : '';
+  setDesignStatus(
+    conflicts
+      ? `WFC done${btMsg} — ${conflicts} conflict(s).`
+      : `WFC complete${btMsg} — clean tiling!`,
+    conflicts ? 'err' : 'ok'
+  );
+}
+
+function doFill() {
+  if (!state.tiles.length) { setDesignStatus('Add tiles to your library first.', 'err'); return; }
+
+  if (state.mode === 'wfc') {
+    fillWFC();
+    return;
+  }
+
+  let result;
+  if (state.mode === 'scan' || state.mode === 'manual') {
+    result = fillScanOrder();
+  } else {
+    result = fillRandom();
+  }
+
+  renderGrid();
+  if (result.stuck) {
+    setDesignStatus(`Placed ${result.placed}, ${result.stuck} stuck (no valid fit).`, 'err');
+  } else {
+    setDesignStatus(`Filled ${result.placed} tiles!`, 'ok');
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDERING (all UI updates flow through here)
+// ═══════════════════════════════════════════════════════
+
+function renderEditor() {
+  const ctx = document.getElementById('tileEditor').getContext('2d');
+  drawTile(ctx, 0, 0, 120, state.editorEdges, { labels: true });
+}
+
+function renderTileList() {
+  const el = document.getElementById('tileList');
+  el.innerHTML = '';
+  document.getElementById('tileCount').textContent =
+    `${state.tiles.length} tile${state.tiles.length !== 1 ? 's' : ''}`;
+
+  const THUMB = 40;
+  for (const t of state.tiles) {
+    const wrap = document.createElement('div');
+    wrap.className = 'tile-thumb';
+    wrap.style.width = THUMB + 'px';
+    wrap.style.height = THUMB + 'px';
+    wrap.title = `T:${COLORS[t.edges[0]].name} R:${COLORS[t.edges[1]].name} B:${COLORS[t.edges[2]].name} L:${COLORS[t.edges[3]].name}`;
+
+    const c = document.createElement('canvas');
+    c.width = THUMB; c.height = THUMB;
+    drawTile(c.getContext('2d'), 0, 0, THUMB, t.edges);
+    wrap.appendChild(c);
+
+    const del = document.createElement('button');
+    del.className = 'del-btn';
+    del.textContent = '×';
+    del.addEventListener('click', ev => {
+      ev.stopPropagation();
+      removeTile(t.id);
+      renderAll();
+    });
+    wrap.appendChild(del);
+
+    wrap.addEventListener('click', () => {
+      state.editorEdges = [...t.edges];
+      renderEditor();
+    });
+
+    el.appendChild(wrap);
+  }
+}
+
+function resizeGridCanvas() {
+  const canvas = document.getElementById('grid');
+  const wrap = document.getElementById('gridWrap');
+  const W = wrap.clientWidth || 600;
+  const H = wrap.clientHeight || 500;
+  state.tileSize = Math.max(12, Math.min(48, Math.floor(Math.min(W, H) / state.gridN)));
+  canvas.width = state.gridN * state.tileSize;
+  canvas.height = state.gridN * state.tileSize;
+}
+
+function renderGrid() {
+  const canvas = document.getElementById('grid');
+  const ctx = canvas.getContext('2d');
+  const N = state.gridN;
+  const S = state.tileSize;
+
+  ctx.fillStyle = '#f5f0e8';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let r = 0; r < N; r++) {
+    for (let c = 0; c < N; c++) {
+      const i = idx(r, c);
+      const tid = state.grid[i];
+      const x = c * S, y = r * S;
+
+      if (tid === null) {
+        ctx.fillStyle = '#f0ebe0';
+        ctx.fillRect(x, y, S, S);
+        ctx.strokeStyle = '#ddd6c8';
+        ctx.lineWidth = 0.5;
+        ctx.strokeRect(x + 0.5, y + 0.5, S - 1, S - 1);
+        continue;
+      }
+
+      const tile = tileById(tid);
+      if (!tile) {
+        state.grid[i] = null;
+        ctx.fillStyle = '#f0ebe0';
+        ctx.fillRect(x, y, S, S);
+        ctx.strokeStyle = '#ddd6c8';
+        ctx.lineWidth = 0.5;
+        ctx.strokeRect(x + 0.5, y + 0.5, S - 1, S - 1);
+        continue;
+      }
+
+      const conflict = hasConflict(r, c);
+      drawTile(ctx, x, y, S, tile.edges, { highlight: conflict });
+
+      if (conflict) {
+        ctx.strokeStyle = '#c0392b';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(x + 4, y + 4);
+        ctx.lineTo(x + S - 4, y + S - 4);
+        ctx.moveTo(x + S - 4, y + 4);
+        ctx.lineTo(x + 4, y + S - 4);
+        ctx.stroke();
+      }
+    }
+  }
+
+  refreshStats();
+  updateEmptyState();
+}
+
+function refreshStats() {
+  const total = state.gridN * state.gridN;
+  const placed = state.grid.filter(c => c !== null).length;
+  const conflicts = countConflicts();
+  document.getElementById('statPlaced').textContent = placed;
+  document.getElementById('statConflicts').textContent = conflicts;
+  document.getElementById('statCoverage').textContent = Math.round(placed / total * 100) + '%';
+}
+
+function updateEmptyState() {
+  const hasContent = state.tiles.length > 0 || state.grid.some(c => c !== null);
+  document.getElementById('emptyGrid').style.display = hasContent ? 'none' : '';
+}
+
+function renderAll() {
+  renderEditor();
+  renderTileList();
+  renderGrid();
+}
+
+// ═══════════════════════════════════════════════════════
+//  DESIGN STATUS
+// ═══════════════════════════════════════════════════════
+
+function setDesignStatus(msg, type = '') {
+  const el = document.getElementById('designStatusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg' + (type ? ' ' + type : '');
+}
+
+// ═══════════════════════════════════════════════════════
+//  MODE SWITCHING (designer)
+// ═══════════════════════════════════════════════════════
+
+function setMode(m) {
+  state.mode = m;
+  document.querySelectorAll('.mode-tab').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === m);
+  });
+  document.getElementById('statusMode').textContent = m;
+
+  const labels = {
+    manual: '⚡ Complete',
+    scan: '▶ Fill (L→R)',
+    wfc: '▶ Fill (WFC)',
+    random: '▶ Fill (Random)',
+  };
+  document.getElementById('fillBtn').textContent = labels[m] || '▶ Fill';
+}
+
+// ═══════════════════════════════════════════════════════
+//  PRESETS
+// ═══════════════════════════════════════════════════════
+
+const PRESETS = {
+  checkerboard: {
+    desc: '2 tiles, 2 colors. Strict alternation — each tile forces its opposite on every neighbor.',
+    tiles: [[0,1,1,0],[1,0,0,1]],
+  },
+  stripes_h: {
+    desc: '2 tiles, 2 colors. Rows alternate. Left/right edges uniform.',
+    tiles: [[0,0,1,0],[1,0,0,0]],
+  },
+  stripes_v: {
+    desc: '2 tiles, 2 colors. Columns alternate. Top/bottom edges uniform.',
+    tiles: [[0,1,0,0],[0,0,0,1]],
+  },
+  diagonal: {
+    desc: '4 tiles, 2 colors. Colors flow diagonally, creating banded patterns.',
+    tiles: [[0,0,1,1],[0,1,0,0],[1,0,0,0],[1,1,1,1]],
+  },
+  stochastic8: {
+    desc: 'Cohen et al. (2003) minimal stochastic set: 2×2 edge colors, 8 tiles. Guarantees ≥2 valid choices at every scan-order step.',
+    tiles: [
+      [0,2,0,2],[0,3,1,2],[0,2,0,3],[0,3,1,3],
+      [1,2,0,2],[1,3,1,2],[1,2,1,3],[1,3,0,3],
+    ],
+    mode: 'scan',
+  },
+  stochastic18: {
+    desc: 'Larger stochastic set: 3×3 edge colors, 18 tiles. More variety, less visible repetition.',
+    tiles: [
+      [0,3,1,3],[0,4,2,3],[0,3,0,4],[0,5,2,4],[0,4,1,5],[0,5,0,5],
+      [1,4,0,3],[1,5,2,3],[1,3,1,4],[1,5,0,4],[1,4,2,5],[1,3,1,5],
+      [2,5,0,3],[2,4,1,3],[2,3,2,4],[2,5,1,4],[2,4,0,5],[2,3,2,5],
+    ],
+    mode: 'scan',
+  },
+  maze_all: {
+    desc: 'Complete 2-color set: all 16 combos. Maximum randomness, totally unconstrained.',
+    tiles: (() => {
+      const t = [];
+      for (let i = 0; i < 16; i++)
+        t.push([(i>>3)&1,(i>>2)&1,(i>>1)&1,i&1]);
+      return t;
+    })(),
+  },
+  maze_connected: {
+    desc: '11 tiles, 2 colors. Only tiles with ≥2 openings — corridors, corners, T-junctions, crossroads.',
+    tiles: [
+      [0,1,0,1],[1,0,1,0],
+      [1,1,0,0],[0,1,1,0],[0,0,1,1],[1,0,0,1],
+      [1,1,1,0],[0,1,1,1],[1,0,1,1],[1,1,0,1],
+      [1,1,1,1],
+    ],
+  },
+  pipes: {
+    desc: '23 tiles, 3 colors. Two pipe colors (Red + Teal) on Ink background.',
+    tiles: [
+      [0,0,0,0],
+      [1,0,1,0],[0,1,0,1],[1,1,0,0],[0,1,1,0],[0,0,1,1],[1,0,0,1],
+      [2,0,2,0],[0,2,0,2],[2,2,0,0],[0,2,2,0],[0,0,2,2],[2,0,0,2],
+      [1,0,0,0],[0,0,1,0],[0,1,0,0],[0,0,0,1],
+      [2,0,0,0],[0,0,2,0],[0,2,0,0],[0,0,0,2],
+      [1,0,0,2],[2,0,0,1],
+    ],
+  },
+  jeandel_rao: {
+    desc: 'Jeandel–Rao (2015): proven smallest aperiodic set. 11 tiles, 4 colors. Use WFC fill.',
+    tiles: [
+      [0,3,1,1],[2,3,1,1],[0,0,2,0],[2,1,3,0],[1,0,3,2],
+      [2,3,0,2],[3,3,1,2],[3,0,0,3],[0,0,1,3],[0,2,0,3],[0,2,3,3],
+    ],
+    mode: 'wfc',
+  },
+};
+
+function loadPreset(name) {
+  const p = PRESETS[name];
+  if (!p) return;
+
+  // Clear everything
+  state.tiles = [];
+  state.nextId = 0;
+
+  // Add tiles
+  for (const edges of p.tiles) {
+    state.tiles.push({ id: state.nextId++, edges: [...edges] });
+  }
+
+  // Clear grid
+  clearGrid();
+
+  // Show description
+  document.getElementById('presetDesc').textContent = p.desc;
+
+  // Set recommended mode and auto-fill
+  const fillMode = p.mode || 'scan';
+  setMode(fillMode);
+  renderTileList();
+
+  // Fill
+  doFill();
+
+  // Return to manual mode after filling
+  setMode('manual');
+}
+
+// ═══════════════════════════════════════════════════════
+//  DESIGNER EVENT HANDLERS
+// ═══════════════════════════════════════════════════════
+
+// Palette
+function buildPalette() {
+  const el = document.getElementById('palette');
+  el.innerHTML = '';
+  COLORS.forEach((c, i) => {
+    const btn = document.createElement('div');
+    btn.className = 'color-btn' + (i === state.selectedColor ? ' selected' : '');
+    btn.style.background = c.hex;
+    btn.title = c.name;
+    btn.addEventListener('click', () => {
+      state.selectedColor = i;
+      el.querySelectorAll('.color-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    });
+    el.appendChild(btn);
+  });
+}
+
+// Editor click — detect which triangle quadrant
+document.getElementById('tileEditor').addEventListener('click', e => {
+  const canvas = e.target;
+  const rect = canvas.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) * (120 / rect.width);
+  const my = (e.clientY - rect.top) * (120 / rect.height);
+  const dx = mx - 60, dy = my - 60;
+  const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+  let edge;
+  if (angle >= -135 && angle < -45) edge = 0;      // top
+  else if (angle >= -45 && angle < 45) edge = 1;    // right
+  else if (angle >= 45 && angle < 135) edge = 2;    // bottom
+  else edge = 3;                                      // left
+
+  state.editorEdges[edge] = state.selectedColor;
+  renderEditor();
+});
+
+document.getElementById('clearEditorBtn').addEventListener('click', () => {
+  state.editorEdges = [0, 0, 0, 0];
+  renderEditor();
+});
+
+document.getElementById('addTileBtn').addEventListener('click', () => {
+  if (addTileToLibrary(state.editorEdges)) {
+    renderTileList();
+    updateEmptyState();
+    setDesignStatus(`Added tile. Library now has ${state.tiles.length} tile(s).`, 'ok');
+  }
+});
+
+document.getElementById('clearAllBtn').addEventListener('click', () => {
+  clearLibrary();
+  renderAll();
+  document.getElementById('presetSelect').value = '';
+  document.getElementById('presetDesc').textContent = '';
+  setDesignStatus('Tile library cleared.', 'ok');
+});
+
+// Grid click — cycle through valid tiles
+document.getElementById('grid').addEventListener('click', e => {
+  if (!state.tiles.length) { setDesignStatus('Add tiles to your library first.', 'err'); return; }
+
+  const rect = e.target.getBoundingClientRect();
+  const c = Math.floor((e.clientX - rect.left) / state.tileSize);
+  const r = Math.floor((e.clientY - rect.top) / state.tileSize);
+  if (c < 0 || c >= state.gridN || r < 0 || r >= state.gridN) return;
+
+  const i = idx(r, c);
+  const currentId = state.grid[i];
+
+  // Temporarily clear to get constraints without self-reference
+  state.grid[i] = null;
+  const valid = validTilesFor(r, c);
+  state.grid[i] = currentId;
+
+  if (!valid.length) {
+    // No valid tiles — toggle between first tile and null
+    state.grid[i] = currentId === null ? state.tiles[0].id : null;
+  } else if (currentId === null) {
+    state.grid[i] = valid[0].id;
+  } else {
+    // Cycle: valid[0], valid[1], ..., null
+    const curIdx = valid.findIndex(t => t.id === currentId);
+    if (curIdx === -1) {
+      state.grid[i] = valid[0].id;
+    } else {
+      const next = curIdx + 1;
+      state.grid[i] = next < valid.length ? valid[next].id : null;
+    }
+  }
+  renderGrid();
+});
+
+// Right-click to clear cell
+document.getElementById('grid').addEventListener('contextmenu', e => {
+  e.preventDefault();
+  const rect = e.target.getBoundingClientRect();
+  const c = Math.floor((e.clientX - rect.left) / state.tileSize);
+  const r = Math.floor((e.clientY - rect.top) / state.tileSize);
+  if (c < 0 || c >= state.gridN || r < 0 || r >= state.gridN) return;
+  state.grid[idx(r, c)] = null;
+  renderGrid();
+});
+
+// Tooltip
+document.getElementById('grid').addEventListener('mousemove', e => {
+  const rect = e.target.getBoundingClientRect();
+  const c = Math.floor((e.clientX - rect.left) / state.tileSize);
+  const r = Math.floor((e.clientY - rect.top) / state.tileSize);
+  const tip = document.getElementById('tooltip');
+
+  if (c >= 0 && c < state.gridN && r >= 0 && r < state.gridN) {
+    const t = tileById(state.grid[idx(r, c)]);
+    if (t) {
+      tip.style.display = 'block';
+      tip.style.left = (e.clientX + 12) + 'px';
+      tip.style.top = (e.clientY - 8) + 'px';
+      const e0 = t.edges;
+      tip.innerHTML = `[${c},${r}] T:${COLORS[e0[0]].name} R:${COLORS[e0[1]].name}<br>B:${COLORS[e0[2]].name} L:${COLORS[e0[3]].name}${hasConflict(r, c) ? '<br><span style="color:#ff8888">⚠ conflict</span>' : ''}`;
+      return;
+    }
+  }
+  tip.style.display = 'none';
+});
+document.getElementById('grid').addEventListener('mouseleave', () => {
+  document.getElementById('tooltip').style.display = 'none';
+});
+
+// Mode tabs
+document.getElementById('modeTabs').addEventListener('click', e => {
+  const btn = e.target.closest('.mode-tab');
+  if (btn && btn.dataset.mode) setMode(btn.dataset.mode);
+});
+
+// Fill + Clear
+document.getElementById('fillBtn').addEventListener('click', doFill);
+document.getElementById('clearGridBtn').addEventListener('click', () => {
+  clearGrid();
+  renderGrid();
+  setDesignStatus('Grid cleared.', '');
+});
+
+// Grid size slider
+document.getElementById('gridSize').addEventListener('input', e => {
+  const n = parseInt(e.target.value);
+  document.getElementById('gridSizeVal').textContent = `${n}×${n}`;
+
+  // Preserve existing tiles where possible
+  const oldN = state.gridN;
+  const oldGrid = state.grid;
+  state.gridN = n;
+  state.grid = new Array(n * n).fill(null);
+
+  const copyN = Math.min(oldN, n);
+  for (let r = 0; r < copyN; r++) {
+    for (let c = 0; c < copyN; c++) {
+      state.grid[r * n + c] = oldGrid[r * oldN + c];
+    }
+  }
+
+  resizeGridCanvas();
+  renderGrid();
+});
+
+// Preset select
+document.getElementById('presetSelect').addEventListener('change', e => {
+  if (e.target.value) loadPreset(e.target.value);
+});
+
+// Window resize
+window.addEventListener('resize', () => {
+  resizeGridCanvas();
+  renderGrid();
+});
+
+// ═══════════════════════════════════════════════════════
+//  DESIGNER SAVE / LOAD
+// ═══════════════════════════════════════════════════════
+
+function exportState() {
+  const data = {
+    version: 1,
+    gridN: state.gridN,
+    tiles: state.tiles.map(t => ({ id: t.id, edges: t.edges })),
+    grid: state.grid,
+  };
+  const json = JSON.stringify(data, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const ts = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
+  a.download = `wang-tiles-${ts}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  document.getElementById('saveLoadMsg').textContent = `Exported ${state.tiles.length} tiles + ${state.gridN}×${state.gridN} grid.`;
+  setDesignStatus('State exported.', 'ok');
+}
+
+function importState(json) {
+  try {
+    const data = JSON.parse(json);
+
+    if (!data.tiles || !Array.isArray(data.tiles)) throw new Error('Missing tiles array');
+    if (!data.grid || !Array.isArray(data.grid)) throw new Error('Missing grid array');
+    if (!data.gridN || typeof data.gridN !== 'number') throw new Error('Missing gridN');
+
+    // Validate tiles
+    for (const t of data.tiles) {
+      if (!Array.isArray(t.edges) || t.edges.length !== 4) throw new Error('Invalid tile edges');
+      if (t.edges.some(e => typeof e !== 'number' || e < 0 || e >= COLORS.length)) {
+        throw new Error(`Edge color index out of range (0–${COLORS.length - 1})`);
+      }
+    }
+
+    // Validate grid size
+    const n = Math.max(4, Math.min(32, data.gridN));
+    if (data.grid.length !== n * n) throw new Error(`Grid length ${data.grid.length} doesn't match ${n}×${n}`);
+
+    // Apply
+    state.tiles = data.tiles.map(t => ({ id: t.id, edges: [...t.edges] }));
+    state.nextId = state.tiles.length ? Math.max(...state.tiles.map(t => t.id)) + 1 : 0;
+    state.gridN = n;
+    state.grid = data.grid.map(v => (v === null ? null : v));
+
+    // Sync UI
+    document.getElementById('gridSize').value = n;
+    document.getElementById('gridSizeVal').textContent = `${n}×${n}`;
+    document.getElementById('presetSelect').value = '';
+    document.getElementById('presetDesc').textContent = '';
+
+    resizeGridCanvas();
+    renderAll();
+
+    document.getElementById('saveLoadMsg').textContent = `Loaded ${state.tiles.length} tiles, ${n}×${n} grid.`;
+    setDesignStatus(`Imported ${state.tiles.length} tiles.`, 'ok');
+  } catch (err) {
+    document.getElementById('saveLoadMsg').textContent = 'Import failed: ' + err.message;
+    setDesignStatus('Import failed — invalid file.', 'err');
+  }
+}
+
+document.getElementById('designExportBtn').addEventListener('click', exportState);
+
+document.getElementById('importBtn').addEventListener('click', () => {
+  document.getElementById('importFile').click();
+});
+
+document.getElementById('importFile').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => importState(reader.result);
+  reader.onerror = () => {
+    setDesignStatus('Could not read file.', 'err');
+  };
+  reader.readAsText(file);
+  e.target.value = ''; // reset so same file can be re-imported
+});
+
+// ═══════════════════════════════════════════════════════
+//  FABRICATE — State
+// ═══════════════════════════════════════════════════════
+
+let currentDesign = null;
+let currentSvgs   = [];   // original SVGs (for export)
+let sheetIndex    = 0;
+
+// ── Fabricate Helpers ─────────────────────────────────────────────────────────
+function setStatus(msg, cls = '') {
+  const el = document.getElementById('statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg' + (cls ? ' ' + cls : '');
+}
+
+function setExportMsg(msg, cls = '') {
+  const el = document.getElementById('exportMsg');
+  el.textContent = msg;
+  el.className = 'file-status' + (cls ? ' ' + cls : '');
+}
+
+function getParams() {
+  return {
+    tileSize:     +document.getElementById('tileSize').value,
+    tabHeight:    +document.getElementById('tabHeight').value,
+    margin:       +document.getElementById('margin').value,
+    tolerance:    +document.getElementById('tolerance').value,
+    hatchSpacing: +document.getElementById('hatchSpacing').value,
+    stockWidth:   +document.getElementById('stockWidth').value,
+    stockHeight:  +document.getElementById('stockHeight').value,
+    border:        document.getElementById('border').checked,
+  };
+}
+
+// Thicken hairline strokes so they're visible in the preview pane.
+// The original SVGs use 0.076–0.1 mm strokes (laser hairlines);
+// we bump them up for screen rendering only.
+function thickenStrokes(svgStr) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(svgStr, 'image/svg+xml');
+  doc.querySelectorAll('[stroke-width]').forEach(el => {
+    const w = parseFloat(el.getAttribute('stroke-width'));
+    if (w < 0.6) el.setAttribute('stroke-width', '0.6');
+  });
+  return new XMLSerializer().serializeToString(doc);
+}
+
+function showSheet(idx) {
+  if (!currentSvgs.length) return;
+  sheetIndex = Math.max(0, Math.min(idx, currentSvgs.length - 1));
+
+  const zoom = parseInt(document.getElementById('zoomSlider').value) / 100;
+  const svgStr = thickenStrokes(currentSvgs[sheetIndex]);
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(svgStr, 'image/svg+xml');
+  const svgEl = doc.documentElement;
+
+  // Remove fixed mm dimensions; let CSS control display size.
+  svgEl.removeAttribute('width');
+  svgEl.removeAttribute('height');
+  svgEl.style.cssText = `width:${zoom * 100}%; height:auto;`;
+
+  const wrap = document.getElementById('previewSvgWrap');
+  wrap.innerHTML = '';
+  wrap.appendChild(svgEl);
+  wrap.style.display = 'block';
+
+  document.getElementById('previewEmpty').style.display = 'none';
+  document.getElementById('sheetLabel').textContent =
+    `${sheetIndex + 1} / ${currentSvgs.length}`;
+
+  document.getElementById('prevSheet').disabled = sheetIndex === 0;
+  document.getElementById('nextSheet').disabled = sheetIndex === currentSvgs.length - 1;
+}
+
+function updateStats(stats) {
+  document.getElementById('sGrid').textContent     = stats.grid;
+  document.getElementById('sPieces').textContent   = stats.pieces;
+  document.getElementById('sPerSheet').textContent = stats.perSheet;
+  document.getElementById('sSheets').textContent   = stats.sheets;
+  document.getElementById('sLayout').textContent   = stats.layout;
+}
+
+// ── File loading ──────────────────────────────────────────────────────────────
+function loadFile(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      currentDesign = JSON.parse(e.target.result);
+      const n = currentDesign.tiles.length;
+      const g = currentDesign.gridN;
+      document.getElementById('fileStatus').textContent =
+        `${file.name} — ${n} tile type${n !== 1 ? 's' : ''}, ${g}×${g} grid`;
+      document.getElementById('fileStatus').className = 'file-status ok';
+      setStatus(`Loaded ${file.name}.`);
+      // Wipe stale preview
+      currentSvgs = [];
+      document.getElementById('previewSvgWrap').style.display = 'none';
+      document.getElementById('previewEmpty').style.display   = '';
+      document.getElementById('exportBtn').disabled = true;
+      document.getElementById('sheetLabel').textContent = '—';
+      scheduleRefresh();
+    } catch (err) {
+      document.getElementById('fileStatus').textContent = `Parse error: ${err.message}`;
+      document.getElementById('fileStatus').className = 'file-status err';
+      currentDesign = null;
+    }
+  };
+  reader.readAsText(file);
+}
+
+const dropZone  = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('click',      () => fileInput.click());
+dropZone.addEventListener('dragover',   e  => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave',  ()  => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop',       e  => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  loadFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change',    e  => loadFile(e.target.files[0]));
+
+// ── Preview ───────────────────────────────────────────────────────────────────
+let _refreshTimer = null;
+
+function scheduleRefresh(delay = 500) {
+  if (!currentDesign) return;
+  clearTimeout(_refreshTimer);
+  _refreshTimer = setTimeout(doRefresh, delay);
+}
+
+async function doRefresh() {
+  if (!currentDesign) return;
+  setStatus('Generating preview…');
+  document.getElementById('previewBtn').disabled = true;
+  try {
+    const res = await fetch('/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ design: currentDesign, params: getParams() }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || res.statusText);
+
+    currentSvgs = data.svgs;
+    updateStats(data.stats);
+    showSheet(sheetIndex);
+    document.getElementById('exportBtn').disabled = false;
+    setStatus(
+      `${data.stats.pieces} pieces across ${data.stats.sheets} sheet${data.stats.sheets !== 1 ? 's' : ''}.`,
+      'ok'
+    );
+    setExportMsg('');
+  } catch (err) {
+    setStatus(`Error: ${err.message}`, 'err');
+  } finally {
+    document.getElementById('previewBtn').disabled = false;
+  }
+}
+
+document.getElementById('previewBtn').addEventListener('click', () => {
+  if (!currentDesign) { setStatus('Load a design JSON file first.', 'err'); return; }
+  doRefresh();
+});
+
+// Live preview: re-generate on any param change
+['tileSize','tabHeight','margin','hatchSpacing','tolerance','stockWidth','stockHeight']
+  .forEach(id => document.getElementById(id).addEventListener('input', () => scheduleRefresh()));
+document.getElementById('border').addEventListener('change', () => scheduleRefresh());
+
+// ── Export ────────────────────────────────────────────────────────────────────
+document.getElementById('exportBtn').addEventListener('click', async () => {
+  if (!currentDesign) { setStatus('Load a design JSON file first.', 'err'); return; }
+  setExportMsg('Exporting…');
+  document.getElementById('exportBtn').disabled = true;
+  try {
+    const res = await fetch('/export', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ design: currentDesign, params: getParams() }),
+    });
+    if (!res.ok) {
+      const d = await res.json();
+      throw new Error(d.error || res.statusText);
+    }
+    const blob = await res.blob();
+    const url  = URL.createObjectURL(blob);
+    const a    = Object.assign(document.createElement('a'), {
+      href: url, download: 'laser-cut-tiles.zip'
+    });
+    a.click();
+    URL.revokeObjectURL(url);
+    setExportMsg('Downloaded laser-cut-tiles.zip', 'ok');
+    setStatus('Export complete.', 'ok');
+  } catch (err) {
+    setExportMsg(`Export failed: ${err.message}`, 'err');
+    setStatus(`Export error: ${err.message}`, 'err');
+  } finally {
+    document.getElementById('exportBtn').disabled = false;
+  }
+});
+
+// ── Sheet navigation ──────────────────────────────────────────────────────────
+document.getElementById('prevSheet').addEventListener('click', () => showSheet(sheetIndex - 1));
+document.getElementById('nextSheet').addEventListener('click', () => showSheet(sheetIndex + 1));
+
+// ── Zoom ──────────────────────────────────────────────────────────────────────
+document.getElementById('zoomSlider').addEventListener('input', e => {
+  document.getElementById('zoomVal').textContent = e.target.value + '%';
+  if (currentSvgs.length) showSheet(sheetIndex);
+});
+
+// ═══════════════════════════════════════════════════════
+//  TAB SWITCHING
+// ═══════════════════════════════════════════════════════
+
+function syncDesignToFabricate() {
+  if (!state.tiles.length) return;
+  currentDesign = {
+    version: 1,
+    gridN: state.gridN,
+    tiles: state.tiles.map(t => ({ id: t.id, edges: [...t.edges] })),
+    grid: [...state.grid],
+  };
+  const n = state.tiles.length;
+  const g = state.gridN;
+  document.getElementById('fileStatus').textContent =
+    `From designer — ${n} tile type${n !== 1 ? 's' : ''}, ${g}×${g} grid`;
+  document.getElementById('fileStatus').className = 'file-status ok';
+  // Clear stale preview and trigger live refresh
+  currentSvgs = [];
+  document.getElementById('previewSvgWrap').style.display = 'none';
+  document.getElementById('previewEmpty').style.display = '';
+  document.getElementById('exportBtn').disabled = true;
+  document.getElementById('sheetLabel').textContent = '—';
+  scheduleRefresh(0);
+}
+
+function switchTab(tab) {
+  document.getElementById('tabDesign').style.display = tab === 'design' ? 'flex' : 'none';
+  document.getElementById('tabFabricate').style.display = tab === 'fabricate' ? 'flex' : 'none';
+  document.querySelectorAll('.app-tab').forEach(b =>
+    b.classList.toggle('active', b.dataset.tab === tab));
+  document.getElementById('modeTabsWrap').style.display = tab === 'design' ? '' : 'none';
+
+  if (tab === 'fabricate') syncDesignToFabricate();
+  if (tab === 'design') {
+    requestAnimationFrame(() => { resizeGridCanvas(); renderGrid(); });
+  }
+}
+
+document.querySelectorAll('.app-tab').forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+});
+
+// ═══════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════
+
+buildPalette();
+clearGrid();
+
+// Defer so the layout is settled before measuring
+requestAnimationFrame(() => {
+  resizeGridCanvas();
+  renderAll();
+
+  // Load default preset
+  document.getElementById('presetSelect').value = 'stochastic8';
+  loadPreset('stochastic8');
+
+  // Start on Design tab
+  switchTab('design');
+});
+</script>
+</body>
+</html>
