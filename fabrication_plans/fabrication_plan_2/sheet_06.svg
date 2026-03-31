@@ -1,0 +1,1446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="250.000mm" height="250.000mm"
+     viewBox="0 0 250.0000 250.0000">
+  <desc>Wang Tile Laser-Cut Puzzle | tile=50.0mm tab=5.0mm tol=0.17mm hatch=3.0mm | Ink: none  Red: hatch(90)deg  Teal: hatch(45)deg  Gold: hatch(0,90)deg  Slate: circles  Plum: triangles | black=raster blue=engrave red=cut</desc>
+  <!-- piece 001  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(6.0000,6.0000)">
+    <defs>
+      <clipPath id="cp001e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 002  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(67.0000,6.0000)">
+    <defs>
+      <clipPath id="cp002e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 003  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(128.0000,6.0000)">
+    <defs>
+      <clipPath id="cp003e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 004  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(189.0000,6.0000)">
+    <defs>
+      <clipPath id="cp004e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 005  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(6.0000,67.0000)">
+    <defs>
+      <clipPath id="cp005e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp005e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 006  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(67.0000,67.0000)">
+    <defs>
+      <clipPath id="cp006e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 007  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(128.0000,67.0000)">
+    <defs>
+      <clipPath id="cp007e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp007e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 008  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(189.0000,67.0000)">
+    <defs>
+      <clipPath id="cp008e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp008e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 009  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(6.0000,128.0000)">
+    <defs>
+      <clipPath id="cp009e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp009e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 010  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(67.0000,128.0000)">
+    <defs>
+      <clipPath id="cp010e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp010e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 011  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(128.0000,128.0000)">
+    <defs>
+      <clipPath id="cp011e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp011e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 012  T:Red  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(189.0000,128.0000)">
+    <defs>
+      <clipPath id="cp012e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="3.0000" y1="0.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="0.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="0.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="0.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="0.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="0.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="0.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="0.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="0.0000" x2="27.0000" y2="23.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="0.0000" x2="30.0000" y2="20.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="0.0000" x2="33.0000" y2="17.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="0.0000" x2="36.0000" y2="14.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="0.0000" x2="39.0000" y2="11.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="0.0000" x2="42.0000" y2="8.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="0.0000" x2="45.0000" y2="5.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="0.0000" x2="48.0000" y2="2.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp012e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 18.6650,0.0000 C 18.6650,0.5170 20.5234,0.4265 20.5234,0.7755 C 20.5234,1.9698 19.8286,2.5049 19.8286,2.9469 C 19.8286,4.1462 20.8007,5.1183 22.0000,5.1183 C 23.1993,5.1183 24.1714,4.1462 24.1714,2.9469 C 24.1714,2.5049 23.4766,1.9698 23.4766,0.7755 C 23.4766,0.4265 25.3350,0.5170 25.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 013  T:Plum  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(6.0000,189.0000)">
+    <defs>
+      <clipPath id="cp013e0">
+        <polygon points="0.0000,0.0000 50.0000,0.0000 25.0000,25.0000"/>
+      </clipPath>
+      <clipPath id="cp013e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <polygon points="0.0000,0.0000 50.0000,0.0000 25.0000,25.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <polygon points="2.8460,0.9487 47.1540,0.9487 25.0000,23.1026" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <polygon points="5.6921,1.8974 44.3079,1.8974 25.0000,21.2053" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <polygon points="8.5381,2.8460 41.4619,2.8460 25.0000,19.3079" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <polygon points="11.3842,3.7947 38.6158,3.7947 25.0000,17.4105" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <polygon points="14.2302,4.7434 35.7698,4.7434 25.0000,15.5132" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <polygon points="17.0763,5.6921 32.9237,5.6921 25.0000,13.6158" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <polygon points="19.9223,6.6408 30.0777,6.6408 25.0000,11.7184" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <polygon points="22.7684,7.5895 27.2316,7.5895 25.0000,9.8211" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e0)"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp013e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 21.6650,0.0000 C 21.6650,0.5170 28.5234,0.4265 28.5234,0.7755 C 28.5234,1.9698 27.8286,2.5049 27.8286,2.9469 C 27.8286,4.1462 28.8007,5.1183 30.0000,5.1183 C 31.1993,5.1183 32.1714,4.1462 32.1714,2.9469 C 32.1714,2.5049 31.4766,1.9698 31.4766,0.7755 C 31.4766,0.4265 38.3350,0.5170 38.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 014  T:Plum  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(67.0000,189.0000)">
+    <defs>
+      <clipPath id="cp014e0">
+        <polygon points="0.0000,0.0000 50.0000,0.0000 25.0000,25.0000"/>
+      </clipPath>
+      <clipPath id="cp014e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <polygon points="0.0000,0.0000 50.0000,0.0000 25.0000,25.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <polygon points="2.8460,0.9487 47.1540,0.9487 25.0000,23.1026" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <polygon points="5.6921,1.8974 44.3079,1.8974 25.0000,21.2053" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <polygon points="8.5381,2.8460 41.4619,2.8460 25.0000,19.3079" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <polygon points="11.3842,3.7947 38.6158,3.7947 25.0000,17.4105" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <polygon points="14.2302,4.7434 35.7698,4.7434 25.0000,15.5132" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <polygon points="17.0763,5.6921 32.9237,5.6921 25.0000,13.6158" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <polygon points="19.9223,6.6408 30.0777,6.6408 25.0000,11.7184" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <polygon points="22.7684,7.5895 27.2316,7.5895 25.0000,9.8211" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e0)"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp014e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 21.6650,0.0000 C 21.6650,0.5170 28.5234,0.4265 28.5234,0.7755 C 28.5234,1.9698 27.8286,2.5049 27.8286,2.9469 C 27.8286,4.1462 28.8007,5.1183 30.0000,5.1183 C 31.1993,5.1183 32.1714,4.1462 32.1714,2.9469 C 32.1714,2.5049 31.4766,1.9698 31.4766,0.7755 C 31.4766,0.4265 38.3350,0.5170 38.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 015  T:Plum  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(128.0000,189.0000)">
+    <defs>
+      <clipPath id="cp015e0">
+        <polygon points="0.0000,0.0000 50.0000,0.0000 25.0000,25.0000"/>
+      </clipPath>
+      <clipPath id="cp015e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <polygon points="0.0000,0.0000 50.0000,0.0000 25.0000,25.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <polygon points="2.8460,0.9487 47.1540,0.9487 25.0000,23.1026" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <polygon points="5.6921,1.8974 44.3079,1.8974 25.0000,21.2053" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <polygon points="8.5381,2.8460 41.4619,2.8460 25.0000,19.3079" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <polygon points="11.3842,3.7947 38.6158,3.7947 25.0000,17.4105" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <polygon points="14.2302,4.7434 35.7698,4.7434 25.0000,15.5132" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <polygon points="17.0763,5.6921 32.9237,5.6921 25.0000,13.6158" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <polygon points="19.9223,6.6408 30.0777,6.6408 25.0000,11.7184" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <polygon points="22.7684,7.5895 27.2316,7.5895 25.0000,9.8211" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e0)"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp015e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 21.6650,0.0000 C 21.6650,0.5170 28.5234,0.4265 28.5234,0.7755 C 28.5234,1.9698 27.8286,2.5049 27.8286,2.9469 C 27.8286,4.1462 28.8007,5.1183 30.0000,5.1183 C 31.1993,5.1183 32.1714,4.1462 32.1714,2.9469 C 32.1714,2.5049 31.4766,1.9698 31.4766,0.7755 C 31.4766,0.4265 38.3350,0.5170 38.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 016  T:Plum  R:Slate  B:Red  L:Gold -->
+  <g transform="translate(189.0000,189.0000)">
+    <defs>
+      <clipPath id="cp016e0">
+        <polygon points="0.0000,0.0000 50.0000,0.0000 25.0000,25.0000"/>
+      </clipPath>
+      <clipPath id="cp016e1">
+        <polygon points="50.0000,0.0000 50.0000,50.0000 25.0000,25.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <polygon points="0.0000,0.0000 50.0000,0.0000 25.0000,25.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <polygon points="2.8460,0.9487 47.1540,0.9487 25.0000,23.1026" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <polygon points="5.6921,1.8974 44.3079,1.8974 25.0000,21.2053" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <polygon points="8.5381,2.8460 41.4619,2.8460 25.0000,19.3079" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <polygon points="11.3842,3.7947 38.6158,3.7947 25.0000,17.4105" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <polygon points="14.2302,4.7434 35.7698,4.7434 25.0000,15.5132" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <polygon points="17.0763,5.6921 32.9237,5.6921 25.0000,13.6158" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <polygon points="19.9223,6.6408 30.0777,6.6408 25.0000,11.7184" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <polygon points="22.7684,7.5895 27.2316,7.5895 25.0000,9.8211" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e0)"/>
+      <circle cx="25.0000" cy="25.0000" r="3.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="6.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="9.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="12.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="15.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="18.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="21.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="24.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="27.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="30.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="33.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="36.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="39.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="42.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="45.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="48.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="51.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="54.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="57.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="60.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="63.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="66.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <circle cx="25.0000" cy="25.0000" r="69.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp016e1)"/>
+      <line x1="3.0000" y1="47.0000" x2="3.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="44.0000" x2="6.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="41.0000" x2="9.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="38.0000" x2="12.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="35.0000" x2="15.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="32.0000" x2="18.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="29.0000" x2="21.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="26.0000" x2="24.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="27.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="30.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="33.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="36.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="39.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="42.0000" y1="42.0000" x2="42.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="45.0000" y1="45.0000" x2="45.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="48.0000" y1="48.0000" x2="48.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="23.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="20.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="17.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="14.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="11.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="42.0000" x2="8.0000" y2="42.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="45.0000" x2="5.0000" y2="45.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="48.0000" x2="2.0000" y2="48.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="50.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="47.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="44.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="41.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="38.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="35.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="32.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="21.0000" y2="29.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="24.0000" y2="26.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 21.6650,0.0000 C 21.6650,0.5170 28.5234,0.4265 28.5234,0.7755 C 28.5234,1.9698 27.8286,2.5049 27.8286,2.9469 C 27.8286,4.1462 28.8007,5.1183 30.0000,5.1183 C 31.1993,5.1183 32.1714,4.1462 32.1714,2.9469 C 32.1714,2.5049 31.4766,1.9698 31.4766,0.7755 C 31.4766,0.4265 38.3350,0.5170 38.3350,0.0000 L 50.0000,0.0000 L 50.0000,21.0000 C 50.5000,21.0000 50.4125,26.5720 50.7500,26.5720 C 51.9050,26.5720 52.4225,25.9000 52.8500,25.9000 C 54.0098,25.9000 54.9500,26.8402 54.9500,28.0000 C 54.9500,29.1598 54.0098,30.1000 52.8500,30.1000 C 52.4225,30.1000 51.9050,29.4280 50.7500,29.4280 C 50.4125,29.4280 50.5000,35.0000 50.0000,35.0000 L 50.0000,50.0000 L 25.2500,50.0000 C 25.2500,50.5000 23.4280,50.4125 23.4280,50.7500 C 23.4280,51.9050 24.1000,52.4225 24.1000,52.8500 C 24.1000,54.0098 23.1598,54.9500 22.0000,54.9500 C 20.8402,54.9500 19.9000,54.0098 19.9000,52.8500 C 19.9000,52.4225 20.5720,51.9050 20.5720,50.7500 C 20.5720,50.4125 18.7500,50.5000 18.7500,50.0000 L 0.0000,50.0000 L 0.0000,31.8350 C 0.5170,31.8350 0.4265,27.4766 0.7755,27.4766 C 1.9698,27.4766 2.5049,28.1714 2.9469,28.1714 C 4.1462,28.1714 5.1183,27.1993 5.1183,26.0000 C 5.1183,24.8007 4.1462,23.8286 2.9469,23.8286 C 2.5049,23.8286 1.9698,24.5234 0.7755,24.5234 C 0.4265,24.5234 0.5170,20.1650 0.0000,20.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="261.000mm" height="108.000mm"
+     viewBox="0 0 261.0000 108.0000">
+  <desc>Wang Tile Laser-Cut Puzzle | tile=40.0mm tab=5.0mm tol=0.17mm hatch=3.0mm | Ink: none  Red: hatch(90)deg  Teal: hatch(45)deg  Gold: hatch(0,90)deg  Slate: circles  Plum: triangles | black=raster blue=engrave red=cut</desc>
+  <!-- piece 001  T:Plum  R:Gold  B:Plum  L:Teal -->
+  <g transform="translate(6.0000,6.0000)">
+    <defs>
+      <clipPath id="cp001e0">
+        <polygon points="0.0000,0.0000 40.0000,0.0000 20.0000,20.0000"/>
+      </clipPath>
+      <clipPath id="cp001e2">
+        <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <polygon points="0.0000,0.0000 40.0000,0.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e0)"/>
+      <polygon points="2.8460,0.9487 37.1540,0.9487 20.0000,18.1026" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e0)"/>
+      <polygon points="5.6921,1.8974 34.3079,1.8974 20.0000,16.2053" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e0)"/>
+      <polygon points="8.5381,2.8460 31.4619,2.8460 20.0000,14.3079" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e0)"/>
+      <polygon points="11.3842,3.7947 28.6158,3.7947 20.0000,12.4105" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e0)"/>
+      <polygon points="14.2302,4.7434 25.7698,4.7434 20.0000,10.5132" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e0)"/>
+      <polygon points="17.0763,5.6921 22.9237,5.6921 20.0000,8.6158" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e0)"/>
+      <polygon points="19.9223,6.6408 20.0777,6.6408 20.0000,6.7184" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e0)"/>
+      <line x1="37.0000" y1="3.0000" x2="40.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="34.0000" y1="6.0000" x2="40.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="31.0000" y1="9.0000" x2="40.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="28.0000" y1="12.0000" x2="40.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="25.0000" y1="15.0000" x2="40.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="22.0000" y1="18.0000" x2="40.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="40.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="40.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="40.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="40.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="40.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="40.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="40.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="19.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="16.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="13.0000" x2="27.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="10.0000" x2="30.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="7.0000" x2="33.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="4.0000" x2="36.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="1.0000" x2="39.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e2)"/>
+      <polygon points="37.1540,39.0513 2.8460,39.0513 20.0000,21.8974" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e2)"/>
+      <polygon points="34.3079,38.1026 5.6921,38.1026 20.0000,23.7947" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e2)"/>
+      <polygon points="31.4619,37.1540 8.5381,37.1540 20.0000,25.6921" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e2)"/>
+      <polygon points="28.6158,36.2053 11.3842,36.2053 20.0000,27.5895" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e2)"/>
+      <polygon points="25.7698,35.2566 14.2302,35.2566 20.0000,29.4868" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e2)"/>
+      <polygon points="22.9237,34.3079 17.0763,34.3079 20.0000,31.3842" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e2)"/>
+      <polygon points="20.0777,33.3592 19.9223,33.3592 20.0000,33.2816" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp001e2)"/>
+      <line x1="0.0000" y1="2.4264" x2="18.7868" y2="21.2132" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.6690" x2="16.6655" y2="23.3345" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="10.9117" x2="14.5442" y2="25.4558" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.1543" x2="12.4228" y2="27.5772" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="19.3970" x2="10.3015" y2="29.6985" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="23.6396" x2="8.1802" y2="31.8198" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.8823" x2="6.0589" y2="33.9411" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="32.1249" x2="3.9376" y2="36.0624" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.3675" x2="1.8162" y2="38.1838" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 16.6650,0.0000 C 16.6650,0.5170 23.5234,0.4265 23.5234,0.7755 C 23.5234,1.9698 22.8286,2.5049 22.8286,2.9469 C 22.8286,4.1462 23.8007,5.1183 25.0000,5.1183 C 26.1993,5.1183 27.1714,4.1462 27.1714,2.9469 C 27.1714,2.5049 26.4766,1.9698 26.4766,0.7755 C 26.4766,0.4265 33.3350,0.5170 33.3350,0.0000 L 40.0000,0.0000 L 40.0000,15.2500 C 40.5000,15.2500 40.4125,19.5720 40.7500,19.5720 C 41.9050,19.5720 42.4225,18.9000 42.8500,18.9000 C 44.0098,18.9000 44.9500,19.8402 44.9500,21.0000 C 44.9500,22.1598 44.0098,23.1000 42.8500,23.1000 C 42.4225,23.1000 41.9050,22.4280 40.7500,22.4280 C 40.4125,22.4280 40.5000,26.7500 40.0000,26.7500 L 40.0000,40.0000 L 33.2500,40.0000 C 33.2500,40.5000 26.4280,40.4125 26.4280,40.7500 C 26.4280,41.9050 27.1000,42.4225 27.1000,42.8500 C 27.1000,44.0098 26.1598,44.9500 25.0000,44.9500 C 23.8402,44.9500 22.9000,44.0098 22.9000,42.8500 C 22.9000,42.4225 23.5720,41.9050 23.5720,40.7500 C 23.5720,40.4125 16.7500,40.5000 16.7500,40.0000 L 0.0000,40.0000 L 0.0000,23.5850 C 0.5170,23.5850 0.4265,20.4766 0.7755,20.4766 C 1.9698,20.4766 2.5049,21.1714 2.9469,21.1714 C 4.1462,21.1714 5.1183,20.1993 5.1183,19.0000 C 5.1183,17.8007 4.1462,16.8286 2.9469,16.8286 C 2.5049,16.8286 1.9698,17.5234 0.7755,17.5234 C 0.4265,17.5234 0.5170,14.4150 0.0000,14.4150 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 002  T:Plum  R:Gold  B:Plum  L:Teal -->
+  <g transform="translate(57.0000,6.0000)">
+    <defs>
+      <clipPath id="cp002e0">
+        <polygon points="0.0000,0.0000 40.0000,0.0000 20.0000,20.0000"/>
+      </clipPath>
+      <clipPath id="cp002e2">
+        <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <polygon points="0.0000,0.0000 40.0000,0.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e0)"/>
+      <polygon points="2.8460,0.9487 37.1540,0.9487 20.0000,18.1026" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e0)"/>
+      <polygon points="5.6921,1.8974 34.3079,1.8974 20.0000,16.2053" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e0)"/>
+      <polygon points="8.5381,2.8460 31.4619,2.8460 20.0000,14.3079" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e0)"/>
+      <polygon points="11.3842,3.7947 28.6158,3.7947 20.0000,12.4105" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e0)"/>
+      <polygon points="14.2302,4.7434 25.7698,4.7434 20.0000,10.5132" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e0)"/>
+      <polygon points="17.0763,5.6921 22.9237,5.6921 20.0000,8.6158" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e0)"/>
+      <polygon points="19.9223,6.6408 20.0777,6.6408 20.0000,6.7184" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e0)"/>
+      <line x1="37.0000" y1="3.0000" x2="40.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="34.0000" y1="6.0000" x2="40.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="31.0000" y1="9.0000" x2="40.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="28.0000" y1="12.0000" x2="40.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="25.0000" y1="15.0000" x2="40.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="22.0000" y1="18.0000" x2="40.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="40.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="40.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="40.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="40.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="40.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="40.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="40.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="19.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="16.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="13.0000" x2="27.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="10.0000" x2="30.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="7.0000" x2="33.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="4.0000" x2="36.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="1.0000" x2="39.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e2)"/>
+      <polygon points="37.1540,39.0513 2.8460,39.0513 20.0000,21.8974" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e2)"/>
+      <polygon points="34.3079,38.1026 5.6921,38.1026 20.0000,23.7947" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e2)"/>
+      <polygon points="31.4619,37.1540 8.5381,37.1540 20.0000,25.6921" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e2)"/>
+      <polygon points="28.6158,36.2053 11.3842,36.2053 20.0000,27.5895" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e2)"/>
+      <polygon points="25.7698,35.2566 14.2302,35.2566 20.0000,29.4868" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e2)"/>
+      <polygon points="22.9237,34.3079 17.0763,34.3079 20.0000,31.3842" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e2)"/>
+      <polygon points="20.0777,33.3592 19.9223,33.3592 20.0000,33.2816" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp002e2)"/>
+      <line x1="0.0000" y1="2.4264" x2="18.7868" y2="21.2132" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.6690" x2="16.6655" y2="23.3345" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="10.9117" x2="14.5442" y2="25.4558" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.1543" x2="12.4228" y2="27.5772" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="19.3970" x2="10.3015" y2="29.6985" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="23.6396" x2="8.1802" y2="31.8198" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.8823" x2="6.0589" y2="33.9411" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="32.1249" x2="3.9376" y2="36.0624" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.3675" x2="1.8162" y2="38.1838" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 16.6650,0.0000 C 16.6650,0.5170 23.5234,0.4265 23.5234,0.7755 C 23.5234,1.9698 22.8286,2.5049 22.8286,2.9469 C 22.8286,4.1462 23.8007,5.1183 25.0000,5.1183 C 26.1993,5.1183 27.1714,4.1462 27.1714,2.9469 C 27.1714,2.5049 26.4766,1.9698 26.4766,0.7755 C 26.4766,0.4265 33.3350,0.5170 33.3350,0.0000 L 40.0000,0.0000 L 40.0000,15.2500 C 40.5000,15.2500 40.4125,19.5720 40.7500,19.5720 C 41.9050,19.5720 42.4225,18.9000 42.8500,18.9000 C 44.0098,18.9000 44.9500,19.8402 44.9500,21.0000 C 44.9500,22.1598 44.0098,23.1000 42.8500,23.1000 C 42.4225,23.1000 41.9050,22.4280 40.7500,22.4280 C 40.4125,22.4280 40.5000,26.7500 40.0000,26.7500 L 40.0000,40.0000 L 33.2500,40.0000 C 33.2500,40.5000 26.4280,40.4125 26.4280,40.7500 C 26.4280,41.9050 27.1000,42.4225 27.1000,42.8500 C 27.1000,44.0098 26.1598,44.9500 25.0000,44.9500 C 23.8402,44.9500 22.9000,44.0098 22.9000,42.8500 C 22.9000,42.4225 23.5720,41.9050 23.5720,40.7500 C 23.5720,40.4125 16.7500,40.5000 16.7500,40.0000 L 0.0000,40.0000 L 0.0000,23.5850 C 0.5170,23.5850 0.4265,20.4766 0.7755,20.4766 C 1.9698,20.4766 2.5049,21.1714 2.9469,21.1714 C 4.1462,21.1714 5.1183,20.1993 5.1183,19.0000 C 5.1183,17.8007 4.1462,16.8286 2.9469,16.8286 C 2.5049,16.8286 1.9698,17.5234 0.7755,17.5234 C 0.4265,17.5234 0.5170,14.4150 0.0000,14.4150 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 003  T:Plum  R:Gold  B:Plum  L:Teal -->
+  <g transform="translate(108.0000,6.0000)">
+    <defs>
+      <clipPath id="cp003e0">
+        <polygon points="0.0000,0.0000 40.0000,0.0000 20.0000,20.0000"/>
+      </clipPath>
+      <clipPath id="cp003e2">
+        <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <polygon points="0.0000,0.0000 40.0000,0.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e0)"/>
+      <polygon points="2.8460,0.9487 37.1540,0.9487 20.0000,18.1026" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e0)"/>
+      <polygon points="5.6921,1.8974 34.3079,1.8974 20.0000,16.2053" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e0)"/>
+      <polygon points="8.5381,2.8460 31.4619,2.8460 20.0000,14.3079" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e0)"/>
+      <polygon points="11.3842,3.7947 28.6158,3.7947 20.0000,12.4105" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e0)"/>
+      <polygon points="14.2302,4.7434 25.7698,4.7434 20.0000,10.5132" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e0)"/>
+      <polygon points="17.0763,5.6921 22.9237,5.6921 20.0000,8.6158" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e0)"/>
+      <polygon points="19.9223,6.6408 20.0777,6.6408 20.0000,6.7184" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e0)"/>
+      <line x1="37.0000" y1="3.0000" x2="40.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="34.0000" y1="6.0000" x2="40.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="31.0000" y1="9.0000" x2="40.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="28.0000" y1="12.0000" x2="40.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="25.0000" y1="15.0000" x2="40.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="22.0000" y1="18.0000" x2="40.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="40.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="40.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="40.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="40.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="40.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="40.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="40.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="19.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="16.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="13.0000" x2="27.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="10.0000" x2="30.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="7.0000" x2="33.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="4.0000" x2="36.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="1.0000" x2="39.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e2)"/>
+      <polygon points="37.1540,39.0513 2.8460,39.0513 20.0000,21.8974" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e2)"/>
+      <polygon points="34.3079,38.1026 5.6921,38.1026 20.0000,23.7947" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e2)"/>
+      <polygon points="31.4619,37.1540 8.5381,37.1540 20.0000,25.6921" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e2)"/>
+      <polygon points="28.6158,36.2053 11.3842,36.2053 20.0000,27.5895" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e2)"/>
+      <polygon points="25.7698,35.2566 14.2302,35.2566 20.0000,29.4868" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e2)"/>
+      <polygon points="22.9237,34.3079 17.0763,34.3079 20.0000,31.3842" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e2)"/>
+      <polygon points="20.0777,33.3592 19.9223,33.3592 20.0000,33.2816" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp003e2)"/>
+      <line x1="0.0000" y1="2.4264" x2="18.7868" y2="21.2132" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.6690" x2="16.6655" y2="23.3345" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="10.9117" x2="14.5442" y2="25.4558" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.1543" x2="12.4228" y2="27.5772" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="19.3970" x2="10.3015" y2="29.6985" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="23.6396" x2="8.1802" y2="31.8198" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.8823" x2="6.0589" y2="33.9411" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="32.1249" x2="3.9376" y2="36.0624" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.3675" x2="1.8162" y2="38.1838" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 16.6650,0.0000 C 16.6650,0.5170 23.5234,0.4265 23.5234,0.7755 C 23.5234,1.9698 22.8286,2.5049 22.8286,2.9469 C 22.8286,4.1462 23.8007,5.1183 25.0000,5.1183 C 26.1993,5.1183 27.1714,4.1462 27.1714,2.9469 C 27.1714,2.5049 26.4766,1.9698 26.4766,0.7755 C 26.4766,0.4265 33.3350,0.5170 33.3350,0.0000 L 40.0000,0.0000 L 40.0000,15.2500 C 40.5000,15.2500 40.4125,19.5720 40.7500,19.5720 C 41.9050,19.5720 42.4225,18.9000 42.8500,18.9000 C 44.0098,18.9000 44.9500,19.8402 44.9500,21.0000 C 44.9500,22.1598 44.0098,23.1000 42.8500,23.1000 C 42.4225,23.1000 41.9050,22.4280 40.7500,22.4280 C 40.4125,22.4280 40.5000,26.7500 40.0000,26.7500 L 40.0000,40.0000 L 33.2500,40.0000 C 33.2500,40.5000 26.4280,40.4125 26.4280,40.7500 C 26.4280,41.9050 27.1000,42.4225 27.1000,42.8500 C 27.1000,44.0098 26.1598,44.9500 25.0000,44.9500 C 23.8402,44.9500 22.9000,44.0098 22.9000,42.8500 C 22.9000,42.4225 23.5720,41.9050 23.5720,40.7500 C 23.5720,40.4125 16.7500,40.5000 16.7500,40.0000 L 0.0000,40.0000 L 0.0000,23.5850 C 0.5170,23.5850 0.4265,20.4766 0.7755,20.4766 C 1.9698,20.4766 2.5049,21.1714 2.9469,21.1714 C 4.1462,21.1714 5.1183,20.1993 5.1183,19.0000 C 5.1183,17.8007 4.1462,16.8286 2.9469,16.8286 C 2.5049,16.8286 1.9698,17.5234 0.7755,17.5234 C 0.4265,17.5234 0.5170,14.4150 0.0000,14.4150 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 004  T:Plum  R:Gold  B:Plum  L:Teal -->
+  <g transform="translate(159.0000,6.0000)">
+    <defs>
+      <clipPath id="cp004e0">
+        <polygon points="0.0000,0.0000 40.0000,0.0000 20.0000,20.0000"/>
+      </clipPath>
+      <clipPath id="cp004e2">
+        <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <polygon points="0.0000,0.0000 40.0000,0.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e0)"/>
+      <polygon points="2.8460,0.9487 37.1540,0.9487 20.0000,18.1026" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e0)"/>
+      <polygon points="5.6921,1.8974 34.3079,1.8974 20.0000,16.2053" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e0)"/>
+      <polygon points="8.5381,2.8460 31.4619,2.8460 20.0000,14.3079" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e0)"/>
+      <polygon points="11.3842,3.7947 28.6158,3.7947 20.0000,12.4105" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e0)"/>
+      <polygon points="14.2302,4.7434 25.7698,4.7434 20.0000,10.5132" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e0)"/>
+      <polygon points="17.0763,5.6921 22.9237,5.6921 20.0000,8.6158" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e0)"/>
+      <polygon points="19.9223,6.6408 20.0777,6.6408 20.0000,6.7184" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e0)"/>
+      <line x1="37.0000" y1="3.0000" x2="40.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="34.0000" y1="6.0000" x2="40.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="31.0000" y1="9.0000" x2="40.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="28.0000" y1="12.0000" x2="40.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="25.0000" y1="15.0000" x2="40.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="22.0000" y1="18.0000" x2="40.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="40.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="40.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="40.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="40.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="40.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="40.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="40.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="19.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="16.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="13.0000" x2="27.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="10.0000" x2="30.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="7.0000" x2="33.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="4.0000" x2="36.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="1.0000" x2="39.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e2)"/>
+      <polygon points="37.1540,39.0513 2.8460,39.0513 20.0000,21.8974" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e2)"/>
+      <polygon points="34.3079,38.1026 5.6921,38.1026 20.0000,23.7947" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e2)"/>
+      <polygon points="31.4619,37.1540 8.5381,37.1540 20.0000,25.6921" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e2)"/>
+      <polygon points="28.6158,36.2053 11.3842,36.2053 20.0000,27.5895" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e2)"/>
+      <polygon points="25.7698,35.2566 14.2302,35.2566 20.0000,29.4868" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e2)"/>
+      <polygon points="22.9237,34.3079 17.0763,34.3079 20.0000,31.3842" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e2)"/>
+      <polygon points="20.0777,33.3592 19.9223,33.3592 20.0000,33.2816" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp004e2)"/>
+      <line x1="0.0000" y1="2.4264" x2="18.7868" y2="21.2132" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.6690" x2="16.6655" y2="23.3345" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="10.9117" x2="14.5442" y2="25.4558" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.1543" x2="12.4228" y2="27.5772" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="19.3970" x2="10.3015" y2="29.6985" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="23.6396" x2="8.1802" y2="31.8198" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.8823" x2="6.0589" y2="33.9411" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="32.1249" x2="3.9376" y2="36.0624" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.3675" x2="1.8162" y2="38.1838" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 16.6650,0.0000 C 16.6650,0.5170 23.5234,0.4265 23.5234,0.7755 C 23.5234,1.9698 22.8286,2.5049 22.8286,2.9469 C 22.8286,4.1462 23.8007,5.1183 25.0000,5.1183 C 26.1993,5.1183 27.1714,4.1462 27.1714,2.9469 C 27.1714,2.5049 26.4766,1.9698 26.4766,0.7755 C 26.4766,0.4265 33.3350,0.5170 33.3350,0.0000 L 40.0000,0.0000 L 40.0000,15.2500 C 40.5000,15.2500 40.4125,19.5720 40.7500,19.5720 C 41.9050,19.5720 42.4225,18.9000 42.8500,18.9000 C 44.0098,18.9000 44.9500,19.8402 44.9500,21.0000 C 44.9500,22.1598 44.0098,23.1000 42.8500,23.1000 C 42.4225,23.1000 41.9050,22.4280 40.7500,22.4280 C 40.4125,22.4280 40.5000,26.7500 40.0000,26.7500 L 40.0000,40.0000 L 33.2500,40.0000 C 33.2500,40.5000 26.4280,40.4125 26.4280,40.7500 C 26.4280,41.9050 27.1000,42.4225 27.1000,42.8500 C 27.1000,44.0098 26.1598,44.9500 25.0000,44.9500 C 23.8402,44.9500 22.9000,44.0098 22.9000,42.8500 C 22.9000,42.4225 23.5720,41.9050 23.5720,40.7500 C 23.5720,40.4125 16.7500,40.5000 16.7500,40.0000 L 0.0000,40.0000 L 0.0000,23.5850 C 0.5170,23.5850 0.4265,20.4766 0.7755,20.4766 C 1.9698,20.4766 2.5049,21.1714 2.9469,21.1714 C 4.1462,21.1714 5.1183,20.1993 5.1183,19.0000 C 5.1183,17.8007 4.1462,16.8286 2.9469,16.8286 C 2.5049,16.8286 1.9698,17.5234 0.7755,17.5234 C 0.4265,17.5234 0.5170,14.4150 0.0000,14.4150 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 005  T:Teal  R:Teal  B:Teal  L:Gold -->
+  <g transform="translate(210.0000,6.0000)">
+    <g class="engrave">
+      <line x1="35.7574" y1="0.0000" x2="37.8787" y2="2.1213" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="31.5147" y1="0.0000" x2="35.7574" y2="4.2426" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.2721" y1="-0.0000" x2="33.6360" y2="6.3640" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="23.0294" y1="0.0000" x2="31.5147" y2="8.4853" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.7868" y1="-0.0000" x2="29.3934" y2="10.6066" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="14.5442" y1="-0.0000" x2="27.2721" y2="12.7279" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="10.3015" y1="-0.0000" x2="25.1508" y2="14.8492" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0589" y1="-0.0000" x2="23.0294" y2="16.9706" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="1.8162" y1="-0.0000" x2="20.9081" y2="19.0919" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="37.8787" y1="2.1213" x2="40.0000" y2="4.2426" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="35.7574" y1="4.2426" x2="40.0000" y2="8.4853" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.6360" y1="6.3640" x2="40.0000" y2="12.7279" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="31.5147" y1="8.4853" x2="40.0000" y2="16.9706" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="29.3934" y1="10.6066" x2="40.0000" y2="21.2132" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.2721" y1="12.7279" x2="40.0000" y2="25.4558" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="25.1508" y1="14.8492" x2="40.0000" y2="29.6985" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="23.0294" y1="16.9706" x2="40.0000" y2="33.9411" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="20.9081" y1="19.0919" x2="40.0000" y2="38.1838" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.7868" y1="21.2132" x2="37.5736" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="16.6655" y1="23.3345" x2="33.3310" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="14.5442" y1="25.4558" x2="29.0883" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.4228" y1="27.5772" x2="24.8457" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="10.3015" y1="29.6985" x2="20.6030" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="8.1802" y1="31.8198" x2="16.3604" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0589" y1="33.9411" x2="12.1177" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.9376" y1="36.0624" x2="7.8751" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="1.8162" y1="38.1838" x2="3.6325" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="19.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="16.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="13.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="10.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="7.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="4.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="1.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="37.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="34.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="31.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="28.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="25.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="22.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 14.4150,0.0000 C 14.4150,0.5170 17.5234,0.4265 17.5234,0.7755 C 17.5234,1.9698 16.8286,2.5049 16.8286,2.9469 C 16.8286,4.1462 17.8007,5.1183 19.0000,5.1183 C 20.1993,5.1183 21.1714,4.1462 21.1714,2.9469 C 21.1714,2.5049 20.4766,1.9698 20.4766,0.7755 C 20.4766,0.4265 23.5850,0.5170 23.5850,0.0000 L 40.0000,0.0000 L 40.0000,14.5000 C 40.5000,14.5000 40.4125,17.5720 40.7500,17.5720 C 41.9050,17.5720 42.4225,16.9000 42.8500,16.9000 C 44.0098,16.9000 44.9500,17.8402 44.9500,19.0000 C 44.9500,20.1598 44.0098,21.1000 42.8500,21.1000 C 42.4225,21.1000 41.9050,20.4280 40.7500,20.4280 C 40.4125,20.4280 40.5000,23.5000 40.0000,23.5000 L 40.0000,40.0000 L 23.5000,40.0000 C 23.5000,40.5000 20.4280,40.4125 20.4280,40.7500 C 20.4280,41.9050 21.1000,42.4225 21.1000,42.8500 C 21.1000,44.0098 20.1598,44.9500 19.0000,44.9500 C 17.8402,44.9500 16.9000,44.0098 16.9000,42.8500 C 16.9000,42.4225 17.5720,41.9050 17.5720,40.7500 C 17.5720,40.4125 14.5000,40.5000 14.5000,40.0000 L 0.0000,40.0000 L 0.0000,26.8350 C 0.5170,26.8350 0.4265,22.4766 0.7755,22.4766 C 1.9698,22.4766 2.5049,23.1714 2.9469,23.1714 C 4.1462,23.1714 5.1183,22.1993 5.1183,21.0000 C 5.1183,19.8007 4.1462,18.8286 2.9469,18.8286 C 2.5049,18.8286 1.9698,19.5234 0.7755,19.5234 C 0.4265,19.5234 0.5170,15.1650 0.0000,15.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <!-- piece 006  T:Teal  R:Gold  B:Plum  L:Gold -->
+  <g transform="translate(6.0000,57.0000)">
+    <defs>
+      <clipPath id="cp006e2">
+        <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000"/>
+      </clipPath>
+    </defs>
+    <g class="engrave">
+      <line x1="35.7574" y1="0.0000" x2="37.8787" y2="2.1213" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="31.5147" y1="0.0000" x2="35.7574" y2="4.2426" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.2721" y1="-0.0000" x2="33.6360" y2="6.3640" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="23.0294" y1="0.0000" x2="31.5147" y2="8.4853" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.7868" y1="-0.0000" x2="29.3934" y2="10.6066" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="14.5442" y1="-0.0000" x2="27.2721" y2="12.7279" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="10.3015" y1="-0.0000" x2="25.1508" y2="14.8492" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0589" y1="-0.0000" x2="23.0294" y2="16.9706" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="1.8162" y1="-0.0000" x2="20.9081" y2="19.0919" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="37.0000" y1="3.0000" x2="40.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="34.0000" y1="6.0000" x2="40.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="31.0000" y1="9.0000" x2="40.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="28.0000" y1="12.0000" x2="40.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="25.0000" y1="15.0000" x2="40.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="22.0000" y1="18.0000" x2="40.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="21.0000" x2="40.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="24.0000" x2="40.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="27.0000" x2="40.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="30.0000" x2="40.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="33.0000" x2="40.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="36.0000" x2="40.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="39.0000" x2="40.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="21.0000" y1="19.0000" x2="21.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="24.0000" y1="16.0000" x2="24.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="27.0000" y1="13.0000" x2="27.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="30.0000" y1="10.0000" x2="30.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="33.0000" y1="7.0000" x2="33.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="36.0000" y1="4.0000" x2="36.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="39.0000" y1="1.0000" x2="39.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <polygon points="40.0000,40.0000 0.0000,40.0000 20.0000,20.0000" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e2)"/>
+      <polygon points="37.1540,39.0513 2.8460,39.0513 20.0000,21.8974" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e2)"/>
+      <polygon points="34.3079,38.1026 5.6921,38.1026 20.0000,23.7947" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e2)"/>
+      <polygon points="31.4619,37.1540 8.5381,37.1540 20.0000,25.6921" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e2)"/>
+      <polygon points="28.6158,36.2053 11.3842,36.2053 20.0000,27.5895" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e2)"/>
+      <polygon points="25.7698,35.2566 14.2302,35.2566 20.0000,29.4868" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e2)"/>
+      <polygon points="22.9237,34.3079 17.0763,34.3079 20.0000,31.3842" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e2)"/>
+      <polygon points="20.0777,33.3592 19.9223,33.3592 20.0000,33.2816" stroke="#0000ff" stroke-width="{ETCH_WIDTH}" fill="none" clip-path="url(#cp006e2)"/>
+      <line x1="0.0000" y1="3.0000" x2="3.0000" y2="3.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="6.0000" x2="6.0000" y2="6.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="9.0000" x2="9.0000" y2="9.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="12.0000" x2="12.0000" y2="12.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="15.0000" x2="15.0000" y2="15.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="18.0000" x2="18.0000" y2="18.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="21.0000" x2="19.0000" y2="21.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="24.0000" x2="16.0000" y2="24.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="27.0000" x2="13.0000" y2="27.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="30.0000" x2="10.0000" y2="30.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="33.0000" x2="7.0000" y2="33.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="36.0000" x2="4.0000" y2="36.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="39.0000" x2="1.0000" y2="39.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="0.0000" y1="0.0000" x2="0.0000" y2="40.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="3.0000" y1="3.0000" x2="3.0000" y2="37.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="6.0000" y1="6.0000" x2="6.0000" y2="34.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="9.0000" y1="9.0000" x2="9.0000" y2="31.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="12.0000" y1="12.0000" x2="12.0000" y2="28.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="15.0000" y1="15.0000" x2="15.0000" y2="25.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+      <line x1="18.0000" y1="18.0000" x2="18.0000" y2="22.0000" stroke="#0000ff" stroke-width="0.1" fill="none"/>
+    </g>
+    <path d="M 0.0000,0.0000 L 14.4150,0.0000 C 14.4150,0.5170 17.5234,0.4265 17.5234,0.7755 C 17.5234,1.9698 16.8286,2.5049 16.8286,2.9469 C 16.8286,4.1462 17.8007,5.1183 19.0000,5.1183 C 20.1993,5.1183 21.1714,4.1462 21.1714,2.9469 C 21.1714,2.5049 20.4766,1.9698 20.4766,0.7755 C 20.4766,0.4265 23.5850,0.5170 23.5850,0.0000 L 40.0000,0.0000 L 40.0000,15.2500 C 40.5000,15.2500 40.4125,19.5720 40.7500,19.5720 C 41.9050,19.5720 42.4225,18.9000 42.8500,18.9000 C 44.0098,18.9000 44.9500,19.8402 44.9500,21.0000 C 44.9500,22.1598 44.0098,23.1000 42.8500,23.1000 C 42.4225,23.1000 41.9050,22.4280 40.7500,22.4280 C 40.4125,22.4280 40.5000,26.7500 40.0000,26.7500 L 40.0000,40.0000 L 33.2500,40.0000 C 33.2500,40.5000 26.4280,40.4125 26.4280,40.7500 C 26.4280,41.9050 27.1000,42.4225 27.1000,42.8500 C 27.1000,44.0098 26.1598,44.9500 25.0000,44.9500 C 23.8402,44.9500 22.9000,44.0098 22.9000,42.8500 C 22.9000,42.4225 23.5720,41.9050 23.5720,40.7500 C 23.5720,40.4125 16.7500,40.5000 16.7500,40.0000 L 0.0000,40.0000 L 0.0000,26.8350 C 0.5170,26.8350 0.4265,22.4766 0.7755,22.4766 C 1.9698,22.4766 2.5049,23.1714 2.9469,23.1714 C 4.1462,23.1714 5.1183,22.1993 5.1183,21.0000 C 5.1183,19.8007 4.1462,18.8286 2.9469,18.8286 C 2.5049,18.8286 1.9698,19.5234 0.7755,19.5234 C 0.4265,19.5234 0.5170,15.1650 0.0000,15.1650 L 0.0000,0.0000 Z" fill="none" stroke="#ff0000" stroke-width="0.0762" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>
