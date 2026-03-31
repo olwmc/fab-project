@@ -136,11 +136,32 @@ class Handler(BaseHTTPRequestHandler):
         elif self.path == "/export":
             buf = io.BytesIO()
             with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as zf:
+                svg_names = []
                 for i, svg in enumerate(svgs):
                     name = f"sheet_{i+1:02d}.svg" if len(svgs) > 1 else "tiles.svg"
                     zf.writestr(name, svg)
+                    svg_names.append(name)
                 hs = float(payload.get("params", {}).get("hatchSpacing", 3.0))
                 zf.writestr("paint_key.svg", make_key_svg(hatch_spacing=hs))
+                file_list = ", ".join(svg_names)
+                readme = (
+                    "Wang Tile Laser-Cut Puzzle\n"
+                    "==========================\n\n"
+                    "Files in this archive:\n"
+                    f"  {file_list}    laser cut these (red = cut through, blue = engrave)\n"
+                    "  paint_key.svg   reference for painting each edge color\n\n"
+                    "Instructions:\n"
+                    f"  1. Laser cut: {file_list}\n"
+                      "  2. Assemble the puzzle: Work through the sheet files in\n"
+                    "     order (sheet_01, sheet_02, …). Within each sheet, pieces\n"
+                    "     fill left-to-right, top-to-bottom (row-wise). Lay them\n"
+                    "     out in that sequence to reconstruct the original pattern.\n"
+                    "     Tabs and slots are color-coded so each piece only fits\n"
+                    "     in the correct orientation.\n"
+                    "  3. Paint each edge triangle according to paint_key.svg.\n"
+                    "     The engraved patterns identify which color goes where.\n"
+                )
+                zf.writestr("README.txt", readme)
             data = buf.getvalue()
             self.send_response(200)
             self.send_header("Content-Type", "application/zip")

@@ -32,10 +32,10 @@ PAINT_COLORS = [
 ]
 
 PATTERN_DESCS = [
-    "blank — no marking",
+    "blank",
     "vertical lines",
-    "diagonal lines  /",
-    "crosshatch  + ×",
+    "diagonal lines",
+    "crosshatch",
     "concentric circles",
     "concentric triangles",
 ]
