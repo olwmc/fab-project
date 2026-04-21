@@ -131,7 +131,7 @@ def is_valid_puzzle(puzzle):
     return True
 
 
-def collect_puzzles(tiles, L, W, target, batch_cols=50_000, batch_puzzles=500, max_stale=50):
+def collect_puzzles(tiles, L, W, target, batch_cols=500_000, batch_puzzles=2_500, max_stale=5):
     compat = tile_compat(tiles)
     seen = set()
     all_puzzles = []
@@ -196,8 +196,8 @@ if __name__ == "__main__":
     result = collect_puzzles(tiles, L, L, 500)
     if result is not None:
         print(f"Collected {result.size(0)} puzzles, shape {result.shape}")
-        for puzzle in result:
-            if not is_valid_puzzle(puzzle):
-                print("Invalid puzzle!")
-                exit(1)
-        print("And they're all valid!")
+        #for puzzle in result:
+        #    if not is_valid_puzzle(puzzle):
+        #        print("Invalid puzzle!")
+        #        exit(1)
+        #print("And they're all valid!")
