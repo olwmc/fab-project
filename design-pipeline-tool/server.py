@@ -135,17 +135,23 @@ def gen_tileset(num_colors, num_tiles, rng):
     """Grow a tileset by attaching neighbors that share an edge — guarantees
     at least one valid 2-tile tiling exists. Mirrors knuth.generate_tileset,
     but biased toward reusing existing edge colors so small tilesets actually
-    feel easy (matching edges are common rather than bottlenecked)."""
+    feel easy (matching edges are common rather than bottlenecked).
+
+    The `num_colors` value is a count, not a range: we pick that many distinct
+    colors uniformly from the full palette so each initial tileset visually
+    looks different rather than always using colors 1-2."""
     num_colors = max(1, min(num_colors, MAX_COLORS))
+    # Internal colors are 1-indexed into [1..MAX_COLORS]; sample a random subset.
+    palette = rng.sample(range(1, MAX_COLORS + 1), num_colors)
 
     def rand_color(used):
         # 80% reuse an existing color (keeps edge-matching friendly),
-        # 20% pick anything in range.
+        # 20% pick anything from this tileset's palette.
         if used and rng.random() < 0.8:
             return rng.choice(list(used))
-        return rng.randint(1, num_colors)
+        return rng.choice(palette)
 
-    tiles = {tuple(rng.randint(1, num_colors) for _ in range(4))}
+    tiles = {tuple(rng.choice(palette) for _ in range(4))}
     attempts = 0
     while len(tiles) < num_tiles and attempts < 10000:
         attempts += 1
