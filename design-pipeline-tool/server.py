@@ -2,9 +2,11 @@
 """
 server.py — Wang Tile fabrication pipeline server.
 
-Serves index.html and two API endpoints:
+Serves index.html and API endpoints:
   POST /generate  — { design, params } → { svgs: [...], stats: {...} }
   POST /export    — { design, params } → laser-cut-tiles.zip
+  POST /discover  — { gridN } → { candidates: [Candidate x 9] }
+  POST /breed     — { gridN, parents: [tileset] } → { candidates: [Candidate x 9] }
 
 Run from the project root or design-pipeline-tool/ directory:
   python design-pipeline-tool/server.py
@@ -13,6 +15,8 @@ Run from the project root or design-pipeline-tool/ directory:
 
 import io
 import json
+import math
+import random
 import sys
 import zipfile
 from collections import Counter
@@ -27,8 +31,21 @@ sys.path.insert(0, str(_ROOT))
 from wang_to_svg_curved import render_svg, TAB_WIDTHS, MM_PER_IN
 from make_paint_key import make_key_svg
 
+import torch
+from counting import collect_puzzles
+import knuth
+from knuth import grade_difficulty
+
+# grade_difficulty only uses unbounded_entropy_strip's output for inv_pressure,
+# which is an informational metric and does NOT contribute to the score. The
+# DFS inside it can OOM for large grid_h + dense compat graphs, so bypass it.
+knuth.unbounded_entropy_strip = lambda *a, **kw: None
+
 HERE = Path(__file__).resolve().parent
 TOP, RIGHT, BOTTOM, LEFT = 0, 1, 2, 3
+MAX_COLORS = 6  # matches index.html COLORS palette length
+_DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+_N, _E, _S, _W = 0, 1, 2, 3
 
 
 def make_pieces(data, border=False):
@@ -91,6 +108,222 @@ def generate(design, params):
     return svgs, stats
 
 
+# ═══════════════════════════════════════════════════════
+#  PICBREEDER DISCOVERY / BREEDING
+# ═══════════════════════════════════════════════════════
+#
+#  Tilesets are generated/mutated with 1-indexed edge colors in [1..MAX_COLORS],
+#  which keeps "max_color+1" arithmetic simple. They get converted to the
+#  0-indexed form the frontend expects (COLORS[] palette indices) on response.
+
+_PRESETS = [
+    # (band, num_colors, num_tiles) — initial batch is intentionally very simple;
+    # the user evolves toward complexity via breeding.
+    ("easy",   2, 3),
+    ("easy",   2, 3),
+    ("easy",   2, 4),
+    ("medium", 2, 4),
+    ("medium", 2, 5),
+    ("medium", 3, 5),
+    ("hard",   3, 6),
+    ("hard",   3, 7),
+    ("hard",   3, 8),
+]
+
+
+def gen_tileset(num_colors, num_tiles, rng):
+    """Grow a tileset by attaching neighbors that share an edge — guarantees
+    at least one valid 2-tile tiling exists. Mirrors knuth.generate_tileset,
+    but biased toward reusing existing edge colors so small tilesets actually
+    feel easy (matching edges are common rather than bottlenecked)."""
+    num_colors = max(1, min(num_colors, MAX_COLORS))
+
+    def rand_color(used):
+        # 80% reuse an existing color (keeps edge-matching friendly),
+        # 20% pick anything in range.
+        if used and rng.random() < 0.8:
+            return rng.choice(list(used))
+        return rng.randint(1, num_colors)
+
+    tiles = {tuple(rng.randint(1, num_colors) for _ in range(4))}
+    attempts = 0
+    while len(tiles) < num_tiles and attempts < 10000:
+        attempts += 1
+        used = {c for t in tiles for c in t}
+        src = rng.choice(list(tiles))
+        if rng.random() < 0.5:
+            t = (rand_color(used), rand_color(used), rand_color(used), src[_E])
+        else:
+            t = (src[_S], rand_color(used), rand_color(used), rand_color(used))
+        tiles.add(t)
+    return [list(t) for t in tiles]
+
+
+def mutate_tileset(parent_tiles, rng, n_muts=None):
+    """Apply additive mutations. Parent tiles are always preserved so the
+    parent's puzzle remains a valid tiling in the child. n_muts=0 returns
+    the parent tileset unchanged — useful when a single parent is selected
+    and the user just wants puzzle-layout variation."""
+    tiles = [tuple(t) for t in parent_tiles]
+    if n_muts == 0:
+        return [list(t) for t in tiles]
+    ops = ["new_color", "recolor", "rotate", "flip", "hybrid"]
+    if n_muts is None:
+        n_muts = rng.randint(2, 4)
+    for _ in range(n_muts):
+        op = rng.choice(ops)
+        max_c = max(max(t) for t in tiles)
+        a = rng.choice(tiles)
+        if op == "new_color":
+            t = list(a)
+            t[rng.randint(0, 3)] = min(max_c + 1, MAX_COLORS)
+            tiles.append(tuple(t))
+        elif op == "recolor":
+            t = list(a)
+            t[rng.randint(0, 3)] = rng.randint(1, max_c)
+            tiles.append(tuple(t))
+        elif op == "rotate":
+            tiles.append((a[_W], a[_N], a[_E], a[_S]))
+        elif op == "flip":
+            tiles.append((a[_N], a[_W], a[_S], a[_E]))
+        elif op == "hybrid":
+            b = rng.choice(tiles)
+            tiles.append((a[_N], a[_E], b[_S], b[_W]))
+    # Dedup while preserving order so parent tiles keep their original indices
+    seen = set()
+    out = []
+    for t in tiles:
+        if t not in seen:
+            seen.add(t)
+            out.append(list(t))
+    return out
+
+
+def _assign_bands(candidates):
+    """Relative ranking: sort by score and split roughly into thirds. Gives a
+    consistent green/yellow/red spread even when the raw scoring is skewed."""
+    if not candidates:
+        return
+    order = sorted(range(len(candidates)), key=lambda i: candidates[i]["difficulty"]["score"])
+    n = len(order)
+    for rank, idx in enumerate(order):
+        if rank < n / 3:            band = "easy"
+        elif rank < 2 * n / 3:      band = "medium"
+        else:                       band = "hard"
+        candidates[idx]["difficulty"]["band"] = band
+
+
+def build_candidate(tiles_1idx, gridN, rng):
+    """Given a 1-indexed tileset, sample one puzzle and grade it. Returns the
+    candidate dict (0-indexed for frontend) or None if no puzzle exists.
+
+    Only the tiles actually present in the sampled puzzle are included in the
+    returned tileset — the "empirical" tileset. The underlying generator may
+    produce extra tiles that the solver never needed; shipping those would lie
+    about what's in the puzzle and inflate the mutation space on breed."""
+    tiles_t = torch.tensor(tiles_1idx, device=_DEVICE, dtype=torch.long)
+    puzzles = collect_puzzles(
+        tiles_t, gridN, gridN,
+        target=1, batch_cols=2_000, batch_puzzles=32, max_stale=2,
+    )
+    if puzzles is None or puzzles.size(0) == 0:
+        return None
+
+    puzzle = puzzles[0]  # shape (W, L, 4), indexed [col][row]
+    # Walk the puzzle cells and build the empirical tileset in order of first
+    # appearance, so the shipped tile ids are 0..m-1 with no gaps.
+    empirical = []                 # list of (n,e,s,w) tuples, 1-indexed colors
+    empirical_lookup = {}          # tuple -> empirical id
+    grid = [None] * (gridN * gridN)
+    usage = Counter()
+    for col in range(gridN):
+        for row in range(gridN):
+            key = tuple(puzzle[col][row].tolist())
+            if key not in empirical_lookup:
+                empirical_lookup[key] = len(empirical)
+                empirical.append(key)
+            tid = empirical_lookup[key]
+            grid[row * gridN + col] = tid
+            usage[tid] += 1
+
+    # Re-grade against the empirical tileset so the difficulty score reflects
+    # only what's actually in play.
+    emp_t = torch.tensor([list(t) for t in empirical], device=_DEVICE, dtype=torch.long)
+    grade = grade_difficulty(emp_t, dict(usage), gridN, gridN, num_samples=80)
+    score = float(grade["difficulty_score"])
+
+    return {
+        "version": 1,
+        "gridN":   gridN,
+        # 0-indexed for COLORS[] palette
+        "tiles":   [{"id": i, "edges": [c - 1 for c in empirical[i]]}
+                    for i in range(len(empirical))],
+        "grid":    grid,
+        "difficulty": {
+            "score": score,
+            "label": grade["difficulty_label"],
+            # "band" is assigned later by _assign_bands() once the whole batch is built
+            "band":  "medium",
+        },
+    }
+
+
+def build_candidate_with_retry(tiles_factory, gridN, rng, max_attempts=4):
+    """tiles_factory(rng) -> tileset. Retries if no puzzle exists."""
+    for _ in range(max_attempts):
+        tiles = tiles_factory(rng)
+        cand = build_candidate(tiles, gridN, rng)
+        if cand is not None:
+            return cand
+    return None
+
+
+def discover(gridN):
+    rng = random.Random()
+    out = []
+    for _band, num_colors, num_tiles in _PRESETS:
+        cand = build_candidate_with_retry(
+            lambda r, nc=num_colors, nt=num_tiles: gen_tileset(nc, nt, r),
+            gridN, rng,
+        )
+        if cand is not None:
+            out.append(cand)
+    _assign_bands(out)
+    return out
+
+
+def breed(gridN, parents):
+    """Parents: list of tilesets in the frontend 0-indexed shape
+    [{id, edges:[n,e,s,w]}, ...]. Produces ~9 additive-mutation children."""
+    rng = random.Random()
+    # Convert each parent to internal 1-indexed list of lists
+    parents_1idx = []
+    for p in parents:
+        parents_1idx.append([[e + 1 for e in t["edges"]] for t in p])
+
+    # Single-parent mode: keep the tileset fixed and just re-roll the puzzle,
+    # so the user gets layout variation without expanding the tile vocabulary.
+    single_parent = len(parents_1idx) == 1
+    children_per = max(1, math.ceil(9 / max(1, len(parents_1idx))))
+    out = []
+    for parent in parents_1idx:
+        for _ in range(children_per):
+            if len(out) >= 9:
+                break
+            n_muts = 0 if single_parent else None
+            cand = build_candidate_with_retry(
+                lambda r, p=parent, nm=n_muts: mutate_tileset(p, r, n_muts=nm),
+                gridN, rng,
+            )
+            if cand is not None:
+                out.append(cand)
+        if len(out) >= 9:
+            break
+    out = out[:9]
+    _assign_bands(out)
+    return out
+
+
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):
         print(f"  {fmt % args}")
@@ -123,6 +356,23 @@ class Handler(BaseHTTPRequestHandler):
             self._send(404, "text/plain", "Not found")
 
     def do_POST(self):
+        # Discovery/breeding endpoints have a different payload shape; route first.
+        if self.path in ("/discover", "/breed"):
+            try:
+                payload = self._read_body()
+                gridN = int(payload.get("gridN", 8))
+                gridN = max(2, min(25, gridN))
+                if self.path == "/discover":
+                    candidates = discover(gridN)
+                else:
+                    candidates = breed(gridN, payload.get("parents", []))
+                self._send(200, "application/json",
+                           json.dumps({"candidates": candidates}))
+            except Exception as exc:
+                import traceback; traceback.print_exc()
+                self._send(400, "application/json", json.dumps({"error": str(exc)}))
+            return
+
         try:
             payload = self._read_body()
             svgs, stats = generate(payload["design"], payload.get("params", {}))

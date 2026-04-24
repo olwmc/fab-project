@@ -109,11 +109,118 @@ header .sub {
 }
 
 /* ── TAB PANELS ── */
-#tabDesign, #tabFabricate {
+#tabDesign, #tabFabricate, #tabDiscover {
   display: flex;
   flex-direction: column;
   flex: 1;
   overflow: hidden;
+}
+
+/* ── DISCOVER TAB ── */
+.discover-bar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper2);
+  flex-shrink: 0;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+.discover-bar .bar-label {
+  color: var(--ink3);
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+.discover-bar input[type=range] {
+  width: 160px;
+  accent-color: var(--ink);
+}
+.discover-bar .spacer { flex: 1; }
+.discover-bar .status { color: var(--ink3); font-size: 10px; }
+.discover-grid {
+  flex: 1;
+  overflow: auto;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 14px;
+  background: var(--paper);
+}
+.discover-card {
+  background: var(--paper2);
+  border: 3px solid var(--rule);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.05s;
+  position: relative;
+}
+.discover-card:hover { transform: translateY(-1px); }
+.discover-card.band-easy   { border-color: #2d7a2d; }
+.discover-card.band-medium { border-color: #c8a030; }
+.discover-card.band-hard   { border-color: #b03030; }
+.discover-card.liked {
+  box-shadow: 0 0 0 3px var(--ink) inset;
+}
+.discover-card .thumb {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: var(--paper);
+}
+.discover-card .thumb svg { max-width: 100%; max-height: 100%; display: block; }
+.discover-card .meta {
+  padding: 6px 10px;
+  font-size: 9px;
+  color: var(--ink2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--rule2);
+  letter-spacing: 0.05em;
+}
+.discover-card .meta .score { font-weight: 500; }
+.discover-card .meta .band-easy   { color: #2d7a2d; }
+.discover-card .meta .band-medium { color: #c8a030; }
+.discover-card .meta .band-hard   { color: #b03030; }
+.discover-card .card-actions {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--rule2);
+}
+.discover-card .card-actions button {
+  flex: 1;
+  padding: 7px 4px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+  color: var(--ink2);
+  cursor: pointer;
+  border-right: 1px solid var(--rule2);
+}
+.discover-card .card-actions button:last-child { border-right: none; }
+.discover-card .card-actions button:hover { background: var(--paper); color: var(--ink); }
+.discover-card.liked .btn-like { background: var(--ink); color: var(--paper); }
+.discover-empty {
+  grid-column: 1 / -1;
+  align-self: center;
+  text-align: center;
+  color: var(--rule);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  padding: 40px;
 }
 
 /* ── LEFT PANEL ── */
@@ -508,6 +615,7 @@ select:focus { outline: 1.5px solid var(--ink); }
   <h1>Wang Tile Designer</h1>
   <span class="sub">fabrication pipeline</span>
   <div class="app-tabs">
+    <button class="app-tab" data-tab="discover">Discover</button>
     <button class="app-tab active" data-tab="design">Design</button>
     <button class="app-tab" data-tab="fabricate">Fabricate</button>
   </div>
@@ -520,6 +628,24 @@ select:focus { outline: 1.5px solid var(--ink); }
     </div>
   </div>
 </header>
+
+<!-- ══════════════════════════════════════════════════════
+     DISCOVER TAB (picbreeder)
+════════════════════════════════════════════════════════ -->
+<div id="tabDiscover" style="display:none;">
+  <div class="discover-bar">
+    <span class="bar-label">Grid</span>
+    <input type="range" id="discoverGridSize" min="2" max="25" value="8">
+    <span id="discoverGridSizeVal" style="font-size:10px;color:var(--teal);min-width:40px;">8×8</span>
+    <button class="btn-primary" id="discoverRollBtn">↻ Roll 9</button>
+    <button class="btn-secondary" id="discoverBreedBtn" disabled>✦ Breed selected</button>
+    <div class="spacer"></div>
+    <span class="status" id="discoverStatus">Click Roll 9 to generate puzzles.</span>
+  </div>
+  <div class="discover-grid" id="discoverGrid">
+    <div class="discover-empty">Click <b>Roll 9</b> to generate a batch of puzzles.</div>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════════════════
      DESIGN TAB
@@ -2023,8 +2149,9 @@ function syncDesignToFabricate() {
 }
 
 function switchTab(tab) {
-  document.getElementById('tabDesign').style.display = tab === 'design' ? 'flex' : 'none';
-  document.getElementById('tabFabricate').style.display = tab === 'fabricate' ? 'flex' : 'none';
+  document.getElementById('tabDesign').style.display     = tab === 'design'    ? 'flex' : 'none';
+  document.getElementById('tabFabricate').style.display  = tab === 'fabricate' ? 'flex' : 'none';
+  document.getElementById('tabDiscover').style.display   = tab === 'discover'  ? 'flex' : 'none';
   document.querySelectorAll('.app-tab').forEach(b =>
     b.classList.toggle('active', b.dataset.tab === tab));
   document.getElementById('modeTabsWrap').style.display = tab === 'design' ? '' : 'none';
@@ -2034,6 +2161,152 @@ function switchTab(tab) {
     requestAnimationFrame(() => { resizeGridCanvas(); renderGrid(); });
   }
 }
+
+// ═══════════════════════════════════════════════════════
+//  DISCOVER TAB (picbreeder)
+// ═══════════════════════════════════════════════════════
+
+const discover = { candidates: [], liked: new Set() };
+
+function renderCandidateSVG(cand) {
+  // Solved puzzle thumbnail. Each tile = square with 4 triangles (N/E/S/W)
+  // filled from COLORS[edge]. Fallback gray for invalid indices.
+  const n = cand.gridN;
+  const tileById = {};
+  for (const t of cand.tiles) tileById[t.id] = t.edges;
+  const cell = 20;
+  const size = cell * n;
+  const parts = [];
+  parts.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges">`);
+  for (let r = 0; r < n; r++) {
+    for (let c = 0; c < n; c++) {
+      const tid = cand.grid[r * n + c];
+      if (tid === null || tid === undefined) continue;
+      const edges = tileById[tid];
+      if (!edges) continue;
+      const x = c * cell, y = r * cell;
+      const cx = x + cell / 2, cy = y + cell / 2;
+      const color = i => (COLORS[edges[i]] && COLORS[edges[i]].hex) || '#888';
+      // [N, E, S, W] triangles, each from a square corner pair to the center
+      parts.push(`<polygon points="${x},${y} ${x+cell},${y} ${cx},${cy}" fill="${color(0)}"/>`);
+      parts.push(`<polygon points="${x+cell},${y} ${x+cell},${y+cell} ${cx},${cy}" fill="${color(1)}"/>`);
+      parts.push(`<polygon points="${x},${y+cell} ${x+cell},${y+cell} ${cx},${cy}" fill="${color(2)}"/>`);
+      parts.push(`<polygon points="${x},${y} ${x},${y+cell} ${cx},${cy}" fill="${color(3)}"/>`);
+    }
+  }
+  parts.push(`</svg>`);
+  return parts.join('');
+}
+
+function renderDiscover() {
+  const grid = document.getElementById('discoverGrid');
+  const breedBtn = document.getElementById('discoverBreedBtn');
+  grid.innerHTML = '';
+  if (!discover.candidates.length) {
+    grid.innerHTML = '<div class="discover-empty">Click <b>Roll 9</b> to generate a batch of puzzles.</div>';
+    breedBtn.disabled = true;
+    return;
+  }
+  discover.candidates.forEach((cand, idx) => {
+    const liked = discover.liked.has(idx);
+    const band = cand.difficulty.band || 'medium';
+    const card = document.createElement('div');
+    card.className = `discover-card band-${band}` + (liked ? ' liked' : '');
+    card.innerHTML = `
+      <div class="thumb">${renderCandidateSVG(cand)}</div>
+      <div class="meta">
+        <span class="score">score ${cand.difficulty.score.toFixed(0)} · ${cand.difficulty.label}</span>
+        <span class="band-${band}">${cand.tiles.length} tiles</span>
+      </div>
+      <div class="card-actions">
+        <button class="btn-like" data-act="like">${liked ? '♥ Liked' : '♡ Like'}</button>
+        <button data-act="use">Use this →</button>
+      </div>
+    `;
+    card.querySelector('[data-act="like"]').addEventListener('click', e => {
+      e.stopPropagation();
+      if (discover.liked.has(idx)) discover.liked.delete(idx);
+      else discover.liked.add(idx);
+      renderDiscover();
+    });
+    card.querySelector('[data-act="use"]').addEventListener('click', e => {
+      e.stopPropagation();
+      const payload = {
+        version: 1,
+        gridN: cand.gridN,
+        tiles: cand.tiles,
+        grid:  cand.grid,
+      };
+      importState(JSON.stringify(payload));
+      switchTab('design');
+    });
+    grid.appendChild(card);
+  });
+  breedBtn.disabled = discover.liked.size === 0;
+}
+
+function discoverSetStatus(msg) {
+  document.getElementById('discoverStatus').textContent = msg;
+}
+
+async function discoverFetch(path, body) {
+  const r = await fetch(path, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) {
+    const err = await r.json().catch(() => ({error: r.statusText}));
+    throw new Error(err.error || r.statusText);
+  }
+  return r.json();
+}
+
+async function discoverRoll() {
+  const gridN = parseInt(document.getElementById('discoverGridSize').value, 10);
+  discoverSetStatus(`Rolling 9 puzzles at ${gridN}×${gridN}…`);
+  document.getElementById('discoverRollBtn').disabled = true;
+  document.getElementById('discoverBreedBtn').disabled = true;
+  const t0 = performance.now();
+  try {
+    const data = await discoverFetch('/discover', { gridN });
+    discover.candidates = data.candidates || [];
+    discover.liked.clear();
+    renderDiscover();
+    discoverSetStatus(`Got ${discover.candidates.length} puzzles in ${((performance.now()-t0)/1000).toFixed(1)}s.`);
+  } catch (e) {
+    discoverSetStatus(`Error: ${e.message}`);
+  } finally {
+    document.getElementById('discoverRollBtn').disabled = false;
+  }
+}
+
+async function discoverBreed() {
+  if (!discover.liked.size) return;
+  const gridN = parseInt(document.getElementById('discoverGridSize').value, 10);
+  const parents = [...discover.liked].map(i => discover.candidates[i].tiles);
+  discoverSetStatus(`Breeding ${parents.length} parent(s) at ${gridN}×${gridN}…`);
+  document.getElementById('discoverRollBtn').disabled = true;
+  document.getElementById('discoverBreedBtn').disabled = true;
+  const t0 = performance.now();
+  try {
+    const data = await discoverFetch('/breed', { gridN, parents });
+    discover.candidates = data.candidates || [];
+    discover.liked.clear();
+    renderDiscover();
+    discoverSetStatus(`Bred ${discover.candidates.length} children in ${((performance.now()-t0)/1000).toFixed(1)}s.`);
+  } catch (e) {
+    discoverSetStatus(`Error: ${e.message}`);
+  } finally {
+    document.getElementById('discoverRollBtn').disabled = false;
+  }
+}
+
+document.getElementById('discoverGridSize').addEventListener('input', e => {
+  document.getElementById('discoverGridSizeVal').textContent = `${e.target.value}×${e.target.value}`;
+});
+document.getElementById('discoverRollBtn').addEventListener('click', discoverRoll);
+document.getElementById('discoverBreedBtn').addEventListener('click', discoverBreed);
 
 document.querySelectorAll('.app-tab').forEach(btn => {
   btn.addEventListener('click', () => switchTab(btn.dataset.tab));

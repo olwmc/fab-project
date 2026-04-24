@@ -290,9 +290,19 @@ def unbounded_entropy_strip(tiles, grid_h, strip_width=5):
     if num_types ** min(grid_h, 8) > 5_000_000:
         return None
 
+    # Hard cap on valid_cols to avoid OOM: with a dense compat graph and large
+    # grid_h, DFS can explode to ~num_types**grid_h. Abort early; caller treats
+    # None as "unbounded entropy unavailable".
+    MAX_COLS = 10000
     valid_cols = []
+    aborted = [False]
 
     def dfs(partial):
+        if aborted[0]:
+            return
+        if len(valid_cols) >= MAX_COLS:
+            aborted[0] = True
+            return
         if len(partial) == grid_h:
             valid_cols.append(tuple(partial))
             return
@@ -303,16 +313,21 @@ def unbounded_entropy_strip(tiles, grid_h, strip_width=5):
                 partial.append(t)
                 dfs(partial)
                 partial.pop()
+                if aborted[0]:
+                    return
 
     for t in range(num_types):
         dfs([t])
+        if aborted[0]:
+            break
+
+    if aborted[0]:
+        return None
 
     if not valid_cols:
         return float("-inf")
 
     n = len(valid_cols)
-    if n > 10000:
-        return None
 
     T = np.zeros((n, n), dtype=np.float64)
     for i, ca in enumerate(valid_cols):
