@@ -15,7 +15,6 @@ Run from the project root or design-pipeline-tool/ directory:
 
 import io
 import json
-import math
 import random
 import sys
 import zipfile
@@ -131,18 +130,19 @@ _PRESETS = [
 ]
 
 
-def gen_tileset(num_colors, num_tiles, rng):
+def gen_tileset(num_colors, num_tiles, rng, allowed=None):
     """Grow a tileset by attaching neighbors that share an edge — guarantees
     at least one valid 2-tile tiling exists. Mirrors knuth.generate_tileset,
     but biased toward reusing existing edge colors so small tilesets actually
     feel easy (matching edges are common rather than bottlenecked).
 
     The `num_colors` value is a count, not a range: we pick that many distinct
-    colors uniformly from the full palette so each initial tileset visually
-    looks different rather than always using colors 1-2."""
-    num_colors = max(1, min(num_colors, MAX_COLORS))
-    # Internal colors are 1-indexed into [1..MAX_COLORS]; sample a random subset.
-    palette = rng.sample(range(1, MAX_COLORS + 1), num_colors)
+    colors uniformly from `allowed` (default: all colors) so each initial tileset
+    visually looks different rather than always using colors 1-2."""
+    if not allowed:
+        allowed = list(range(1, MAX_COLORS + 1))
+    num_colors = max(1, min(num_colors, len(allowed)))
+    palette = rng.sample(allowed, num_colors)
 
     def rand_color(used):
         # 80% reuse an existing color (keeps edge-matching friendly),
@@ -165,28 +165,31 @@ def gen_tileset(num_colors, num_tiles, rng):
     return [list(t) for t in tiles]
 
 
-def mutate_tileset(parent_tiles, rng, n_muts=None):
-    """Apply additive mutations. Parent tiles are always preserved so the
-    parent's puzzle remains a valid tiling in the child. n_muts=0 returns
-    the parent tileset unchanged — useful when a single parent is selected
-    and the user just wants puzzle-layout variation."""
+def mutate_tileset(parent_tiles, rng, n_muts=None, allowed=None):
+    """Apply mutations to a tileset. n_muts=0 returns the tileset unchanged —
+    useful when a single parent is selected and the user just wants puzzle-layout
+    variation. The delete op may remove any tile, including parent tiles.
+    `allowed` restricts which colors new_color/recolor may introduce."""
+    if not allowed:
+        allowed = list(range(1, MAX_COLORS + 1))
     tiles = [tuple(t) for t in parent_tiles]
     if n_muts == 0:
         return [list(t) for t in tiles]
-    ops = ["new_color", "recolor", "rotate", "flip", "hybrid"]
+    ops = ["new_color", "recolor", "rotate", "flip", "hybrid", "delete"]
     if n_muts is None:
         n_muts = rng.randint(2, 4)
     for _ in range(n_muts):
         op = rng.choice(ops)
-        max_c = max(max(t) for t in tiles)
         a = rng.choice(tiles)
         if op == "new_color":
+            used = {c for t in tiles for c in t}
+            choices = [c for c in allowed if c not in used] or list(allowed)
             t = list(a)
-            t[rng.randint(0, 3)] = min(max_c + 1, MAX_COLORS)
+            t[rng.randint(0, 3)] = rng.choice(choices)
             tiles.append(tuple(t))
         elif op == "recolor":
             t = list(a)
-            t[rng.randint(0, 3)] = rng.randint(1, max_c)
+            t[rng.randint(0, 3)] = rng.choice(allowed)
             tiles.append(tuple(t))
         elif op == "rotate":
             tiles.append((a[_W], a[_N], a[_E], a[_S]))
@@ -195,7 +198,10 @@ def mutate_tileset(parent_tiles, rng, n_muts=None):
         elif op == "hybrid":
             b = rng.choice(tiles)
             tiles.append((a[_N], a[_E], b[_S], b[_W]))
-    # Dedup while preserving order so parent tiles keep their original indices
+        elif op == "delete":
+            if len(tiles) > 1:
+                tiles.pop(rng.randint(0, len(tiles) - 1))
+    # Dedup while preserving order
     seen = set()
     out = []
     for t in tiles:
@@ -203,6 +209,28 @@ def mutate_tileset(parent_tiles, rng, n_muts=None):
             seen.add(t)
             out.append(list(t))
     return out
+
+
+def crossover_tileset(parent_a, parent_b, rng, n_muts=None, allowed=None):
+    """Sample a random subset of tiles from each of two parents, combine them,
+    then apply fewer mutations than single-parent breeding (0–2 vs 2–4)."""
+    a_tiles = [tuple(t) for t in parent_a]
+    b_tiles = [tuple(t) for t in parent_b]
+
+    n_from_a = rng.randint(1, len(a_tiles))
+    n_from_b = rng.randint(1, len(b_tiles))
+    combined_raw = rng.sample(a_tiles, n_from_a) + rng.sample(b_tiles, n_from_b)
+
+    seen = set()
+    combined = []
+    for t in combined_raw:
+        if t not in seen:
+            seen.add(t)
+            combined.append(list(t))
+
+    if n_muts is None:
+        n_muts = rng.randint(0, 2)
+    return mutate_tileset(combined, rng, n_muts=n_muts, allowed=allowed)
 
 
 def _assign_bands(candidates):
@@ -284,12 +312,12 @@ def build_candidate_with_retry(tiles_factory, gridN, rng, max_attempts=4):
     return None
 
 
-def discover(gridN):
+def discover(gridN, allowed=None):
     rng = random.Random()
     out = []
     for _band, num_colors, num_tiles in _PRESETS:
         cand = build_candidate_with_retry(
-            lambda r, nc=num_colors, nt=num_tiles: gen_tileset(nc, nt, r),
+            lambda r, nc=num_colors, nt=num_tiles: gen_tileset(nc, nt, r, allowed),
             gridN, rng,
         )
         if cand is not None:
@@ -298,33 +326,35 @@ def discover(gridN):
     return out
 
 
-def breed(gridN, parents):
+def breed(gridN, parents, allowed=None):
     """Parents: list of tilesets in the frontend 0-indexed shape
-    [{id, edges:[n,e,s,w]}, ...]. Produces ~9 additive-mutation children."""
-    rng = random.Random()
-    # Convert each parent to internal 1-indexed list of lists
-    parents_1idx = []
-    for p in parents:
-        parents_1idx.append([[e + 1 for e in t["edges"]] for t in p])
+    [{id, edges:[n,e,s,w]}, ...]. Produces ~9 children via mutation and crossover.
 
-    # Single-parent mode: keep the tileset fixed and just re-roll the puzzle,
-    # so the user gets layout variation without expanding the tile vocabulary.
+    With one parent: re-rolls the puzzle layout without mutating the tileset.
+    With multiple parents: roughly half the children come from single-parent
+    mutation (2–4 ops), half from two-parent crossover (0–2 ops)."""
+    rng = random.Random()
+    parents_1idx = [[[e + 1 for e in t["edges"]] for t in p] for p in parents]
+
     single_parent = len(parents_1idx) == 1
-    children_per = max(1, math.ceil(9 / max(1, len(parents_1idx))))
     out = []
-    for parent in parents_1idx:
-        for _ in range(children_per):
-            if len(out) >= 9:
-                break
-            n_muts = 0 if single_parent else None
-            cand = build_candidate_with_retry(
-                lambda r, p=parent, nm=n_muts: mutate_tileset(p, r, n_muts=nm),
-                gridN, rng,
-            )
-            if cand is not None:
-                out.append(cand)
-        if len(out) >= 9:
-            break
+    attempts = 0
+    while len(out) < 9 and attempts < 27:
+        attempts += 1
+        if single_parent:
+            pa = parents_1idx[0]
+            factory = lambda r, p=pa: mutate_tileset(p, r, n_muts=0, allowed=allowed)
+        elif len(parents_1idx) >= 2 and rng.random() < 0.5:
+            pa, pb = rng.sample(parents_1idx, 2)
+            factory = lambda r, a=pa, b=pb: crossover_tileset(a, b, r, allowed=allowed)
+        else:
+            pa = rng.choice(parents_1idx)
+            factory = lambda r, p=pa: mutate_tileset(p, r, allowed=allowed)
+
+        cand = build_candidate_with_retry(factory, gridN, rng)
+        if cand is not None:
+            out.append(cand)
+
     out = out[:9]
     _assign_bands(out)
     return out
@@ -368,10 +398,13 @@ class Handler(BaseHTTPRequestHandler):
                 payload = self._read_body()
                 gridN = int(payload.get("gridN", 8))
                 gridN = max(2, min(25, gridN))
+                # allowedColors arrives as 0-indexed; convert to internal 1-indexed.
+                ac = payload.get("allowedColors")
+                allowed = [c + 1 for c in ac] if ac else None
                 if self.path == "/discover":
-                    candidates = discover(gridN)
+                    candidates = discover(gridN, allowed=allowed)
                 else:
-                    candidates = breed(gridN, payload.get("parents", []))
+                    candidates = breed(gridN, payload.get("parents", []), allowed=allowed)
                 self._send(200, "application/json",
                            json.dumps({"candidates": candidates}))
             except Exception as exc:

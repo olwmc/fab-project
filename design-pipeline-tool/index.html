@@ -140,6 +140,21 @@ header .sub {
 }
 .discover-bar .spacer { flex: 1; }
 .discover-bar .status { color: var(--ink3); font-size: 10px; }
+.discover-bar .color-picker { display: flex; gap: 5px; align-items: center; }
+.color-toggle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.25);
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.1s, box-shadow 0.1s;
+}
+.color-toggle.on {
+  opacity: 1;
+  box-shadow: 0 0 0 1.5px var(--ink);
+}
 .discover-grid {
   flex: 1;
   overflow: auto;
@@ -213,6 +228,34 @@ header .sub {
 .discover-card .card-actions button:last-child { border-right: none; }
 .discover-card .card-actions button:hover { background: var(--paper); color: var(--ink); }
 .discover-card.liked .btn-like { background: var(--ink); color: var(--paper); }
+.discover-card .card-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: row;
+}
+.discover-card .tileset-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 6px;
+  border-right: 1px solid var(--rule2);
+  background: var(--paper);
+  align-items: center;
+  overflow-y: auto;
+}
+.discover-card .tileset-tile {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.discover-card .tileset-tile svg { display: block; }
+.discover-card .tile-count {
+  font-size: 8px;
+  color: var(--ink3);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+}
 .discover-empty {
   grid-column: 1 / -1;
   align-self: center;
@@ -639,6 +682,8 @@ select:focus { outline: 1.5px solid var(--ink); }
     <span id="discoverGridSizeVal" style="font-size:10px;color:var(--teal);min-width:40px;">8×8</span>
     <button class="btn-primary" id="discoverRollBtn">↻ Roll 9</button>
     <button class="btn-secondary" id="discoverBreedBtn" disabled>✦ Breed selected</button>
+    <span class="bar-label">Colors</span>
+    <div class="color-picker" id="discoverColorPicker"></div>
     <div class="spacer"></div>
     <span class="status" id="discoverStatus">Click Roll 9 to generate puzzles.</span>
   </div>
@@ -2166,7 +2211,34 @@ function switchTab(tab) {
 //  DISCOVER TAB (picbreeder)
 // ═══════════════════════════════════════════════════════
 
-const discover = { candidates: [], liked: new Set() };
+const discover = {
+  candidates: [],
+  liked: new Set(),
+  allowedColors: new Set(COLORS.map((_, i) => i)),  // all on by default
+};
+
+// Build color-toggle buttons from the shared COLORS palette.
+(function buildDiscoverColorPicker() {
+  const picker = document.getElementById('discoverColorPicker');
+  COLORS.forEach((c, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'color-toggle on';
+    btn.style.background = c.hex;
+    btn.title = c.name;
+    btn.addEventListener('click', () => {
+      if (discover.allowedColors.has(i)) {
+        if (discover.allowedColors.size > 1) {   // keep at least one color active
+          discover.allowedColors.delete(i);
+          btn.classList.remove('on');
+        }
+      } else {
+        discover.allowedColors.add(i);
+        btn.classList.add('on');
+      }
+    });
+    picker.appendChild(btn);
+  });
+})();
 
 function renderCandidateSVG(cand) {
   // Solved puzzle thumbnail. Each tile = square with 4 triangles (N/E/S/W)
@@ -2198,6 +2270,31 @@ function renderCandidateSVG(cand) {
   return parts.join('');
 }
 
+function renderTilesetStrip(cand) {
+  // Count each tile's appearances in the puzzle grid.
+  const usage = {};
+  for (const tid of cand.grid) {
+    if (tid !== null && tid !== undefined) usage[tid] = (usage[tid] || 0) + 1;
+  }
+  // Render tiles in id order (stable: server assigns ids by first appearance).
+  const cell = 18;
+  const cx = cell / 2, cy = cell / 2;
+  const parts = ['<div class="tileset-strip">'];
+  for (const tile of cand.tiles) {
+    const e = tile.edges;
+    const col = i => (COLORS[e[i]] && COLORS[e[i]].hex) || '#888';
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${cell} ${cell}" width="${cell}" height="${cell}" shape-rendering="crispEdges">`
+      + `<polygon points="0,0 ${cell},0 ${cx},${cy}" fill="${col(0)}"/>`
+      + `<polygon points="${cell},0 ${cell},${cell} ${cx},${cy}" fill="${col(1)}"/>`
+      + `<polygon points="0,${cell} ${cell},${cell} ${cx},${cy}" fill="${col(2)}"/>`
+      + `<polygon points="0,0 0,${cell} ${cx},${cy}" fill="${col(3)}"/>`
+      + `</svg>`;
+    parts.push(`<div class="tileset-tile">${svg}<span class="tile-count">×${usage[tile.id] || 0}</span></div>`);
+  }
+  parts.push('</div>');
+  return parts.join('');
+}
+
 function renderDiscover() {
   const grid = document.getElementById('discoverGrid');
   const breedBtn = document.getElementById('discoverBreedBtn');
@@ -2213,7 +2310,10 @@ function renderDiscover() {
     const card = document.createElement('div');
     card.className = `discover-card band-${band}` + (liked ? ' liked' : '');
     card.innerHTML = `
-      <div class="thumb">${renderCandidateSVG(cand)}</div>
+      <div class="card-body">
+        ${renderTilesetStrip(cand)}
+        <div class="thumb">${renderCandidateSVG(cand)}</div>
+      </div>
       <div class="meta">
         <span class="score">score ${cand.difficulty.score.toFixed(0)} · ${cand.difficulty.label}</span>
         <span class="band-${band}">${cand.tiles.length} tiles</span>
@@ -2269,7 +2369,7 @@ async function discoverRoll() {
   document.getElementById('discoverBreedBtn').disabled = true;
   const t0 = performance.now();
   try {
-    const data = await discoverFetch('/discover', { gridN });
+    const data = await discoverFetch('/discover', { gridN, allowedColors: [...discover.allowedColors] });
     discover.candidates = data.candidates || [];
     discover.liked.clear();
     renderDiscover();
@@ -2290,7 +2390,7 @@ async function discoverBreed() {
   document.getElementById('discoverBreedBtn').disabled = true;
   const t0 = performance.now();
   try {
-    const data = await discoverFetch('/breed', { gridN, parents });
+    const data = await discoverFetch('/breed', { gridN, parents, allowedColors: [...discover.allowedColors] });
     discover.candidates = data.candidates || [];
     discover.liked.clear();
     renderDiscover();
