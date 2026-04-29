@@ -129,80 +129,230 @@ _PRESETS = [
     ("hard",   3, 8),
 ]
 
+def _h_compat(a, b):
+    """True if tile a can sit immediately left of tile b"""
+    return a[_E] == b[_W]
+ 
+ 
+def _v_compat(a, b):
+    """True if tile a can sit immediately above tile b"""
+    return a[_S] == b[_N]
+ 
+ 
+def _any_h_neighbor(tile, tileset):
+    """True if tile has at least one right-neighbor in tileset."""
+    return any(_h_compat(tile, t) for t in tileset)
+ 
+ 
+def _any_v_neighbor(tile, tileset):
+    """True if tile has at least one tile that can go below it in tileset."""
+    return any(_v_compat(tile, t) for t in tileset)
+ 
+ 
+def _is_reachable(tile, tileset):
+    """Heuristic: a tile is useful only if at least one other tile in the set
+    can precede it horizontally or vertically (i.e. it isn't an island)."""
+    return (
+        any(_h_compat(t, tile) for t in tileset if t != tile) or
+        any(_v_compat(t, tile) for t in tileset if t != tile)
+    )
+
 
 def gen_tileset(num_colors, num_tiles, rng, allowed=None):
-    """Grow a tileset by attaching neighbors that share an edge — guarantees
-    at least one valid 2-tile tiling exists. Mirrors knuth.generate_tileset,
-    but biased toward reusing existing edge colors so small tilesets actually
-    feel easy (matching edges are common rather than bottlenecked).
+    """Grow a tileset that spans a range of complexities.
+    
+    The strategy is as follows:
+    1. Pick a random palette of num_colors from allowed
+    2. Seed the tileset with one tile whose edges all come from the palette
+    3. Grow the tileset by one of the 3 expansion moves, whose probabilities 
+       shift as the tileset size grows
 
-    The `num_colors` value is a count, not a range: we pick that many distinct
-    colors uniformly from `allowed` (default: all colors) so each initial tileset
-    visually looks different rather than always using colors 1-2."""
+       attach - pick an existing tile and create a new one whose touching edge
+       matches. The probability starts high and falls as the set grows.
+
+       bridge - pick 2 existing tiles and create a new tile whose N matches
+       tile-A's S and whose W matches tile-B's E. This connects sub-graphs,
+       raising the branch factor. The probability grows with the set size.
+
+       free - pick a tile with completely random edges from the palette. This
+       adds variety but is only accepted if the candidate has at least one
+       compatible neighbor in the set.
+    """
     if not allowed:
         allowed = list(range(1, MAX_COLORS + 1))
     num_colors = max(1, min(num_colors, len(allowed)))
     palette = rng.sample(allowed, num_colors)
-
-    def rand_color(used):
-        # 80% reuse an existing color (keeps edge-matching friendly),
-        # 20% pick anything from this tileset's palette.
-        if used and rng.random() < 0.8:
-            return rng.choice(list(used))
+ 
+    def rand_pal():
         return rng.choice(palette)
-
-    tiles = {tuple(rng.choice(palette) for _ in range(4))}
+ 
+    seed = tuple(rand_pal() for _ in range(4))
+    tiles = [seed]
+ 
     attempts = 0
-    while len(tiles) < num_tiles and attempts < 10000:
+    while len(tiles) < num_tiles and attempts < 20_000:
         attempts += 1
-        used = {c for t in tiles for c in t}
-        src = rng.choice(list(tiles))
-        if rng.random() < 0.5:
-            t = (rand_color(used), rand_color(used), rand_color(used), src[_E])
+        progress = len(tiles) / num_tiles
+ 
+        p_attach = max(0.40, 0.80 - 0.40 * progress)
+        p_bridge = min(0.35, 0.10 + 0.40 * progress)
+        roll = rng.random()
+ 
+        if roll < p_attach or len(tiles) < 2:
+            # Attach: new tile shares one edge with a random existing tile
+            src = rng.choice(tiles)
+            if rng.random() < 0.5:
+                candidate = (rand_pal(), rand_pal(), rand_pal(), src[_E])  # to the right
+            else:
+                candidate = (src[_S], rand_pal(), rand_pal(), rand_pal())  # below
+ 
+        elif roll < p_attach + p_bridge:
+            # Bridge: fix both N and W from two (possibly the same) existing tiles
+            ta = rng.choice(tiles)
+            tb = rng.choice(tiles)
+            candidate = (ta[_S], rand_pal(), rand_pal(), tb[_E])
+ 
         else:
-            t = (src[_S], rand_color(used), rand_color(used), rand_color(used))
-        tiles.add(t)
-    return [list(t) for t in tiles]
+            # Free: random edges, accepted only if at least one neighbor exists
+            candidate = tuple(rand_pal() for _ in range(4))
+            if not (
+                _any_h_neighbor(candidate, tiles) or
+                _any_v_neighbor(candidate, tiles) or
+                any(_h_compat(candidate, t) for t in tiles) or
+                any(_v_compat(candidate, t) for t in tiles)
+            ):
+                continue
+ 
+        if candidate not in tiles:
+            tiles.append(candidate)
+ 
+    # Connectivity pass: drop pure-island tiles
+    cleaned = [t for t in tiles if _is_reachable(t, tiles)]
+    if len(cleaned) < 2:
+        cleaned = tiles[:2]  # fallback: always return at least 2
+ 
+    return [list(t) for t in cleaned]
 
 
 def mutate_tileset(parent_tiles, rng, n_muts=None, allowed=None):
     """Apply mutations to a tileset. n_muts=0 returns the tileset unchanged —
     useful when a single parent is selected and the user just wants puzzle-layout
-    variation. The delete op may remove any tile, including parent tiles.
-    `allowed` restricts which colors new_color/recolor may introduce."""
+    variation. `allowed` restricts which colors new_color/recolor may introduce.
+    
+    The operations on the tileset are as follows:
+    new_color - clone a tile with one dege changed to a color that isn't in the set
+    recolor - clone a tile with one edge changed to any palette color
+    rotate - add the 90 degree clockwise rotation of a random tile
+    flip - add the horizontal mirror of a random tile
+    hybrid - pick two tiles, try N/E from A and S/W from B and its complement,
+             accept the first that has at least one compatible neighbor in the set
+    smart_delete - remove a tile with few compatible neighbors, randomly picking
+                   amongst the bottom third to avoid repicking the same tile
+    shift_color - find the most frequent edge color and replace all its occurences
+                  in one tile with another
+    """
     if not allowed:
         allowed = list(range(1, MAX_COLORS + 1))
     tiles = [tuple(t) for t in parent_tiles]
     if n_muts == 0:
         return [list(t) for t in tiles]
-    ops = ["new_color", "recolor", "rotate", "flip", "hybrid", "delete"]
     if n_muts is None:
-        n_muts = rng.randint(2, 4)
+        n_muts = rng.randint(2, 5)
+ 
+    ops = ["new_color", "recolor", "rotate", "flip",
+           "hybrid", "smart_delete", "shift_color"]
+ 
     for _ in range(n_muts):
         op = rng.choice(ops)
-        a = rng.choice(tiles)
+ 
         if op == "new_color":
             used = {c for t in tiles for c in t}
             choices = [c for c in allowed if c not in used] or list(allowed)
+            a = rng.choice(tiles)
             t = list(a)
             t[rng.randint(0, 3)] = rng.choice(choices)
-            tiles.append(tuple(t))
+            candidate = tuple(t)
+            if candidate not in tiles:
+                tiles.append(candidate)
+ 
         elif op == "recolor":
+            a = rng.choice(tiles)
             t = list(a)
             t[rng.randint(0, 3)] = rng.choice(allowed)
-            tiles.append(tuple(t))
+            candidate = tuple(t)
+            if candidate not in tiles:
+                tiles.append(candidate)
+ 
         elif op == "rotate":
-            tiles.append((a[_W], a[_N], a[_E], a[_S]))
+            a = rng.choice(tiles)
+            # 90 degrees clockwise
+            candidate = (a[_W], a[_N], a[_E], a[_S])
+            if candidate not in tiles:
+                tiles.append(candidate)
+ 
         elif op == "flip":
-            tiles.append((a[_N], a[_W], a[_S], a[_E]))
+            a = rng.choice(tiles)
+            candidate = (a[_N], a[_W], a[_S], a[_E])  # swap E/W
+            if candidate not in tiles:
+                tiles.append(candidate)
+ 
         elif op == "hybrid":
+            a = rng.choice(tiles)
             b = rng.choice(tiles)
-            tiles.append((a[_N], a[_E], b[_S], b[_W]))
-        elif op == "delete":
-            if len(tiles) > 1:
-                tiles.pop(rng.randint(0, len(tiles) - 1))
-    # Dedup while preserving order
-    seen = set()
+            for cand in [
+                (a[_N], a[_E], b[_S], b[_W]),  # N/E from a, S/W from b
+                (b[_N], b[_E], a[_S], a[_W]),  # complementary split
+            ]:
+                if cand in tiles:
+                    continue
+                if (
+                    _any_h_neighbor(cand, tiles) or
+                    _any_v_neighbor(cand, tiles) or
+                    any(_h_compat(cand, t) for t in tiles) or
+                    any(_v_compat(cand, t) for t in tiles)
+                ):
+                    tiles.append(cand)
+                    break
+ 
+        elif op == "smart_delete":
+            if len(tiles) <= 2:
+                continue
+ 
+            def neighbor_count(tile):
+                return sum(
+                    1 for t in tiles
+                    if t is not tile and (
+                        _h_compat(tile, t) or _h_compat(t, tile) or
+                        _v_compat(tile, t) or _v_compat(t, tile)
+                    )
+                )
+ 
+            scored = sorted(tiles, key=neighbor_count)
+            # Pick randomly from the least-connected third to avoid always
+            # deleting the same tile.
+            bottom = scored[:max(1, len(scored) // 3)]
+            tiles.remove(rng.choice(bottom))
+ 
+        elif op == "shift_color":
+            from collections import Counter
+            freq = Counter(c for t in tiles for c in t)
+            if not freq:
+                continue
+            dominant = freq.most_common(1)[0][0]
+            victims = [t for t in tiles if dominant in t]
+            if not victims:
+                continue
+            a = rng.choice(victims)
+            replacement = rng.choice(
+                [c for c in allowed if c != dominant] or list(allowed)
+            )
+            new_tile = tuple(replacement if c == dominant else c for c in a)
+            if new_tile not in tiles:
+                tiles.remove(a)
+                tiles.append(new_tile)
+ 
+    # Dedup, preserve order
+    seen: set = set()
     out = []
     for t in tiles:
         if t not in seen:
@@ -211,23 +361,70 @@ def mutate_tileset(parent_tiles, rng, n_muts=None, allowed=None):
     return out
 
 
+
 def crossover_tileset(parent_a, parent_b, rng, n_muts=None, allowed=None):
     """Sample a random subset of tiles from each of two parents, combine them,
-    then apply fewer mutations than single-parent breeding (0–2 vs 2–4)."""
+    then apply fewer mutations than single-parent breeding (0–2 vs 2–4).
+    
+    Strategies for combining:
+    union_sample - take random subsets from each parent and merge them
+    compatible_first - seed with all of parent A, then absorb tiles from parent B
+                       only if they share at least one compatible edge with something
+                       already in the combined set
+    color_matched - find edge colors that appear in both parents, pick one as a pivot
+                    and include every tile from either parent that features it.
+    """
+    if not allowed:
+        allowed = list(range(1, MAX_COLORS + 1))
+ 
     a_tiles = [tuple(t) for t in parent_a]
     b_tiles = [tuple(t) for t in parent_b]
-
-    n_from_a = rng.randint(1, len(a_tiles))
-    n_from_b = rng.randint(1, len(b_tiles))
-    combined_raw = rng.sample(a_tiles, n_from_a) + rng.sample(b_tiles, n_from_b)
-
-    seen = set()
+ 
+    strategy = rng.choice(["union_sample", "compatible_first", "color_matched"])
+ 
+    if strategy == "union_sample":
+        n_from_a = rng.randint(max(1, len(a_tiles) // 2), len(a_tiles))
+        n_from_b = rng.randint(max(1, len(b_tiles) // 2), len(b_tiles))
+        raw = rng.sample(a_tiles, n_from_a) + rng.sample(b_tiles, n_from_b)
+ 
+    elif strategy == "compatible_first":
+        raw = list(a_tiles)
+        for t in rng.sample(b_tiles, len(b_tiles)):
+            if (
+                _any_h_neighbor(t, raw) or _any_v_neighbor(t, raw) or
+                any(_h_compat(t, r) for r in raw) or
+                any(_v_compat(t, r) for r in raw)
+            ):
+                raw.append(t)
+ 
+    else:  # color_matched
+        colors_a = {c for t in a_tiles for c in t}
+        colors_b = {c for t in b_tiles for c in t}
+        shared = list(colors_a & colors_b)
+        if shared:
+            pivot = rng.choice(shared)
+            raw = (
+                [t for t in a_tiles if pivot in t] +
+                [t for t in b_tiles if pivot in t]
+            )
+        else:
+            # Fallback: union sample
+            raw = (
+                rng.sample(a_tiles, max(1, len(a_tiles) // 2)) +
+                rng.sample(b_tiles, max(1, len(b_tiles) // 2))
+            )
+ 
+    # Dedup
+    seen: set = set()
     combined = []
-    for t in combined_raw:
+    for t in raw:
         if t not in seen:
             seen.add(t)
             combined.append(list(t))
-
+ 
+    if not combined:
+        combined = [list(rng.choice(a_tiles + b_tiles))]
+ 
     if n_muts is None:
         n_muts = rng.randint(0, 2)
     return mutate_tileset(combined, rng, n_muts=n_muts, allowed=allowed)
